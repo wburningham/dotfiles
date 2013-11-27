@@ -6,13 +6,18 @@ function installcask() {
 	brew cask install "${@}" 2> /dev/null
 }
 
+installcask adium
+installcask dashlane
 installcask dropbox
+installcask geektool
 installcask google-chrome
 installcask google-chrome-canary
+installcask firefox
 installcask iterm2
 installcask macvim
+installcask mongohub
 installcask sublime-text
 installcask the-unarchiver
-installcask transmission
+installcask vagrant
 installcask virtualbox
 installcask vlc
