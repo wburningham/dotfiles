@@ -1,13 +1,12 @@
 # Make vim the default editor
 export EDITOR="vim"
 
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend
 # Larger bash history (allow 32³ entries; default is 500)
+# append to bash_history if Terminal.app quits
+shopt -s histappend
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-# Erase duplicates
-export HISTCONTROL="ignoredups"
+export HISTCONTROL=ignoredups
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
@@ -23,3 +22,7 @@ export GREP_OPTIONS="--color=auto"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+
+export NVM_DIR="/Users/wesb/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
