@@ -5,57 +5,36 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-# Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
-alias h="history"
-alias _="sudo"
-alias c='clear'
-alias k='clear'
-alias q="exit"
+# Directory
+alias	md='mkdir -p'
 
+# Shortcuts
+alias go="cd /Code/go/src/gitlab.eng.qops.net"
+alias _="sudo"
 
 # programs
 alias st='open -a "Sublime Text 2"'
 # also/or do this:
 # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
-alias preview="open -a '$PREVIEW'"
-alias xcode="open -a '/Developer/Applications/Xcode.app'"
-alias filemerge="open -a '/Developer/Applications/Utilities/FileMerge.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias opera="open -a opera"
 alias chrome="open -a google\ chrome"
-alias chromium="open -a chromium"
-alias dashcode="open -a dashcode"
-alias finder='open -a Finder'
-
-
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -lFG"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -laFG"
 
 # List only directories
-alias lsd='ls -lF ${colorflag} | grep "^d"'
+alias lsd='ls -lFG | grep "^d"'
 
 alias ll='ls -al'
 
 
-
 # Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+alias ls="command ls -G"
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
 # Enable aliases to be sudo’ed
@@ -63,9 +42,6 @@ alias sudo='sudo '
 
 # Get week number
 alias week='date +%V'
-
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -81,24 +57,11 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Canonical hex dump; some systems have this symlinked
-command -v hd > /dev/null || alias hd="hexdump -C"
-
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
 
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
@@ -123,18 +86,12 @@ alias spoton="sudo mdutil -a -i on"
 
 
 # One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
-done
+#for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+#	alias "$method"="lwp-request -m '$method'"
+#done
 
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
-
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
 
 # Tree
 if [ ! -x "$(which tree 2>/dev/null)" ]
@@ -144,76 +101,25 @@ fi
 
 
 # Git Aliases
-alias gcl='git clone'
-alias ga='git add'
-alias gall='git add .'
-alias g='git'
-alias get='git'
-alias gst='git status'
-alias gs='git status'
-alias gss='git status -s'
-alias gl='git pull'
-alias gup='git fetch && git rebase'
 alias gp='git push'
 alias gpo='git push origin'
-# alias gdv='git diff -w "$@" | vim -R -'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gci='git commit --interactive'
-alias gb='git branch'
-alias gba='git branch -a'
-# alias gcount='git shortlog -sn'
-# alias gcp='git cherry-pick'
-alias gco='git checkout'
-# alias gexport='git archive --format zip --output'
-# alias gdel='git branch -D'
-# alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gs='git status'
 alias gll='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-
-# case $OSTYPE in
-#   linux*)
-#     alias gd='git diff | vim -R -'
-#     ;;
-#   darwin*)
-#     alias gd='git diff | mate'
-#     ;;
-#   darwin*)
-#     alias gd='git diff'
-#     ;;
-# esac
-
-
+alias gco='git checkout'
+alias get='git'
+alias g='git'
+alias gpull='git pull --prune'
+alias gb='git branch'
 
 function git-help() {
   echo "Git Custom Aliases Usage"
   echo
-  echo "  gcl	  = git clone"
-  echo "  g       = git"
-  echo "  get 	  = git"
-  echo "  ga      = git add"
-  echo "  gall	  = git add ."
-  echo "  gst/gs  = git status"
-  echo "  gss	  = git status -s"
-  echo "  gl      = git pull"
-  echo "  gup     = git fetch && git rebase"
   echo "  gp      = git push"
-  # echo "  gd      = git diff | mate"
-  # echo "  gdv     = git diff -w \"$@\" | vim -R -"
-  echo "  gc      = git commit -v"
-  echo "  gca     = git commit -v -a"
-  echo "  gci 	  = git commit --interactive"
-  echo "  gb      = git branch"
-  echo "  gba     = git branch -a"
-  # echo "  gcount  = git shortlog -sn"
-  # echo "  gcp     = git cherry-pick"
-  echo "  gco     = git checkout"
-  # echo "  gexport = git git archive --format zip --output"
-  # echo "  gdel    = git branch -D"
   echo "  gpo     = git push origin"
-  # echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
-  echo "  gll     = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  echo "  gs      = git status"
+  echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
+  echo "  gco     = git checkout"
+  echo "  gpull      = git pull --prune"
+  echo "  gb      = git branch"
   echo
 }
-
-
-
