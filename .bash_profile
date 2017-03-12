@@ -1,7 +1,17 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+export NVM_DIR="/Users/wesb/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export GOPATH=/Code/go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:${GOPATH//://bin:}/bin
 
 PATH=$PATH:/usr/local/mysql/bin
+PATH=$PATH:/usr/local/aws/eb/macosx/python2.7
+PATH=$PATH:/usr/local/aws/api/bin
+PATH="/usr/local/opt/php55/bin:${PATH}"
+export AWS_CREDENTIAL_FILE=~/.awscred
 
 
 # Load the shell dotfiles, and then some:
@@ -20,6 +30,10 @@ shopt -s nocaseglob
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
+# Erase duplicates
+export HISTCONTROL="ignoredups"
+# resize history size
+export HISTSIZE=5000
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
@@ -43,3 +57,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/wesb/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/wesb/google-cloud-sdk/completion.bash.inc'
