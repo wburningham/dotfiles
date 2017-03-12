@@ -1,12 +1,11 @@
 # Install native apps
-brew tap phinze/homebrew-cask
+brew tap caskroom/homebrew-cask
 brew install brew-cask
 
 function installcask() {
 	brew cask install "${@}" 2> /dev/null
 }
 
-installcask adium
 installcask dashlane
 installcask dropbox
 installcask geektool
@@ -21,3 +20,5 @@ installcask the-unarchiver
 installcask vagrant
 installcask virtualbox
 installcask vlc
+installcask alfred
+installcask opera
