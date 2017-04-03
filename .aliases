@@ -9,7 +9,6 @@ alias -- -="cd -"
 alias	md='mkdir -p'
 
 # Shortcuts
-alias go="cd /Code/go/src/gitlab.eng.qops.net"
 alias _="sudo"
 
 # programs
