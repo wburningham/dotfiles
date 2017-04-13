@@ -5,6 +5,22 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
+alias h='history'
+
+# Golang aliases
+
+# create a `go lint` and proxy anything else
+function go {
+   if [ $1 = "lint" ]; then
+         echo "go vet \`go list ./... | grep -v '/vendor/\`'" && \
+go vet `go list ./... | grep -v '/vendor/'` && \
+echo "gosimple -tests=false \`go list ./... | grep -v vendor | grep -v cmd\`" && \
+gosimple -tests=false `go list ./... | grep -v vendor | grep -v cmd`
+      else
+        /usr/local/go/bin/go "$@"
+   fi
+}
+
 # Directory
 alias	md='mkdir -p'
 
