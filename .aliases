@@ -17,7 +17,7 @@ go vet `go list ./... | grep -v '/vendor/'` && \
 echo "gosimple -tests=false \`go list ./... | grep -v vendor | grep -v cmd\`" && \
 gosimple -tests=false `go list ./... | grep -v vendor | grep -v cmd` && \
 echo "staticcheck -tests=false \`go list ./... | grep -v vendor\`" && \
-staticcheck -tests=false `go list ./... | grep -v vendor`
+staticcheck -tests=false `go list ./... | grep -v vendor` && \
 echo "unused -tests=false \`go list ./... | grep -v vendor\`" && \
 unused -tests=false `go list ./... | grep -v vendor`
       else
