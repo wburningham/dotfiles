@@ -11,8 +11,8 @@ alias h='history'
 
 # create a `go lint` and proxy anything else
 function go {
-   if [ $1 = "lint" ]; then
-         echo "go vet \`go list ./... | grep -v 'vendor\`'" && \
+  if [ $1 = "lint" ]; then
+    echo "go vet \`go list ./... | grep -v 'vendor\`'" && \
 go vet `go list ./... | grep -v 'vendor'` && \
 echo "golint \`go list ./... | grep -v vendor\` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports'" && \
 golint `go list ./... | grep -v vendor` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports' && \
@@ -22,9 +22,13 @@ echo "staticcheck -tests=false \`go list ./... | grep -v vendor\`" && \
 staticcheck -tests=false `go list ./... | grep -v vendor` && \
 echo "unused -tests=false \`go list ./... | grep -v vendor\`" && \
 unused -tests=false `go list ./... | grep -v vendor`
-      else
-        /usr/local/go/bin/go "$@"
-   fi
+  else
+    if [ $1 = "cover" ]; then
+      go test -v -cover -coverprofile=coverage.out . && go tool cover -html=coverage.out && rm coverage.out
+    else
+      /usr/local/go/bin/go "$@"
+    fi
+  fi
 }
 
 # Directory
@@ -129,7 +133,7 @@ alias gll='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset 
 alias gco='git checkout'
 alias get='git'
 alias g='git'
-alias gpull='git pull --prune'
+alias gpull='git pull --prune && git branch --merged | grep -v master | xargs git branch -d'
 alias gb='git branch'
 
 function git-help() {
