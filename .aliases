@@ -14,8 +14,8 @@ function go {
   if [ $1 = "lint" ]; then
     echo "go vet \`go list ./... | grep -v 'vendor\`'" && \
 go vet `go list ./... | grep -v 'vendor'` && \
-echo "golint \`go list ./... | grep -v vendor\` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports'" && \
-golint `go list ./... | grep -v vendor` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports' && \
+echo "revive \`go list ./... | grep -v vendor\` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports'" && \
+revive `go list ./... | grep -v vendor` | grep -v 'should have comment or be unexported' | grep -v 'should not use dot imports' && \
 echo "gosimple -tests=false \`go list ./... | grep -v vendor\`" && \
 gosimple -tests=false `go list ./... | grep -v vendor` && \
 echo "staticcheck -tests=false \`go list ./... | grep -v vendor\`" && \
@@ -31,6 +31,21 @@ unused -tests=false `go list ./... | grep -v vendor`
   fi
 }
 
+# Docker aliases
+
+# create a `docker cow` and proxy anything else
+function docker {
+  if [ $1 = "purge" ]; then
+    echo "docker rm -f \`docker ps -a -q\` && docker rmi -f \`docker images -q\`" && \
+    docker rm -f `docker ps -a -q` && docker rmi -f `docker images -q`
+  elif [ $1 = "rm_cow" ]; then
+    echo "rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2" && \
+    rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2
+  else
+    /usr/local/bin/docker "$@"
+  fi
+}
+
 # Directory
 alias	md='mkdir -p'
 
@@ -38,7 +53,7 @@ alias	md='mkdir -p'
 alias _="sudo"
 
 # programs
-alias st='open -a "Sublime Text 2"'
+alias s='open -a "Sublime Text"'
 # also/or do this:
 # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 alias safari="open -a safari"
