@@ -1,0 +1,61 @@
+{
+  "binary_file_patterns": [
+    "dist/*",
+    "node_modules/*",
+    "bower_components/*",
+    "vendor/*",
+    "*.jpg",
+    "*.jpeg",
+    "*.png",
+    "*.gif",
+    "*.ttf",
+    "*.tga",
+    "*.dds",
+    "*.ico",
+    "*.eot",
+    "*.pdf",
+    "*.swf",
+    "*.jar",
+    "*.zip"
+  ],
+  "color_scheme": "Packages/User/Monokai (SL).tmTheme",
+  "color_scheme_alt": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+  "default_encoding": "UTF-8",
+  "default_line_ending": "unix",
+  "detect_indentation": true,
+  "draw_white_space": "all",
+  "ensure_newline_at_eof_on_save": false,
+  "file_exclude_patterns": [
+    ".DS_Store",
+    "Desktop.ini",
+    "*.pyc",
+    "._*",
+    "Thumbs.db",
+    ".Spotlight-V100",
+    ".Trashes"
+  ],
+  "folder_exclude_patterns": [
+    "template_c",
+    "cachehttps",
+    ".git",
+    "node_modules"
+  ],
+  "ignored_packages": [
+    "Vintage"
+  ],
+  "show_full_path": true,
+  "sidebar_no_icon": true,
+  "sidebar_row_padding_medium": true,
+  "status_bar_brighter": true,
+  "tabs_medium": true,
+  "tabs_padding_medium": true,
+  "theme": "Default.sublime-theme",
+  "font_size": 21,
+  "highlight_modified_tabs": true,
+  "hot_exit": false,
+  "show_encoding": true,
+  "show_line_endings": true,
+  "tab_size": 2,
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": true
+}

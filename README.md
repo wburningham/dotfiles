@@ -71,3 +71,25 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
+
+## Setups to take when migrating to a new computer
+
+Note: to scp/ssh to your computer (not from) you need to enable remote login in the settings. (search `ssh` in system preferences)
+
+- copy ~/.ssh folder
+- run `git config --global user.name "John Doe"` (will prompt to install OSX dev tools so run TWICE)
+- run `git config --global user.email johndoe@example.com`
+- git clone dotfiles
+- bootstrap dotfiles
+- install homebrew
+- copy ~/.aws folder
+- copy ~/.awscred file
+- make .bash_history unique and copy
+- copy ~/.extra file
+- copy ~/.netrc file
+- copy ~/.npmrc file
+- copy ~/.srvrrc file
+- copy PandaBar.app
+- copy TrashMe.app
+- copy Quinn.app
+- audit code in /Code

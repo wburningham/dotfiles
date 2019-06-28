@@ -6,19 +6,47 @@ function installcask() {
 	brew cask install "${@}" 2> /dev/null
 }
 
+installcask alfred
+installcask atext # http://www.trankynam.com/atext/
+installcask authy
+installcask dash
 installcask dashlane
-installcask dropbox
-installcask geektool
+installcask disk-inventory-x
+installcask docker
+# installcask dropbox
+installcask evernote
+installcask firefox
+# installcask geektool
 installcask google-chrome
 installcask google-chrome-canary
-installcask firefox
+installcask handbrake
 installcask iterm2
+installcask kap
+installcask kdiff3
+# installcask lego-digital-designer
 installcask macvim
-installcask mongohub
+installcask mysqlworkbench
+installcask numi
+# installcask mongohub
+installcask opera
+installcask plex-media-server
+installcask sequel-pro
+installcask skype
+installcask slack
+installcask sourcetree
+installcask steam
 installcask sublime-text
 installcask the-unarchiver
-installcask vagrant
-installcask virtualbox
+# installcask vagrant
+# installcask virtualbox
 installcask vlc
-installcask alfred
-installcask opera
+# installcask zoomus
+
+
+# # Mac App Store command-line interface
+brew "mas"
+mas "ToothFairy", id: 1191449274
+# mas "BetterSnapTool", id: XXX
+# mas "Trello", id: XXX
+# mas "SimpleMind Lite", id: XXX
+# mas "Audacity", id: XXX
