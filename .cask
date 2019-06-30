@@ -40,12 +40,12 @@ installcask the-unarchiver
 # installcask vagrant
 # installcask virtualbox
 installcask vlc
-# installcask zoomus
+installcask zoomus
 
 
 # # Mac App Store command-line interface
-brew "mas"
-mas "ToothFairy", id: 1191449274
+brew install mas
+mas install "ToothFairy", id: 1191449274
 # mas "BetterSnapTool", id: XXX
 # mas "Trello", id: XXX
 # mas "SimpleMind Lite", id: XXX

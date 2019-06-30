@@ -89,7 +89,12 @@ Note: to scp/ssh to your computer (not from) you need to enable remote login in 
 - copy ~/.netrc file
 - copy ~/.npmrc file
 - copy ~/.srvrrc file
+- copy ~/.path file
 - copy PandaBar.app
 - copy TrashMe.app
 - copy Quinn.app
 - audit code in /Code
+- enable "Turn off my video when joining meeting" in zoomus
+- enable "Mute microphone when joining meeting" in zoomus
+- Setup printers
+

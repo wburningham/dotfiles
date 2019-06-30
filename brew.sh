@@ -27,10 +27,10 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install screen
@@ -39,14 +39,17 @@ brew install screen
 brew install ack
 #brew install exiv2
 brew install git
-brew install imagemagick --with-webp
+# brew install go # couldn't get this to show up in the path correctly
+brew install git
+brew install imagemagick
 brew install nvm
+brew install tig
 brew install tree
 
 # Install some awesome QuickLook plugins (https://github.com/sindresorhus/quick-look-plugins)
 brew cask install qlcolorcode # Preview source code files with syntax highlighting
 brew cask install qlstephen # Preview plain text files without or with unknown file extension. 
-brew cask install quicklook-json # Preview JSON files
+# brew cask install quicklook-json # Preview JSON files
 brew cask install qlimagesize # Display image size and resolution
 
 # Remove outdated versions from the cellar.
