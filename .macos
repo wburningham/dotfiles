@@ -757,8 +757,9 @@ defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2
 # Start up apps                                                               #
 ###############################################################################
 
-defaults write com.trankynam.aText StartAtLogin -bool true
-defaults write com.hegenberg.BetterSnapTool StartAtLogin -bool true
+# tip: list possible domains `defaults domains | tr ',' '\n'`
+
+defaults write com.divisiblebyzero.Spectacle StartAtLogin -bool true
 defaults write com.kapeli.dash StartAtLogin -bool true
 defaults write com.runningwithcrayons.Alfred StartAtLogin -bool true
 
@@ -768,6 +769,13 @@ defaults write com.runningwithcrayons.Alfred StartAtLogin -bool true
 
 # Install Sublime Text settings
 cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+
+###############################################################################
+# Spectacale                                                                  #
+###############################################################################
+
+# Setup preferred shortcuts
+mkdir -p ~/Library/Application\ Support/Spectacle && cp init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 ###############################################################################
 # Kill affected applications                                                  #

@@ -7,9 +7,9 @@ function installcask() {
 }
 
 installcask alfred
-installcask atext # http://www.trankynam.com/atext/
+# installcask atext # http://www.trankynam.com/atext/
 installcask authy
-installcask dash
+installcask ./cask/dash.rb # v3.4.3 locked
 installcask dashlane
 installcask disk-inventory-x
 installcask docker
@@ -36,6 +36,7 @@ installcask slack
 installcask sourcetree
 installcask steam
 installcask sublime-text
+installcask spectacle
 installcask the-unarchiver
 # installcask vagrant
 # installcask virtualbox
@@ -45,8 +46,8 @@ installcask zoomus
 
 # # Mac App Store command-line interface
 brew install mas
-mas install "ToothFairy", id: 1191449274
-# mas "BetterSnapTool", id: XXX
+mas install 1191449274 # "ToothFairy", id: 
+# mas install 417375580 # "BetterSnapTool", id: 
 # mas "Trello", id: XXX
 # mas "SimpleMind Lite", id: XXX
 # mas "Audacity", id: XXX

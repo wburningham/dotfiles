@@ -93,8 +93,14 @@ Note: to scp/ssh to your computer (not from) you need to enable remote login in 
 - copy PandaBar.app
 - copy TrashMe.app
 - copy Quinn.app
+- copy over wifi networks and passwords
 - audit code in /Code
+- enable tap to click for trackpad
+- copy over apps that launch on login
+- redownload Dash docsets or sync
+- Active Dash license file
 - enable "Turn off my video when joining meeting" in zoomus
 - enable "Mute microphone when joining meeting" in zoomus
 - Setup printers
-
+- Disable siri (and remove from touchbar)
+- enable show bluetooth icon in menubar
