@@ -5,4 +5,4 @@ autoload -Uz compinit && compinit
 alias c='chezmoi'
 
 # Source ENV variables
-[ -f "$HOME/.envrc" ] && . "$HOME/.envrc"
+[ -f "$HOME/.env" ] && . "$HOME/.env"
