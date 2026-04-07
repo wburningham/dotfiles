@@ -147,3 +147,17 @@ cask "wburningham/fonts/font-rebecca-handwriting-font"
 cask "wburningham/fonts/font-wes-handwriting-font"
 cask "./casks/font-maple-mono/font-maple-mono.rb"
 
+# === casks ===
+cask "alfred"
+cask "./casks/dash.rb" #v3.4.3 locked
+cask "disk-inventory-x"
+cask "docker-desktop"
+cask "hiddenbar"
+cask "obsidian"
+cask "openlens"
+cask "openscad"
+cask "rectangle"
+cask "sublime-merge"
+cask "sublime-text"
+cask "the-unarchiver"
+
