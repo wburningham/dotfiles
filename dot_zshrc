@@ -3,3 +3,6 @@ autoload -Uz compinit && compinit
 
 # Trying out this alias
 alias c='chezmoi'
+
+# Source ENV variables
+[ -f "$HOME/.envrc" ] && . "$HOME/.envrc"

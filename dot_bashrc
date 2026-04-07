@@ -1,0 +1,2 @@
+# Source ENV variables
+[ -f "$HOME/.envrc" ] && . "$HOME/.envrc"
