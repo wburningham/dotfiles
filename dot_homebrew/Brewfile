@@ -26,7 +26,7 @@ brew "bash"
 brew "fish"
 brew "direnv"
 brew "fisher"
-# cask "./casks/fish-theme/fish-theme.rb"
+cask "./casks/fish-theme/fish-theme.rb"
 
 # === misc ===
 brew "mosquitto" # for use with HomeAssistant #spellchecker:disable-line

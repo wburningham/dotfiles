@@ -6,8 +6,8 @@ cask "fish-theme" do
   name "fish-theme"
   desc "Cask to install github.com/catppuccin/fish Catppuccin Mocha.them"
   homepage "https://github.com/catppuccin/fish"
-  
-  url "https://raw.githubusercontent.com/catppuccin/fish/main/themes/Catppuccin%20Mocha.theme"
+
+  url "https://raw.githubusercontent.com/catppuccin/fish/main/themes/catppuccin-mocha.theme"
   sha256 :no_check
 
   config_filename_base = File.basename(config_filename)
@@ -19,8 +19,7 @@ cask "fish-theme" do
       FileUtils.mv theme_file, "#{staged_path}/#{config_filename_base}"
     end
   end
-  
+
   # Copy the staged config to the home directory
   artifact "#{staged_path}/#{config_filename_base}", target: "#{ENV['HOME']}/#{config_filename}"
 end
-
