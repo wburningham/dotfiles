@@ -1,3 +1,3 @@
 if test -f ~/.env
-    source_envrc ~/.env
+    source_env ~/.env
 end
