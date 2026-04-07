@@ -140,3 +140,10 @@ cask "codex"
 # === passwords ===
 cask "1password"
 cask "1password-cli"
+
+# === fonts ===
+tap "wburningham/fonts", "https://github.com/wburningham/fonts.git"
+cask "wburningham/fonts/font-rebecca-handwriting-font"
+cask "wburningham/fonts/font-wes-handwriting-font"
+cask "./casks/font-maple-mono/font-maple-mono.rb"
+
