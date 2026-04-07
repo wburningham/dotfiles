@@ -1,0 +1,34 @@
+# Rio Terminal Configuration
+# This file is managed by Homebrew cask
+
+# https://rioterm.com/docs/config
+
+use-fork = false
+working-dir = "/Users/wesb/code/go/src/gitlab-app.eng.qops.net"
+confirm-before-quit = false
+
+option-as-alt = "both" # needed for opt + delete/backspace keybinding to delete prev word
+
+[bindings]
+keys = [
+  # Make Option+Backspace delete previous word
+  { key = "d", with = "alt", bytes = "\u001b\u0064" }  # This is actually just sending ESC+d, which is the standard forward delete
+]
+
+[navigation]
+current-working-directory = false # Use same path whenever a new tab is created (Note: requires use-fork to be set to false).
+
+[window]
+opacity = 0.8
+blur = true
+decorations = "Transparent"
+macos-use-unified-titlebar = true
+windows-corner-preference = "RoundSmall"
+width = 1500
+height = 700
+
+
+[fonts]
+size = 18
+family = "Maple Mono"
+extras = [{ family = "Maple Mono" }]

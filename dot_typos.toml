@@ -1,0 +1,25 @@
+# Typos config
+
+[default]
+extend-ignore-re = [
+  # Line ignore with trailing # spellchecker:disable-line
+  "(?Rm)^.*#\\s*spellchecker:disable-line$", # Line block with # spellchecker:<on|off>
+  "#\\s*spellchecker:off\\s*\\n.*\\n\\s*#\\s*spellchecker:on",
+]
+
+extend-ignore-identifiers-re = [
+  # SSL Cipher suites
+  "\\bTLS_[A-Z0-9_]+(_anon_[A-Z0-9_]+)?\\b",
+]
+
+extend-ignore-words-re = [
+    "^[Uu]nparseable$", # an accepted variant of "unparsable" frequently used in computer science
+]
+
+[files]
+extend-exclude = [
+  # Ignore typo rules from proselint
+  "proselint/",
+  ".envrc",
+  "go.sum",
+]
