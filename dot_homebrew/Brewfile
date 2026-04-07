@@ -1,0 +1,141 @@
+# === intro ===
+
+# Brew Bundle Docs: https://docs.brew.sh/Brew-Bundle-and-Brewfile
+# Declarative package management with a Brewfile: https://matthiasportzel.com/brewfile/
+
+# Example: install from local Formula
+# brew "file:///path/to/your/my_formula.rb"
+# brew "./my_formula.rb"
+
+# Example: install from head (will use latest commit = slower from building from source)
+# brew "package", args: ["HEAD"]
+
+# === base ===
+brew "coreutils" # GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
+brew "openssh"
+brew "ack"
+brew "tree"
+brew "lsd"
+brew "make"
+brew "grep"
+brew "ripgrep"
+brew "vim"
+brew "bat"
+brew "zoxide"
+brew "bash"
+brew "fish"
+brew "direnv"
+# brew "fisher"
+
+# === misc ===
+brew "mosquitto" # for use with HomeAssistant #spellchecker:disable-line
+brew "rclone" # Rsync for cloud storage https://rclone.org
+brew "zstd" # Zstandard is a real-time compression algorithm https://facebook.github.io/zstd
+brew "cloc"
+brew "mole"
+brew "dsully/tap/macos-defaults"
+brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
+
+# # === dev:git ===
+brew "git"
+brew "tig" # Text interface for Git repositories https://jonas.github.io/tig
+# brew "git-cliff" # Highly customizable changelog generator https://git-cliff.org
+
+# # === dev:golang ===
+brew "go"
+brew "gofumpt"
+brew "gotests"
+brew "gopls"
+brew "golangci-lint"
+brew "orlangure/tap/gocovsh"
+# brew "./formula/gocovsh.rb" # Custom because I thought there was no brew formula
+
+# === dev:misc ===
+brew "cue-lang/tap/cue"
+cask "ghostty@tip"
+cask "rio"
+brew "gum" # Tool for glamorous shell scripts https://github.com/charmbracelet/gum
+brew "go-task"
+#brew "./formula/go-task.rb" # pin v3.44.0
+brew "watch" # watch -n 10 df -h; Executes a program periodically, showing output fullscreen
+brew "wireshark" # Network analyzer and capture tool - w/o GUI https://www.wireshark.org
+# brew "act"
+brew "eget"
+brew "fd" # Simple, fast and user-friendly alternative to find
+brew "php"
+brew "witr"
+brew "rustup"
+brew "ruby" # for local homebrew formula
+brew "ruby-lsp" # for local homebrew formula
+brew "parallel" # Shell command parallelization utility https://savannah.gnu.org/projects/parallel
+# tap "tj/mmake", "https://github.com/tj/mmake.git"
+# brew "tj/mmake/mmake"
+# tap "tldev/tap", "https://github.com/tldev/homebrew-tap.git"
+# cask "posturr"
+
+# === dev:http ===
+brew "wget"
+brew "curl"
+brew "curlie"
+brew "mkcert" # see https://github.com/FiloSottile/mkcert#macos
+brew "nss" # see https://github.com/FiloSottile/mkcert#macos'
+brew "serve"
+
+# === dev:node ===
+brew "biome"
+brew "yarn"
+brew "fnm", postinstall: "ln -s ${HOMEBREW_PREFIX}/bin/fnm ${HOMEBREW_PREFIX}/bin/nvm" #CAN'T USE UNTIL ENV SETUP RUNS
+brew "pnpm"
+
+# === dev:linting ===
+brew "vale"
+# brew "hadolint" # Dockerfile linter to validate best practices
+brew "ls-lint"
+brew "yamllint"
+brew "shellcheck"
+brew "markdownlint-cli"
+brew "typos-cli"
+# typos lsp for Sublime Test git commit messages
+brew "typos-lsp" # Language Server for typos-cli https://github.com/tekumara/typos-lsp
+
+# === dev:containers/images ===
+brew "ko"
+brew "apko"
+brew "melange"
+# brew "cosign"
+# brew "cyclonedx-gomod"
+# brew "syft"
+brew "oras"
+# brew "skopeo"
+# brew "parlay"
+brew "trivy" # Vulnerability scanner for container images, file systems, and Git repos https://trivy.dev
+brew "dive" # Tool for exploring each layer in a docker image https://github.com/wagoodman/dive
+# brew "podman"
+
+# dev:kubernetes
+ brew "kubernetes-helm"
+ brew "kubectl"
+ brew "kubelogin" # OpenID Connect authentication plugin for kubectl https://github.com/int128/kubelogin
+ brew "k9s" # Kubernetes CLI Cluster manager https://k9scli.io
+
+# === image processing ===
+brew "imagemagick"
+
+# === data processing ===
+brew "jq"
+brew "python-yq" # Command-line YAML and XML processor that wraps jq https://kislyuk.github.io/yq
+brew "graphviz"
+
+# === dev:ai ===
+brew "ollama"
+# brew "block-goose-cli"
+# cask "block-goose"
+cask "cursor-cli"
+brew "gemini-cli"
+cask "claude-code"
+# brew "anomalyco/tap/opencode"
+cask "codex"
+
+# === passwords ===
+cask "1password"
+cask "1password-cli"
