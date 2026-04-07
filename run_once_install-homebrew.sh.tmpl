@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eufo pipefail
+
+# Check if Homebrew is installed, if not, install it
+if ! command -v brew &> /dev/null; then
+    echo "> Install Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "> Homebrew is already installed"
+fi
+
+# Install packages from a Brewfile if it exists
+if [ -f "{{ .chezmoi.sourceDir }}/Brewfile" ]; then
+    brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+fi
