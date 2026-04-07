@@ -1,2 +1,5 @@
 # Initialize the completion system
 autoload -Uz compinit && compinit
+
+# Trying out this alias
+alias c='chezmoi'
