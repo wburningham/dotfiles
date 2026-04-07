@@ -12,7 +12,7 @@
 
 # === base ===
 brew "coreutils" # GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
-brew "openssh"
+# brew "openssh" # We don't want this since it doesn't support macOS UseKeychain in ssh config
 brew "ack"
 brew "tree"
 brew "lsd"
