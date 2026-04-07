@@ -32,14 +32,35 @@ chezmoi init --apply git@github.com:wburningham/dotfiles.git
 
 6. Sync code
 
+An unoptimized high fidelity sync takes ~2h. Plug in and prevent from sleeping:
+
+```
+cafeinate -d
+```
+
+Use `rsync` to sync over the code:
+
 ```
 mkdir -p /Users/$USER/code/go/src/
 
 rsync -a --delete\
   --exclude='.DS_Store' \
-  --exclude='node_modules' \
-  --exclude='vendor' \
-  --exclude='dist' \
-  --exclude='build' \
+  --exclude='node_modules/' \
+  --exclude='vendor/' \
+  --exclude='dist/' \
+  --exclude='build/' \
+  --exclude='venv/' \
+  --exclude='.venv/' \
+  --exclude='__pycache__/' \
+  --exclude='*.pyc' \
+  --exclude='target/debug/' \
   $USER@<old machine ip address>:/Users/$USER/code/go/src/ /Users/$USER/code/go/src/
 ```
+
+6. Sign into apple account
+
+This will sync icloud and all passwords
+
+7. Manually setup internet accounts
+
+System Preferences -> Internet Accounts
