@@ -1,0 +1,5 @@
+{{- $sourceDir := .chezmoi.sourceDir -}}
+{{- range (glob (list $sourceDir ".env_files/*.env*" | joinPath)) }}
+# --- Source: {{ base . }} ---
+{{ include . }}
+{{ end }}
