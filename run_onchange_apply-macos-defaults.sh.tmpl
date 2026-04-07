@@ -1,0 +1,9 @@
+#!/bin/sh
+{{- $sourceDir := .chezmoi.sourceDir }}
+{{- range $path := glob (joinPath $sourceDir ".macos_defaults/*.yaml") }}
+{{- $yaml := include $path | fromYaml }}
+{{- range $domain, $_ := $yaml.data }}
+# {{ base $path }} sha256: {{ include $path | sha256sum }}
+/opt/homebrew/bin/macos-defaults apply {{ $path }}
+{{- end }}
+{{- end }}

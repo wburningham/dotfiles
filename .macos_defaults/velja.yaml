@@ -1,0 +1,39 @@
+---
+data:
+  com.sindresorhus.Velja:
+    NSStatusItem Preferred Position Item-0: 813.0
+    NSStatusItem Visible Item-0: true
+    SS_App_runOnce__AppsSettings_scrollViewIndicatorAnimation: true
+    SS_App_runOnce__PromptScreen_numberKeyTip: true
+    SS_App_runOnce__SSKit__check5345342345: true
+    SS_App_runOnce__missingSupportForSafariProfilesWarning: true
+    SS_App_runOnce__setDefaultMenubarIcon: true
+    SS_NSStatusItem_ensureVisibility_shouldNotShowAgain: true
+    SS_ShowForAppRuns_RulesSettings_EditScreen_introMessage: 5
+    SS_ShowForAppRuns_RulesSettings_EditScreen_tipAboutMatchingSemantics: 4
+    SS_ShowForAppRuns_ruleWelcomeClickThisMessage: 5
+    SS_Tooltip_statusBarButtonWelcomePopover: 1
+    alternativeBrowser: com.sindresorhus.Velja.promptMarker
+    com_apple_SwiftUI_Settings_selectedTabIndex: 2
+    defaultBrowser: com.sindresorhus.Velja.promptMarker
+    googleMeetApp: com.google.Chrome
+    hideMenuBarIcon: false
+    menuBarIcon: paw
+    musicApp: com.apple.Music
+    preferredBrowsers:
+      - com.apple.Safari
+      - com.google.Chrome
+    promptShortcuts:
+      com.google.Chrome: c
+      com.apple.Safari: s
+    prompt_iconSize: medium
+    removeMailtoOnClipboard: true
+    removeTrackingParametersOnClipboard: true
+    rules:
+      - "{\"browser\":\"com.apple.Safari\",\"forceNewWindow\":false,\"id\":\"2A2CD53C-72FD-4C13-86F9-0E15471DA599\",\"isEnabled\":true,\"isTransformScriptEnabled\":false,\"matchers\":[{\"fixture\":\"https:\\/\\/makerworld.com\\/en\\/models\\/40194#profileId-39898\",\"id\":\"F92879FD-971E-4032-9154-CE479EECB4DD\",\"kind\":\"hostSuffix\",\"pattern\":\"makerworld.com\"},{\"fixture\":\"https:\\/\\/www.printables.com\\/model\\/628010-space-shuttle-endeavour\",\"id\":\"2FF2FBEE-143E-49A4-B5FA-EDABD4F0D9C7\",\"kind\":\"hostSuffix\",\"pattern\":\"printables.com\"},{\"fixture\":\"https:\\/\\/thangs.com\\/designer\\/pressprint\\/3d-model\\/Super%20Mushroom%20Container-954231\",\"id\":\"62CBF777-5C22-46F6-80F0-5E68FD666BD5\",\"kind\":\"hostSuffix\",\"pattern\":\"thangs.com\"},{\"fixture\":\"https:\\/\\/www.thingiverse.com\\/thing:6247835\",\"id\":\"D59CCE6A-9C9A-4181-BAB7-0CD16F37A946\",\"kind\":\"hostSuffix\",\"pattern\":\"thingiverse.com\"},{\"fixture\":\"https:\\/\\/cults3d.com\\/en\\/3d-model\\/tool\\/drill-shelf-pin-jig-customizable\",\"id\":\"5A326EAB-0FC3-4B54-AAAF-7760C447C176\",\"kind\":\"hostSuffix\",\"pattern\":\"cults3d.com\"},{\"fixture\":\"https:\\/\\/m.yeggi.com\\/q\\/tesla+center+console\\/2\\/\",\"id\":\"48C12E8D-D2F2-4B08-A13C-F8A140E04407\",\"kind\":\"hostSuffix\",\"pattern\":\"yeggi.com\"},{\"fixture\":\"https:\\/\\/www.stlfinder.com\\/3dmodels\\/kreg-jig-dust-collection\\/#google_vignette\",\"id\":\"C3C668C2-9DD6-4604-B6DF-8A6A52FAA3AC\",\"kind\":\"hostSuffix\",\"pattern\":\"stlfinder.com\"},{\"fixture\":\"prusa3d.com\",\"id\":\"E7EA5A84-5355-47C9-8D20-916CC778D351\",\"kind\":\"hostSuffix\",\"pattern\":\"prusa3d.com\"}],\"onlyFromAirdrop\":false,\"openInBackground\":false,\"runAfterBuiltinRules\":false,\"sourceApps\":[],\"title\":\"3D Printing\",\"transformScript\":\"\",\"transformTestURL\":\"\"}"
+      - '{"browser":"com.google.Chrome","forceNewWindow":false,"id":"2E339126-34FF-4BA2-BF30-A6435475D95E","isEnabled":true,"isTransformScriptEnabled":false,"matchers":[],"onlyFromAirdrop":false,"openInBackground":false,"runAfterBuiltinRules":false,"sourceApps":["com.tinyspeck.slackmacgap"],"title":"Slack links in Chrome","transformScript":"","transformTestURL":""}'
+      - "{\"browser\":\"com.apple.Safari\",\"forceNewWindow\":false,\"id\":\"93F4D09B-8C58-4B68-9705-C8F577A72745\",\"isEnabled\":true,\"isTransformScriptEnabled\":false,\"matchers\":[{\"fixture\":\"\",\"id\":\"C2C30C60-0463-431A-9290-B8151CE5CC8D\",\"kind\":\"hostSuffix\",\"pattern\":\"chase.com\"},{\"fixture\":\"\",\"id\":\"A2A786D6-A011-4531-BD1B-63715C55D16E\",\"kind\":\"hostSuffix\",\"pattern\":\"home-assistant.io\"},{\"fixture\":\"\",\"id\":\"CDE612B3-316B-4CF8-BC89-B83432AF496E\",\"kind\":\"hostSuffix\",\"pattern\":\"amazon.com\"},{\"fixture\":\"\",\"id\":\"227FAB9E-DA45-4F8F-9311-4077E9E87D5D\",\"kind\":\"hostSuffix\",\"pattern\":\"zillow.com\"},{\"fixture\":\"https:\\/\\/www.pnc.com\\/en\\/personal-banking.html\",\"id\":\"3B852470-07F0-4190-BD3B-7BD2F1F2AC34\",\"kind\":\"hostSuffix\",\"pattern\":\"pnc.com\"},{\"fixture\":\"https:\\/\\/www.cit.com\\/cit-bank\\/online-banking\\/logout\\/diagon1\",\"id\":\"DD0373A9-65AD-49C6-8E0F-71FA309D80C2\",\"kind\":\"hostSuffix\",\"pattern\":\"cit.com\"},{\"fixture\":\"https:\\/\\/www.salliemae.com\\/login\\/\",\"id\":\"078D2375-2919-4144-B260-0CD2AC7B4E56\",\"kind\":\"hostSuffix\",\"pattern\":\"salliemae.com\"},{\"fixture\":\"https:\\/\\/ownyourfuture.vanguard.com\\/home\\/logout\",\"id\":\"D6A9FED0-3B3E-4842-8931-DD814A129533\",\"kind\":\"hostSuffix\",\"pattern\":\"vanguard.com\"},{\"fixture\":\"https:\\/\\/www.linkedin.com\\/company\\/pattern-hq\\/about\\/\",\"id\":\"A83815CC-E86B-4CCE-A545-668982EA47C8\",\"kind\":\"hostSuffix\",\"pattern\":\"linkedin.com\"},{\"fixture\":\"\",\"id\":\"A0AA454D-6964-4006-8192-5C9A1BEE4F25\",\"kind\":\"hostSuffix\",\"pattern\":\"paypal.com\"}],\"onlyFromAirdrop\":false,\"openInBackground\":false,\"runAfterBuiltinRules\":false,\"sourceApps\":[],\"title\":\"Personal sites\",\"transformScript\":\"\",\"transformTestURL\":\"\"}"
+      - '{"browser":"com.sindresorhus.Velja.defaultBrowserMarker","forceNewWindow":false,"id":"4BD9A29B-BF48-42C6-B921-13B2455803FE","isEnabled":true,"isTransformScriptEnabled":false,"matchers":[{"fixture":"","id":"E73D0609-E2D4-48A6-B4EC-396484068EAE","kind":"hostSuffix","pattern":"qops.net"},{"fixture":"","id":"FF983EE6-8EA1-43B1-8B45-BBDD880A32DC","kind":"hostSuffix","pattern":"qualtrics.com"},{"fixture":"","id":"4D712160-6AD0-4518-812C-06F14A8EC47D","kind":"hostSuffix","pattern":"splunkcloud.com"},{"fixture":"","id":"1CF00302-947A-4281-A625-148184209E12","kind":"hostSuffix","pattern":"victorops.com"}],"onlyFromAirdrop":false,"openInBackground":false,"runAfterBuiltinRules":false,"sourceApps":[],"title":"Work sites","transformScript":"","transformTestURL":""}'
+      - '{"browser":"com.google.Chrome","forceNewWindow":false,"id":"DAFC15FC-2E69-45A9-B570-3386AF2618EC","isEnabled":true,"isTransformScriptEnabled":false,"matchers":[],"onlyFromAirdrop":false,"openInBackground":false,"runAfterBuiltinRules":false,"sourceApps":["com.runningwithcrayons.Alfred"],"title":"Alfred","transformScript":"","transformTestURL":""}'
+      - '{"browser":"com.google.Chrome","forceNewWindow":false,"id":"B2F2404B-D910-4280-989F-DC447E7917B6","isEnabled":true,"isTransformScriptEnabled":false,"matchers":[],"onlyFromAirdrop":false,"openInBackground":false,"runAfterBuiltinRules":false,"sourceApps":["leits.MeetingBar"],"title":"Zoom from MeetingBar","transformScript":"","transformTestURL":""}'
+    zoomApp: us.zoom.xos
