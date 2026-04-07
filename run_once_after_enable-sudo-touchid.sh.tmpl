@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+# This script enables Touch ID for sudo and persists through macOS updates.
+if [ ! -f /etc/pam.d/sudo_local ]; then
+    echo "Enabling Touch ID for sudo..."
+    sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+    sudo sed -i '' 's/#auth/auth/' /etc/pam.d/sudo_local
+    echo "Enabled"
+    echo "May require system restart"
+fi
+{{ end -}}
