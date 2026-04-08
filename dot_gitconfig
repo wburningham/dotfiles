@@ -33,7 +33,8 @@
 	whitespace = fix
 
 [core]
-	editor = subl -n -w
+	# editor = subl -n -w
+	editor = zed --wait
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
 	# all kinds of trailing whitespace as an error.
 	# [default] trailing-space: looks for spaces at the end of a line
