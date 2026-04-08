@@ -38,6 +38,8 @@ brew "dsully/tap/macos-defaults"
 brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
 cask "tailscale-app" # personal VPN
 # cask "db-browser-for-sqlite"
+cask "meetingbar"
+cask "hiddenbar"
 
 # # === dev:git ===
 brew "git"
