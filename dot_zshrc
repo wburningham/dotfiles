@@ -6,3 +6,7 @@ alias c='chezmoi'
 
 # Source ENV variables
 [ -f "$HOME/.env" ] && . "$HOME/.env"
+
+
+# use mcfly for ctrl+r
+eval "$(mcfly init zsh)"
