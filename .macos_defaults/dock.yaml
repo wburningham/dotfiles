@@ -1,0 +1,38 @@
+---
+kill: ["Dock"]
+
+data:
+  com.apple.dock:
+    autohide: false
+    autohide-delay: 0.0
+    autohide-time-modifier: 0.0
+    dashboard-in-overlay: true
+    enable-spring-load-actions-on-all-items: true
+    expose-animation-duration: 0.10000000149011612
+    expose-group-by-app: false
+    largesize: 128.0
+    launchanim: false
+    loc: "en_US:US"
+    mineffect: scale
+    minimize-to-application: true
+    mod-count: 2989
+    mouse-over-hilite-stack: true
+    mru-spaces: false
+    orientation: bottom
+    recent-apps: []
+    region: US
+    show-process-indicators: true
+    show-recents: false
+    size-immutable: true
+    tilesize: 53
+    trash-full: true
+    version: 1
+    workspaces-swoosh-animation-off: true
+    wvous-bl-corner: 0
+    wvous-bl-modifier: 0
+    wvous-br-corner: 4
+    wvous-br-modifier: 0
+    wvous-tl-corner: 0
+    wvous-tl-modifier: 0
+    wvous-tr-corner: 0
+    wvous-tr-modifier: 0
