@@ -78,3 +78,8 @@ System Preferences -> Internet Accounts
 - Alfred
   - Paste Powerpack key
   - set sync dir to the git repo
+  - manually check Features -> Web Bookmarks -> Safari
+
+10. What can't be synced
+
+- Zed editor recent projects switcher (you _may_ be able to copy a sqlite db)
