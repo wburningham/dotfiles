@@ -76,7 +76,7 @@
 	format = ssh
 [commit]
 	gpgSign = true
-	template = ~/.gitmessage
+	template = ~/.config/git/message
 
 # BEGIN better git config https://blog.gitbutler.com/how-git-core-devs-configure-git/#listing-branches
 
