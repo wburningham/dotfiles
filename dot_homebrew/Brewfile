@@ -166,6 +166,7 @@ cask "zed"
 # === Mac App Store (mas) ===
 brew "mas"
 mas "Velja", id: 1607635845
+mas "AdBlock for Safari", id: 1402042596
 
 # cask "./casks/example-two-files/example-two-files.rb"
 # brew "./formula/bom.rb"
