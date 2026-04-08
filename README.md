@@ -74,6 +74,7 @@ System Preferences -> Internet Accounts
 - Chrome sync didn't work for history so had to run:
   - `scp $USER@<ip>>:/Users/$USER/Library/Application\ Support/Google/Chrome/<profile>/History ~/Library/Application\ Support/Google/Chrome/<profile may be different>/`
 - work shell config (for now I don't have time to encrypt and deal with security design to put in dotfiles)
+- `rsync -a --delete --progress $USER@<ip>:/Applications/Pandabar.app/ /Applications/Pandabar.app/`
 - personal ssh config
 
 9. Manual setup
