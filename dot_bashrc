@@ -3,3 +3,14 @@
 
 # use mcfly for ctrl+r
 eval "$(mcfly init bash)"
+
+# Trying out this alias
+alias c='chezmoi'
+
+# aliases
+alias ls='lsd'
+alias la='lsd -A'
+alias ll='lsd -l'
+alias lla='lsd -lA'
+alias llt='lsd -l --tree'
+alias lt='lsd --tree'
