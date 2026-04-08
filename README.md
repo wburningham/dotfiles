@@ -2,7 +2,7 @@
 
 ## Steps for fresh install:
 
-1. Get ssh keys
+1. Get ssh keys, age key file and chezmoi config
 
 _You should know how_
 
@@ -73,9 +73,15 @@ System Preferences -> Internet Accounts
 - 3D printing slicer software
 - Chrome sync didn't work for history so had to run:
   - `scp $USER@<ip>>:/Users/$USER/Library/Application\ Support/Google/Chrome/<profile>/History ~/Library/Application\ Support/Google/Chrome/<profile may be different>/`
+- work shell config (for now I don't have time to encrypt and deal with security design to put in dotfiles)
+- personal ssh config
 
 9. Manual setup
 
+- Enable Touch ID for sudo
+  - Add `auth sufficient pam_tid.so` to the top of the `/etc/pam.d/sudo_local` file
+    - Note the `_local_` suffix. This file is persisted and update safe
+    - You could also modify `/etc/pam.d/sudo` for good measure
 - Apple Home shortcuts/widgets in control center
 - Alfred
   - Paste Powerpack key
