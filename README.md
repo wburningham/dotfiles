@@ -12,10 +12,11 @@ _You should know how_
 /usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
-3. Install Xcode command-line developer tools:
+3. Install Xcode command-line developer tools and rosetta:
 
 ```
 xcode-select --install
+softwareupdate --install-rosetta --agree-to-license
 ```
 
 4. Install [`twpayne/chezmoi`](https://github.com/twpayne/chezmoi)
@@ -32,7 +33,7 @@ chezmoi init --apply git@github.com:wburningham/dotfiles.git
 
 6. Sync code
 
-An unoptimized high fidelity sync takes ~2h. Plug in and prevent from sleeping:
+An unoptimized high fidelity sync takes ~7-9h. Plug in and prevent from sleeping:
 
 ```
 cafeinate -d
@@ -64,3 +65,16 @@ This will sync icloud and all passwords
 7. Manually setup internet accounts
 
 System Preferences -> Internet Accounts
+
+8. Misc manual copy
+
+- mcfly sqllite db `~/Library/Application Support/McFly/history.db`
+- fish shell history `~/.local/share/fish/fish_history`
+- 3D printing slicer software
+
+9. Manual setup
+
+- Apple Home shortcuts/widgets in control center
+- Alfred
+  - Paste Powerpack key
+  - set sync dir to the git repo
