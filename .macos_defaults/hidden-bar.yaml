@@ -1,0 +1,15 @@
+---
+description: com.dwarvesv.minimalbar
+sudo: false
+current_host: false
+data:
+  com.dwarvesv.minimalbar:
+    NSStatusItem Preferred Position hiddenbar_expandcollapse: 220.0
+    NSStatusItem Preferred Position hiddenbar_separate: 568.0
+    NSStatusItem Preferred Position hiddenbar_terminate: 728.0
+    alwaysHiddenSectionEnabled: true
+    areSeparatorsHidden: false
+    isAutoStart: true
+    isShowPreferences: true
+    numberOfSecondForAutoHide: 60.0
+    useFullStatusBarOnExpandEnabled: true

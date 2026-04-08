@@ -1,0 +1,59 @@
+---
+description: leits.MeetingBar
+sudo: false
+current_host: false
+data:
+  leits.MeetingBar:
+    KeyboardShortcuts_joinEventShortcut: "{\"carbonModifiers\":0,\"carbonKeyCode\":106}"
+    NSStatusItem Preferred Position Item-0: 381.0
+    NSWindow Frame NSFontPanel: "2000 212 445 239 0 0 2560 1415 "
+    SKPurchaseIntentUpdatesLastChecked: 797314690.844384
+    appVersion: 4.11.6
+    automaticEventJoin: true
+    browsers:
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Brave Browser\",\"path\":\"\\/Applications\\/Brave Browser.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Chromium\",\"path\":\"\\/Users\\/wesb\\/code\\/go\\/src\\/github.com\\/wburningham\\/execsec\\/node_modules\\/puppeteer\\/.local-chromium\\/mac-856583\\/chrome-mac\\/Chromium.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Firefox\",\"path\":\"\\/Applications\\/Firefox.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Google Chrome\",\"path\":\"\\/Applications\\/Google Chrome.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Google Meet PWA\",\"path\":\"\\/Users\\/wesb\\/Applications\\/Chrome Apps.localized\\/Google Meet.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Safari\",\"path\":\"\\/System\\/Volumes\\/Preboot\\/Cryptexes\\/App\\/System\\/Applications\\/Safari.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Velja\",\"path\":\"\\/Applications\\/Velja.app\"}"
+      - "{\"arguments\":\"\",\"deletable\":true,\"name\":\"iTerm\",\"path\":\"\\/Applications\\/iTerm.app\"}"
+    createMeetingService: "\"Google Meet\""
+    defaultBrowser: "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Google Meet PWA\",\"path\":\"\\/Users\\/wesb\\/Applications\\/Chrome Apps.localized\\/Google Meet.app\"}"
+    eventStoreProvider: "\"MacOS Calendar App\""
+    eventTitleFormat: "\"show\""
+    eventTitleIconFormat: "\"no_online_session\""
+    filterEventRegexes:
+      - "Eng\\/Design review\\/handoff"
+      - Use this time as you wish to do QED work
+      - "WesB:ScottL 1:1"
+      - No Meeting Thursdays
+      - WesB OOO
+      - corpus working time
+      - Weekly Individual Planning
+      - ^TGIT.*
+      - QED
+    isInstalledFromAppStore: true
+    joinEventNotificationTime: "60"
+    lastRevisedVersionInChangelog: 4.11.6
+    launchAtLogin: true
+    meetBrowser: "{\"arguments\":\"\",\"deletable\":true,\"name\":\"Google Meet PWA\",\"path\":\"\\/Users\\/wesb\\/Applications\\/Chrome Apps.localized\\/Google Meet.app\"}"
+    menuEventTitleLength: 35
+    onboardingCompleted: true
+    personalEventsAppereance: "\"hide\""
+    processedEventsForAutoJoin: []
+    processedEventsForFullscreenNotification: []
+    processedEventsForRunScriptOnEventStart: []
+    selectedCalendarIDs:
+      - FB29CFFC-9F53-4986-88C7-C25732A0C788
+      - C9DE1A66-1706-4CD1-BA4C-D1604A581C96
+      - FB29CFFC-9F53-4986-88C7-C25732A0C788
+      - FB29CFFC-9F53-4986-88C7-C25732A0C788
+    showEventDetails: false
+    showEventEndTime: false
+    showEventsForPeriod: "\"today\""
+    showPendingEvents: "\"hide\""
+    statusbarEventTitleLength: 10
+    timeFormat: "\"12-hour\""
+    zoomBrowser: "{\"path\":\"\",\"arguments\":\"\",\"name\":\"Zoom app\",\"deletable\":true}"
