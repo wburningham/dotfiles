@@ -1,0 +1,46 @@
+---
+data:
+  com.knollsoft.Rectangle:
+    NSNavPanelExpandedSizeForSaveMode: "{923, 448}"
+    NSWindow Frame NSNavPanelAutosaveName: "880 725 800 448 0 0 2560 1415 "
+    SUEnableAutomaticChecks: false
+    SUHasLaunchedBefore: true
+    allowAnyShortcut: true
+    alternateDefaultShortcuts: true
+    bottomHalf: {}
+    bottomLeft:
+      keyCode: 125
+      modifierFlags: 786432
+    bottomRight:
+      keyCode: 125
+      modifierFlags: 1572864
+    center: {}
+    hideMenubarIcon: true
+    larger: {}
+    lastVersion: "59"
+    launchOnLogin: true
+    leftHalf:
+      keyCode: 123.0
+      modifierFlags: 524288.0
+    maximize:
+      keyCode: 126.0
+      modifierFlags: 524288.0
+    maximizeHeight: {}
+    nextDisplay:
+      keyCode: 49
+      modifierFlags: 524288
+    previousDisplay: {}
+    restore: {}
+    rightHalf:
+      keyCode: 124.0
+      modifierFlags: 524288.0
+    smaller: {}
+    subsequentExecutionMode: 2
+    topHalf: {}
+    topLeft:
+      keyCode: 126
+      modifierFlags: 786432
+    topRight:
+      keyCode: 126
+      modifierFlags: 1572864
+    windowSnapping: 2
