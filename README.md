@@ -71,6 +71,8 @@ System Preferences -> Internet Accounts
 - mcfly sqllite db `~/Library/Application Support/McFly/history.db`
 - fish shell history `~/.local/share/fish/fish_history`
 - 3D printing slicer software
+- Chrome sync didn't work for history so had to run:
+  - `scp $USER@<ip>>:/Users/$USER/Library/Application\ Support/Google/Chrome/<profile>/History ~/Library/Application\ Support/Google/Chrome/<profile may be different>/`
 
 9. Manual setup
 
@@ -79,7 +81,12 @@ System Preferences -> Internet Accounts
   - Paste Powerpack key
   - set sync dir to the git repo
   - manually check Features -> Web Bookmarks -> Safari
+- Work 
+  - Disable Privileges.app requests: paste serial # in #remove-demoter
+  - 
 
 10. What can't be synced
 
 - Zed editor recent projects switcher (you _may_ be able to copy a sqlite db)
+- Stickies (use notes instead)
+- I had to manually copu Velja rules. Not sure why they didn't apply
