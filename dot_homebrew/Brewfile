@@ -36,6 +36,7 @@ brew "cloc"
 brew "mole"
 brew "dsully/tap/macos-defaults"
 brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
+brew "tailscale" # personal VPN
 
 # # === dev:git ===
 brew "git"
@@ -114,10 +115,10 @@ brew "dive" # Tool for exploring each layer in a docker image https://github.com
 # brew "podman"
 
 # dev:kubernetes
- brew "kubernetes-helm"
- brew "kubectl"
- brew "kubelogin" # OpenID Connect authentication plugin for kubectl https://github.com/int128/kubelogin
- brew "k9s" # Kubernetes CLI Cluster manager https://k9scli.io
+brew "kubernetes-helm"
+brew "kubectl"
+brew "kubelogin" # OpenID Connect authentication plugin for kubectl https://github.com/int128/kubelogin
+brew "k9s" # Kubernetes CLI Cluster manager https://k9scli.io
 
 # === image processing ===
 brew "imagemagick"
