@@ -4,6 +4,15 @@ fish_config theme choose "Catppuccin Mocha"
 # Not sure, but this is needed to remove the items
 # set -U -e _tide_right_items
 
+# === secrets ===
+# Source secrets not committed to VCS
+if test -f ~/.localrc.fish
+    source ~/.localrc.fish
+end
+if test -f ~/.work.localrc.fish
+    source ~/.work.localrc.fish
+end
+
 # === paths ===
 fish_add_path $GOBIN
 fish_add_path /opt/homebrew/bin
