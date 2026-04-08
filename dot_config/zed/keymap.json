@@ -1,0 +1,38 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+	{
+		"context": "Pane",
+		"bindings": {
+			"cmd-alt-1": "pane::JoinAll", // not working...
+			"cmd-alt-2": "pane::SplitRight"
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			// "shift shift": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			// "j k": ["workspace::SendKeystrokes", "escape"]
+		}
+	},
+	{
+		"bindings": {
+			"ctrl-cmd-p": "projects::OpenRecent"
+		}
+	},
+	{
+		"bindings": {
+			"cmd-i": "agent::ToggleFocus"
+		}
+	}
+]
