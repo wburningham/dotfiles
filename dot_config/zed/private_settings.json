@@ -40,7 +40,13 @@
 	"file_types": {
 		"JSON": ["*.qsf"], // enable JSON parsing survey .qsf files
 		"JSONC": ["*.json5"], // enable JSONC parsing for .json5 extension
-		"Shell Script": [".envrc", ".envrc.local"]
+		"Shell Script": [".envrc", ".envrc.local"],
+		"Git Attributes": ["**/{git,.git,.git/info}/attributes"],
+		"Git Config": [
+			"*.gitconfig",
+			"**/{git,.git/modules,.git/modules/*}/config"
+		],
+		"Git Ignore": ["**/{git,.git}/ignore", "**/.git/info/exclude"]
 	},
 	"lsp": {
 		"typos": {
@@ -110,6 +116,7 @@
 	"auto_install_extensions": {
 		"biome": true,
 		"cue": true,
+		"git-firefly": true,
 		"groovy": true,
 		"html": true,
 		"java": true,
