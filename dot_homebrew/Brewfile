@@ -160,7 +160,9 @@ cask "rectangle"
 cask "sublime-merge"
 cask "sublime-text"
 cask "the-unarchiver"
+cask "zed"
 
 # === Mac App Store (mas) ===
 brew "mas"
 mas "Velja", id: 1607635845
+

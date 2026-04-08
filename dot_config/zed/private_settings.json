@@ -1,0 +1,129 @@
+//
+// Zed settings
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	"inline_code_actions": true,
+	"colorize_brackets": true,
+	"indent_guides": {
+		"enabled": true
+	},
+	"agent_servers": {
+		"claude-acp": {
+			"default_config_options": {
+				"model": "haiku",
+				"mode": "plan"
+			},
+			"type": "registry"
+		},
+		"cursor": {
+			"default_config_options": {
+				"model": "composer-2[fast=true]"
+			},
+			"type": "registry"
+		}
+	},
+	"edit_predictions": {
+		"provider": "ollama",
+		"ollama": {
+			"max_output_tokens": 30,
+			"api_url": "http://127.0.0.1:11434",
+			"model": "qwen2.5-coder:3b"
+		},
+		"mode": "subtle"
+	},
+	"use_system_window_tabs": true, // Allow windows to tab together based macOS setting
+	"file_types": {
+		"JSON": ["*.qsf"], // enable JSON parsing survey .qsf files
+		"JSONC": ["*.json5"], // enable JSONC parsing for .json5 extension
+		"Shell Script": [".envrc", ".envrc.local"]
+	},
+	"lsp": {
+		"typos": {
+			"initialization_options": {
+				// Path to your typos config file, .typos.toml by default.
+				"config": "~/.typos.toml"
+			}
+		},
+		"rust-analyzer": {
+			"initialization_options": {
+				"check": {
+					"command": "clippy"
+				}
+			}
+		},
+		"biome": {
+			"settings": {
+				"json": {
+					"parser": {
+						"allowTrailingCommas": true
+					}
+				}
+			}
+		},
+		"vale": {
+			// These initialization options are merged into Zed's defaults
+			"initialization_options": {
+				"installVale": false,
+				// "configPath": "",	// An absolute path to a .vale.ini file to be used as the default configuration.
+				"syncOnStartup": true // Runs vale sync upon starting the server.
+			}
+		}
+	},
+	"languages": {
+		"Groovy": {
+			"enable_language_server": false
+		},
+		"Git Commit": {
+			"show_wrap_guides": true,
+			// Conventional commit line length guides
+			"wrap_guides": [52, 72]
+		},
+		"JSONC": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		}
+	},
+	// The name of a font to use in the UI
+	// "ui_font_family": "Maple Mono",
+	// The name of a font to use for rendering text in the buffer/terminal
+	"buffer_font_family": "Maple Mono",
+	// Set the buffer/terminal text's font fallbacks, this will be merged with
+	// the platform's default fallbacks.
+	"buffer_font_fallbacks": ["Maple Mono"],
+	"base_keymap": "SublimeText",
+	"telemetry": {
+		// Send debug info like crash reports.
+		"diagnostics": false,
+		// Send anonymized usage data like what languages you're using Zed with.
+		"metrics": false
+	},
+	"ui_font_size": 17,
+	"buffer_font_size": 17,
+	"auto_install_extensions": {
+		"biome": true,
+		"cue": true,
+		"groovy": true,
+		"html": true,
+		"java": true,
+		"ktrz-monokai": true,
+		"php": true,
+		"ruby": true,
+		"toml": true,
+		"txtar": true,
+		"typos": true,
+		"vale": true
+	},
+	"theme": {
+		"mode": "dark",
+		"light": "KTRZ Monokai",
+		"dark": "One Dark"
+	}
+}
