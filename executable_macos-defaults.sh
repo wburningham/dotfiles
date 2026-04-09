@@ -83,34 +83,6 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 # echo "  › Set stone-color wallpaper"
 # osascript -e 'tell application "System Events" to tell every desktop to set picture to "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
 
-echo ""
-echo "› Finder:"
-# echo "  › Always open everything in Finder's list view"
-# defaults write com.apple.Finder FXPreferredViewStyle -string "Nlsv"
-
-echo "  › Display full POSIX path as Finder window title"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-echo "  › Disable the warning when changing a file extension"
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-echo "  › Show all files"
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
-echo "  › Show status bar"
-defaults write com.apple.finder ShowStatusBar -bool true
-
-echo "  › Show path bar"
-defaults write com.apple.finder ShowPathbar -bool true
-
-echo "  › Don't show external hard drives on desktop"
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
-
-echo "  › Don't show removable media on desktop"
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-
-echo "  › Warn before emptying the Trash"
-defaults write com.apple.finder WarnOnEmptyTrash -bool true
 
 echo ""
 echo "› Dock:"

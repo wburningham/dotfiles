@@ -1,0 +1,623 @@
+---
+# kill: ["Finder"]
+
+data:
+  com.apple.finder:
+    FXEnableExtensionChangeWarning: false
+    _FXShowPosixPathInTitle: true
+    AppleShowAllFiles: true
+    ShowStatusBar: true
+    ShowPathbar: true
+    ShowExternalHardDrivesOnDesktop: false
+    ShowHardDrivesOnDesktop: false
+    ShowMountedServersOnDesktop: false
+    ShowRemovableMediaOnDesktop: false
+    WarnOnEmptyTrash: true
+    FXPreferredViewStyle: "clmv" # "Nlsv" = always open everything in Finder's list view
+
+    ComputerViewSettings:
+      CustomViewStyleVersion: 1
+      WindowState:
+        ContainerShowSidebar: true
+        ShowStatusBar: false
+        ShowSidebar: true
+        ShowToolbar: true
+        ShowTabView: true
+        WindowBounds: "{{0, 71}, {1728, 1008}}"
+    CopyProgressWindowLocation: "{236, 354}"
+    CreateDesktop: true
+    DataSeparatedDisplayNameCache: ""
+    DesktopViewSettings:
+      IconViewSettings:
+        backgroundColorBlue: 1.0
+        gridSpacing: 50.0
+        textSize: 12.0
+        backgroundColorRed: 1.0
+        backgroundType: 0
+        backgroundColorGreen: 1.0
+        gridOffsetX: 0.0
+        gridOffsetY: 0.0
+        showItemInfo: false
+        viewOptionsVersion: 1
+        arrangeBy: grid
+        labelOnBottom: true
+        iconSize: 40.0
+        showIconPreview: true
+    DisableAllAnimations: true
+    DownloadsFolderListViewSettingsVersion: 1
+    EmptyTrashProgressWindowLocation: "{663, 277}"
+    FK_AppCentricShowSidebar: true
+    FK_DefaultIconViewSettings:
+      backgroundColorBlue: 1.0
+      gridSpacing: 54.0
+      textSize: 12.0
+      backgroundColorRed: 1.0
+      backgroundType: 0
+      backgroundColorGreen: 1.0
+      gridOffsetX: 0.0
+      gridOffsetY: 0.0
+      showItemInfo: true
+      viewOptionsVersion: 1
+      labelOnBottom: true
+      arrangeBy: name
+      showIconPreview: true
+      iconSize: 64.0
+    FK_DefaultListViewSettings:
+      iconSize: 16
+      showIconPreview: true
+      columns:
+        - width: 300
+          ascending: true
+          identifier: name
+          visible: true
+        - visible: false
+          ascending: false
+          identifier: dateModified
+          width: 181
+        - width: 181
+          ascending: false
+          identifier: dateCreated
+          visible: false
+        - width: 97
+          ascending: false
+          identifier: size
+          visible: true
+        - width: 115
+          ascending: true
+          identifier: kind
+          visible: true
+        - width: 100
+          ascending: true
+          identifier: label
+          visible: false
+        - width: 75
+          ascending: true
+          identifier: version
+          visible: false
+        - width: 300
+          ascending: true
+          identifier: comments
+          visible: false
+        - width: 200
+          ascending: false
+          identifier: dateLastOpened
+          visible: false
+        - width: 200
+          ascending: false
+          identifier: shareOwner
+          visible: false
+        - width: 200
+          ascending: false
+          identifier: shareLastEditor
+          visible: false
+        - visible: true
+          ascending: false
+          identifier: dateAdded
+          width: 181
+      calculateAllSizes: false
+      textSize: 13
+      sortColumn: dateAdded
+      useRelativeDates: true
+      viewOptionsVersion: 1
+    FK_SidebarWidth: 149.0
+    FK_SidebarWidth2: 239.0
+    FK_StandardViewOptions2:
+      ColumnViewOptions:
+        ArrangeBy: dnam
+        ColumnShowFolderArrow: true
+        ShowPreview: true
+        FontSize: 13
+        SharedArrangeBy: kipl
+        ShowIconThumbnails: true
+        ColumnShowIcons: true
+        PreviewDisclosureState: true
+        ColumnWidth: 245
+    FK_StandardViewSettings:
+      IconViewSettings:
+        backgroundColorBlue: 1.0
+        gridSpacing: 54.0
+        textSize: 12.0
+        backgroundColorRed: 1.0
+        backgroundType: 0
+        backgroundColorGreen: 1.0
+        gridOffsetX: 0.0
+        gridOffsetY: 0.0
+        showItemInfo: false
+        viewOptionsVersion: 1
+        arrangeBy: none
+        labelOnBottom: true
+        iconSize: 64.0
+        showIconPreview: true
+      ExtendedListViewSettingsV2:
+        iconSize: 16
+        showIconPreview: true
+        columns:
+          - width: 300
+            ascending: true
+            identifier: name
+            visible: true
+          - width: 181
+            ascending: false
+            identifier: dateModified
+            visible: true
+          - width: 181
+            ascending: false
+            identifier: dateCreated
+            visible: false
+          - width: 97
+            ascending: false
+            identifier: size
+            visible: true
+          - width: 115
+            ascending: true
+            identifier: kind
+            visible: true
+          - width: 100
+            ascending: true
+            identifier: label
+            visible: false
+          - width: 75
+            ascending: true
+            identifier: version
+            visible: false
+          - width: 300
+            ascending: true
+            identifier: comments
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: dateLastOpened
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: shareOwner
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: shareLastEditor
+            visible: false
+        calculateAllSizes: false
+        textSize: 13
+        sortColumn: name
+        useRelativeDates: true
+        viewOptionsVersion: 1
+      SettingsType: FK_StandardViewSettings
+      ListViewSettings:
+        iconSize: 16
+        showIconPreview: true
+        columns:
+          comments:
+            visible: false
+            width: 300
+            ascending: true
+            index: 7
+          name:
+            visible: true
+            width: 300
+            ascending: true
+            index: 0
+          dateCreated:
+            visible: false
+            width: 181
+            ascending: false
+            index: 2
+          size:
+            visible: true
+            width: 97
+            ascending: false
+            index: 3
+          label:
+            visible: false
+            width: 100
+            ascending: true
+            index: 5
+          kind:
+            visible: true
+            width: 115
+            ascending: true
+            index: 4
+          version:
+            visible: false
+            width: 75
+            ascending: true
+            index: 6
+          dateLastOpened:
+            visible: false
+            width: 200
+            ascending: false
+            index: 8
+          dateModified:
+            visible: true
+            width: 181
+            ascending: false
+            index: 1
+        calculateAllSizes: false
+        textSize: 13
+        sortColumn: name
+        useRelativeDates: true
+        viewOptionsVersion: 1
+    FXArrangeGroupViewBy: Name
+    FXConnectToBounds: "{{1037, 848}, {486, 231}}"
+    FXConnectToLastURL: jor
+    FXDefaultSearchScope: SCcf
+    FXDesktopTouchBarUpgradedToTenTwelveOne: 1
+    FXDetachedDesktopProviderID: ""
+    FXDetachedDocumentsProviderID: ""
+    FXICloudDriveDeclinedUpgrade: false
+    FXICloudDriveDesktop: false
+    FXICloudDriveDocuments: false
+    FXICloudDriveEnabled: true
+    FXICloudDriveFirstSyncDownComplete: true
+    FXICloudLoggedIn: true
+    FXInfoPanesExpanded:
+      Privileges: true
+      OpenWith: true
+      Name: true
+      MetaData: true
+      Comments: true
+      General: true
+    FXInfoWindowWidth: 400.0
+    FXLastSearchScope: SCcf
+    FXPreferencesWindow.Location: "{{10, 667}, {377, 402}}"
+    FXPreferredGroupBy: Name
+    FXPreferredSearchViewStyle: Nlsv
+    FXPreferredSearchViewStyleVersion: "%00%00%00%01"
+    FXQuickActionsConfigUpgradeLevel: 3
+    FXSidebarUpgradedSharedSearchToTwelve: true
+    FXSidebarUpgradedToSixteen: true
+    FXSidebarUpgradedToTenFourteen: true
+    FXSidebarUpgradedToTenTen: true
+    FXSyncExtensionToolbarItemsPendingAdd: []
+    FXSyncExtensionToolbarItemsPendingRemove: []
+    FXToolbarUpgradedToTenEight: 1
+    FXToolbarUpgradedToTenNine: 2
+    FXToolbarUpgradedToTenSeven: 1
+    FavoriteTagNames:
+      - ""
+      - Red
+      - Orange
+      - Yellow
+      - Green
+      - Blue
+      - Purple
+      - Gray
+    GoToField: "/Users/wesb/code/go/src/gitlab-app.eng.qops.net "
+    ICloudViewSettings:
+      WindowState:
+        ContainerShowSidebar: true
+        ShowStatusBar: false
+        ShowSidebar: true
+        ShowToolbar: true
+        ShowTabView: false
+        WindowBounds: "{{-0, 56}, {1728, 1023}}"
+    LastTrashState: true
+    MountProgressWindowLocation: "{664, 276}"
+    NSNavPanelExpandedSizeForOpenMode: "{800, 448}"
+    NSWindowTabbingShoudShowTabBarKey-com.apple.finder.TBrowserWindow: true
+    NewWindowTargetPath: "file:///Users/wesb/Desktop/"
+    PreferencesWindow.LastSelection: GNRL
+    PreviewPaneGalleryWidth: 250.0
+    QuitMenuItem: true
+    RecentsArrangeGroupViewBy: Date Last Opened
+    SearchRecentsSavedViewStyleVersion: "%00%00%00%01"
+    SearchRecentsViewSettings:
+      WindowState:
+        ContainerShowSidebar: true
+        ShowStatusBar: false
+        ShowSidebar: true
+        ShowToolbar: true
+        ShowTabView: true
+        WindowBounds: "{{264, 361}, {920, 436}}"
+    ShowSidebar: false
+    SidebarDevicesSectionDisclosedState: true
+    SidebarPlacesSectionDisclosedState: true
+    SidebarShowingSignedIntoiCloud: true
+    SidebarShowingiCloudDesktop: false
+    SidebarTagsSctionDisclosedState: true
+    SidebarWidth: 222.0
+    SidebarWidth2: 239.0
+    SidebariCloudDriveSectionDisclosedState: true
+    StandardViewOptions:
+      ColumnViewOptions:
+        ArrangeBy: pAdd
+        ColumnShowFolderArrow: true
+        ShowPreview: true
+        FontSize: 13
+        SharedArrangeBy: kipl
+        ShowIconThumbnails: true
+        ColumnShowIcons: true
+        PreviewDisclosureState: true
+        ColumnWidth: 245
+    StandardViewSettings:
+      IconViewSettings:
+        backgroundColorBlue: 1.0
+        gridSpacing: 50.0
+        textSize: 12.0
+        backgroundColorRed: 1.0
+        backgroundType: 0
+        backgroundColorGreen: 1.0
+        gridOffsetX: 0.0
+        gridOffsetY: 0.0
+        showItemInfo: false
+        viewOptionsVersion: 1
+        arrangeBy: grid
+        labelOnBottom: true
+        iconSize: 40.0
+        showIconPreview: true
+      ListViewSettings:
+        iconSize: 16
+        showIconPreview: true
+        calculateAllSizes: false
+        columns:
+          comments:
+            index: 7
+            width: 300
+            ascending: true
+            visible: false
+          dateModified:
+            index: 1
+            width: 181
+            ascending: false
+            visible: true
+          dateCreated:
+            index: 2
+            width: 181
+            ascending: false
+            visible: false
+          size:
+            index: 3
+            width: 97
+            ascending: false
+            visible: true
+          label:
+            index: 5
+            width: 100
+            ascending: true
+            visible: false
+          kind:
+            index: 4
+            width: 115
+            ascending: true
+            visible: true
+          version:
+            index: 6
+            width: 75
+            ascending: true
+            visible: false
+          dateLastOpened:
+            index: 8
+            width: 200
+            ascending: false
+            visible: false
+          name:
+            index: 0
+            width: 300
+            ascending: true
+            visible: true
+        textSize: 13
+        sortColumn: name
+        useRelativeDates: true
+        viewOptionsVersion: 1
+      ExtendedListViewSettingsV2:
+        iconSize: 16
+        showIconPreview: true
+        calculateAllSizes: false
+        columns:
+          - width: 300
+            ascending: true
+            identifier: name
+            visible: true
+          - width: 181
+            ascending: false
+            identifier: dateModified
+            visible: true
+          - width: 181
+            ascending: false
+            identifier: dateCreated
+            visible: false
+          - width: 97
+            ascending: false
+            identifier: size
+            visible: true
+          - width: 115
+            ascending: true
+            identifier: kind
+            visible: true
+          - width: 100
+            ascending: true
+            identifier: label
+            visible: false
+          - width: 75
+            ascending: true
+            identifier: version
+            visible: false
+          - width: 300
+            ascending: true
+            identifier: comments
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: dateLastOpened
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: shareOwner
+            visible: false
+          - width: 200
+            ascending: false
+            identifier: shareLastEditor
+            visible: false
+        textSize: 13
+        sortColumn: name
+        useRelativeDates: true
+        viewOptionsVersion: 1
+      SettingsType: StandardViewSettings
+      GalleryViewSettings:
+        arrangeBy: name
+        iconSize: 48.0
+        showIconPreview: true
+        viewOptionsVersion: 1
+    TagsCloudSerialNumber: 2
+    TagsColumnWidth: 190.0
+    TrashViewSettings:
+      WindowState:
+        ContainerShowSidebar: true
+        ShowStatusBar: false
+        ShowSidebar: true
+        ShowToolbar: true
+        ShowTabView: true
+        WindowBounds: "{{440, 75}, {864, 975}}"
+      ExtendedListViewSettingsV2:
+        useRelativeDates: true
+        showIconPreview: true
+        calculateAllSizes: false
+        columns:
+          - width: 300
+            identifier: name
+            ascending: true
+            visible: true
+          - visible: false
+            identifier: ubiquity
+            width: 35
+            ascending: false
+          - width: 181
+            identifier: dateModified
+            ascending: false
+            visible: true
+          - width: 181
+            identifier: dateCreated
+            ascending: false
+            visible: false
+          - width: 97
+            identifier: size
+            ascending: false
+            visible: true
+          - width: 115
+            identifier: kind
+            ascending: true
+            visible: true
+          - width: 100
+            identifier: label
+            ascending: true
+            visible: false
+          - width: 75
+            identifier: version
+            ascending: true
+            visible: false
+          - width: 300
+            identifier: comments
+            ascending: true
+            visible: false
+          - width: 200
+            identifier: dateLastOpened
+            ascending: false
+            visible: false
+          - width: 200
+            identifier: shareOwner
+            ascending: false
+            visible: false
+          - width: 200
+            identifier: shareLastEditor
+            ascending: false
+            visible: false
+          - visible: false
+            identifier: dateAdded
+            width: 181
+            ascending: false
+          - width: 210
+            identifier: invitationStatus
+            ascending: false
+            visible: false
+        scrollPositionY: 5599.0
+        textSize: 13.0
+        scrollPositionX: 0.0
+        sortColumn: name
+        iconSize: 16.0
+        viewOptionsVersion: 1
+      CustomViewStyleVersion: 1
+      ListViewSettings:
+        useRelativeDates: true
+        showIconPreview: true
+        calculateAllSizes: false
+        columns:
+          comments:
+            visible: false
+            ascending: true
+            width: 300
+            index: 7
+          dateModified:
+            visible: true
+            ascending: false
+            width: 181
+            index: 1
+          dateCreated:
+            visible: false
+            ascending: false
+            width: 181
+            index: 2
+          size:
+            visible: true
+            ascending: false
+            width: 97
+            index: 3
+          label:
+            visible: false
+            ascending: true
+            width: 100
+            index: 5
+          version:
+            visible: false
+            ascending: true
+            width: 75
+            index: 6
+          kind:
+            visible: true
+            ascending: true
+            width: 115
+            index: 4
+          name:
+            visible: true
+            ascending: true
+            width: 300
+            index: 0
+          dateLastOpened:
+            visible: false
+            ascending: false
+            width: 200
+            index: 8
+        scrollPositionY: 5599.0
+        textSize: 13.0
+        scrollPositionX: 0.0
+        sortColumn: name
+        iconSize: 16.0
+        viewOptionsVersion: 1
+    ViewSettingsDictionary:
+      anda_Tag_ViewSettings:
+        WindowState:
+          ContainerShowSidebar: true
+          ShowStatusBar: false
+          ShowSidebar: true
+          ShowToolbar: true
+          ShowTabView: false
+          WindowBounds: "{{0, 57}, {864, 1022}}"
+    _FXSortFoldersFirst: true
