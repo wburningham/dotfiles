@@ -1,4 +1,4 @@
 .env_files/
 .macos_defaults/
 .launch_agents/
-/*.md
+*.md
