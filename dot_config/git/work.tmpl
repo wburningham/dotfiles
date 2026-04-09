@@ -1,0 +1,9 @@
+[user]
+	name = {{ .work.git.name }}
+	email = {{ .work.git.email }}
+
+[url "{{ trimSuffix "/" .work.git_storage.http_base_url }}/"]
+	insteadOf = {{ trimSuffix "/" .work.git_storage.git_base_url }}/
+
+[credential]
+	helper = osxkeychain

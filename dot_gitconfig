@@ -64,15 +64,13 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
-
-
 [user]
 	name = Wes Burningham
 	email = wburningham@gmail.com
 	signingkey = /Users/wesb/.ssh/id_rsa.pub
 
 [includeIf "gitdir:~/code/go/src/gitlab*/"]
-	path = ~/.work.gitconfig
+	path = ~/.config/git/work
 [gpg]
 	format = ssh
 [commit]
