@@ -170,57 +170,24 @@ brew "mas"
 mas "Velja", id: 1607635845
 mas "AdBlock for Safari", id: 1402042596
 
+# === work ===
 tap "engineering/qualtrics", "https://gitlab-app.eng.qops.net/engineering/homebrew-qualtrics"
 brew "engineering/qualtrics/bertha"
-
-# cask "./casks/example-two-files/example-two-files.rb"
-# brew "./formula/bom.rb"
-
-# # === work ===
-# tap "qdev/homebrew", "https://gitlab-app.eng.qops.net/dev-tooling/devx-cli/homebrew"
+# # tap "qdev/homebrew", "https://gitlab-app.eng.qops.net/dev-tooling/devx-cli/homebrew"
 # # brew "qdev"
-# cask "wizcli"
 
 # # === legacy ===
-
 # tap "bruceadams/utilities"
-# tap "encoredev/tap"
 # tap "golang/homebrew", "https://gitlab-app.eng.qops.net/golang/homebrew"
-# tap "golangci/tap"
 # tap "homebrew/bundle"
 # tap "homebrew/services"
 # tap "jakehilborn/jakehilborn"
 # tap "qdev/homebrew", "https://gitlab-app.eng.qops.net/dev-tooling/devx-cli/homebrew"
 # tap "qualtrics/brew", "https://gitlab-app.eng.qops.net/homebrew/tap"
 
-# brew "abseil"
-# brew "xz"
-# brew "libtiff"
-# brew "little-cms2"
-# brew "webp"
-# brew "jpeg-xl"
-# brew "aom"
-# brew "glib"
 # brew "cairo"
-# brew "aquasecurity/trivy/trivy"
-# brew "engineering/qualtrics/bertha"
-# brew "golang/homebrew/closepctickets"
 # brew "golang/homebrew/jenkinsfilelint"
 
-
-# cask "dash"
-# cask "discord"
-# cask "iterm2" #spellchecker:disable-line
-# # cask "kap"
-# cask "pgadmin4"
-# cask "qlcolorcode"
-# cask "qlimagesize"
-# cask "qlmarkdown"
-# cask "qlstephen"
-# cask "quicklook-json"
-# cask "zoom"
-# vscode "1yib.rust-bundle"
-# vscode "aaron-bond.better-comments"
 # vscode "albymor.increment-selection"
 # vscode "alefragnani.project-manager"
 # vscode "anteprimorac.html-end-tag-labels"
