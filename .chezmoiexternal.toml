@@ -1,0 +1,16 @@
+# to package up an app
+# ❯ tar -czvf PandaBar.tar.gz PandaBar.app/
+# ❯ chezmoi encrypt PandaBar.tar.gz --output PandaBar.tar.gz.age
+# ❯ <move to .mac_apps>
+# Add entry to this file
+
+[Dash]
+    type = "archive"
+    encrypted = true
+    url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/Dash.tar.gz.age" }}'
+    targetPath = "./Applications"
+[PandaBar]
+    type = "archive"
+    encrypted = true
+    url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/PandaBar.tar.gz.age" }}'
+    targetPath = "./Applications"

@@ -154,7 +154,6 @@ cask "./casks/font-maple-mono/font-maple-mono.rb"
 
 # === casks ===
 cask "alfred"
-cask "./casks/dash.rb" #v3.4.3 locked
 cask "disk-inventory-x"
 cask "docker-desktop"
 cask "hiddenbar"
