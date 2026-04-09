@@ -14,3 +14,8 @@
     encrypted = true
     url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/PandaBar.tar.gz.age" }}'
     targetPath = "./Applications"
+[fish-theme]
+    type = "file"
+    url = 'https://raw.githubusercontent.com/catppuccin/fish/5fc5ae9c2ec22eb376cb03ce76f0d262a38960f3/themes/catppuccin-mocha.theme'
+    checksum.sha256 = "84b5c91fcdc091a59c1e98a469418419941fe573251b9ad588ed166fdb4ec88c"
+    targetPath = ".config/fish/themes/catppuccin-mocha.theme"

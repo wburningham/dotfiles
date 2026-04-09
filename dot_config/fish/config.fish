@@ -1,5 +1,5 @@
 # === theme/prompt ===
-fish_config theme choose "Catppuccin Mocha"
+fish_config theme choose "catppuccin-mocha"
 # set -U -e tide_right_prompt_items
 # Not sure, but this is needed to remove the items
 # set -U -e _tide_right_items
