@@ -90,7 +90,8 @@ System Preferences -> Internet Accounts
   - manually check Features -> Web Bookmarks -> Safari
 - Work 
   - Disable Privileges.app requests: paste serial # in #remove-demoter
-  - 
+- Docker: start and copy settings from old machine
+- Download Dash License from email and manually apply in Dash settings
 
 10. What can't be synced
 
