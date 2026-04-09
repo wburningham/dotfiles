@@ -1,0 +1,15 @@
+---
+description: com.kapeli.dashdoc
+sudo: false
+current_host: false
+data:
+  com.kapeli.dashdoc:
+    automaticallyUpdate: false
+    isTrial: false
+    SUAllowsAutomaticUpdates: false
+    SUAutomaticallyUpdate: false
+    SUEnableAutomaticChecks: true
+    StartAtLogin: true
+    didFirstRun: true
+    didHaveDocsetsSoDontShowNoDocsetsError: true
+    didSuppressDownloadDocsetsAlert: true
