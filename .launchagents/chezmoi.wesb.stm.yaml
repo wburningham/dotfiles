@@ -1,0 +1,18 @@
+Label: chezmoi.wesb.stm
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/stm.out.log
+StandardErrorPath: /tmp/stm.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - >-
+    $HOME/go/bin/stm
+    &&
+    curl -sf https://hc-ping.com/$(cat $HOME/.healthchecks.stm.ping-id)
+    &&
+    echo ""
+
+RunAtLoad: true
+StartInterval: 1800

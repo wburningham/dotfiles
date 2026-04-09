@@ -1,0 +1,30 @@
+Label: chezmoi.wesb.macos-backup
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/macos-backup.out.log
+StandardErrorPath: /tmp/macos-backup.err.log
+KeepAlive: true
+ProcessType: Background
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - >-
+    wget -q -O /dev/null https://hc-ping.com/$(cat $HOME/.healthchecks.macos-backups.ping-id)/start
+    &&
+    echo "start rclone commands\n" >&2
+    &&
+    rclone sync -v --exclude '.git/' $HOME/code/go/src/github.com/wburningham/journal remote:journal
+    &&
+    rclone sync -v --exclude '.DS_Store' $HOME/Files/P1S/3d-models remote:3d-models
+    &&
+    rclone sync -v --exclude '.DS_Store' $HOME/Files/taxes secret:encrypted_taxes
+    &&
+    echo "rclone commands complete\n" >&2
+    &&
+    wget -q -O /dev/null https://hc-ping.com/$(cat $HOME/.healthchecks.macos-backups.ping-id)/$?
+
+RunAtLoad: true
+StartCalendarInterval:
+  - Minute: 0
+ThrottleInterval: 3600

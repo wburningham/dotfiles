@@ -1,0 +1,39 @@
+#!/bin/sh
+# run_onchange_generate-plists.sh.tmpl
+set -e
+
+# Trigger re-run when any launch agent YAML changes (via hash in comment)
+# {{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") }}
+# {{ $path | sha256sum }}
+# {{ end }}
+
+mkdir -p ~/Library/LaunchAgents
+
+# Stop and remove all chezmoi-managed agents (handles deletions/renames)
+launchctl list | awk '/[[:space:]]chezmoi\./ { print $3 }' | while read -r label; do
+    launchctl bootout "gui/$(id -u)/$label" 2>/dev/null || true
+done
+rm -f ~/Library/LaunchAgents/chezmoi.*.plist
+
+# Generate plists from YAML
+{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") -}}
+{{- $agentKey := trimSuffix ".yaml" (base $path) -}}
+{{- $agent := include $path | fromYaml -}}
+{{- $label := index $agent "Label" | default "" -}}
+{{- if not (hasPrefix "chezmoi." $agentKey) -}}
+{{- fail (printf "filename '%s.yaml' must start with 'chezmoi.'" $agentKey) -}}
+{{- end -}}
+{{- if not (hasPrefix "chezmoi." $label) -}}
+{{- fail (printf "Label '%s' in %s must start with 'chezmoi.'" $label $path) -}}
+{{- end }}
+cat > /tmp/{{ $agentKey }}.json << '__JSON_EOF__'
+{{ toPrettyJson $agent }}
+__JSON_EOF__
+plutil -convert xml1 -o ~/Library/LaunchAgents/{{ $agentKey }}.plist /tmp/{{ $agentKey }}.json
+rm /tmp/{{ $agentKey }}.json
+{{ end }}
+# Bootstrap all chezmoi-managed agents
+{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") -}}
+{{- $agentKey := trimSuffix ".yaml" (base $path) }}
+launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/{{ $agentKey }}.plist
+{{ end -}}
