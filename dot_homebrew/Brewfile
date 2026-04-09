@@ -170,6 +170,9 @@ brew "mas"
 mas "Velja", id: 1607635845
 mas "AdBlock for Safari", id: 1402042596
 
+tap "engineering/qualtrics", "https://gitlab-app.eng.qops.net/engineering/homebrew-qualtrics"
+brew "engineering/qualtrics/bertha"
+
 # cask "./casks/example-two-files/example-two-files.rb"
 # brew "./formula/bom.rb"
 
@@ -182,7 +185,6 @@ mas "AdBlock for Safari", id: 1402042596
 
 # tap "bruceadams/utilities"
 # tap "encoredev/tap"
-# tap "engineering/qualtrics", "https://gitlab-app.eng.qops.net/engineering/homebrew-qualtrics"
 # tap "golang/homebrew", "https://gitlab-app.eng.qops.net/golang/homebrew"
 # tap "golangci/tap"
 # tap "homebrew/bundle"
