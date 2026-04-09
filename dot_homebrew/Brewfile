@@ -45,6 +45,7 @@ cask "karabiner-elements"
 brew "git"
 brew "tig" # Text interface for Git repositories https://jonas.github.io/tig
 # brew "git-cliff" # Highly customizable changelog generator https://git-cliff.org
+brew "neovim" # for commit messages
 
 # # === dev:golang ===
 brew "go"
@@ -100,8 +101,8 @@ brew "yamllint"
 brew "shellcheck"
 brew "markdownlint-cli"
 brew "typos-cli"
-# typos lsp for Sublime Test git commit messages
-brew "typos-lsp" # Language Server for typos-cli https://github.com/tekumara/typos-lsp
+# typos-lsp: LSP for typos-cli (Neovim git commits, etc.) https://github.com/tekumara/typos-lsp
+brew "typos-lsp"
 
 # === dev:containers/images ===
 brew "ko"
