@@ -3,6 +3,8 @@ fish_config theme choose "catppuccin-mocha"
 # set -U -e tide_right_prompt_items
 # Not sure, but this is needed to remove the items
 # set -U -e _tide_right_items
+# Force default char (broke in v4.3.0+)
+set -Ux tide_character_vi_icon_default '❯'
 
 # === secrets ===
 # Source secrets not committed to VCS
