@@ -92,6 +92,8 @@ System Preferences -> Internet Accounts
   - Disable Privileges.app requests: paste serial # in #remove-demoter
 - Docker: start and copy settings from old machine
 - Download Dash License from email and manually apply in Dash settings
+- Karabiner-Elements
+  - Open and accept all the permissions
 
 10. What can't be synced
 
