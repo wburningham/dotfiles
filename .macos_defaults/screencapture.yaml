@@ -1,0 +1,11 @@
+---
+description: com.apple.screencapture
+sudo: false
+current_host: false
+data:
+  com.apple.screencapture:
+    disable-shadow: true
+    location: /Users/wesb/Pictures
+    style: selection
+    type: png
+    video: false
