@@ -76,6 +76,9 @@ System Preferences -> Internet Accounts
 - work shell config (for now I don't have time to encrypt and deal with security design to put in dotfiles)
 - `rsync -a --delete --progress $USER@<ip>:/Applications/Pandabar.app/ /Applications/Pandabar.app/`
 - personal ssh config
+- rclone config
+- ~/Movies dir
+- Finder settings
 
 9. Manual setup
 
@@ -94,6 +97,10 @@ System Preferences -> Internet Accounts
 - Download Dash License from email and manually apply in Dash settings
 - Karabiner-Elements
   - Open and accept all the permissions
+- SublimeText
+  - copy paste settings
+  - install package control
+  - install PlainTasks, EasyDiff, Increment Selection
 
 10. What can't be synced
 
