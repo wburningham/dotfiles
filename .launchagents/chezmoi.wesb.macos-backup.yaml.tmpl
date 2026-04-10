@@ -1,3 +1,9 @@
+# launch agent to backup key files using rclone. See ~/.config/rclone/rclone.conf
+# To download a journal entry we use remote:journal
+# > rclone copy remote:journal/entries/<yyyy>-<mm>-<dd>.md ./
+# To download a taxes entry we use secret:encrypted_taxes
+# > rclone copy secret:encrypted_taxes/<file> ./
+
 Label: chezmoi.wesb.macos-backup
 UserName: wesb
 EnvironmentVariables:
