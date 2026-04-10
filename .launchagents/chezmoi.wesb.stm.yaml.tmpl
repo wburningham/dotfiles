@@ -10,7 +10,7 @@ ProgramArguments:
   - >-
     $HOME/go/bin/stm
     &&
-    curl -sf https://hc-ping.com/$(cat $HOME/.healthchecks.stm.ping-id)
+    curl -sf https://hc-ping.com/{{ index .heartbeat_ids "stm" }}
     &&
     echo ""
 

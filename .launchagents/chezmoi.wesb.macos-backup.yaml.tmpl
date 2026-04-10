@@ -10,7 +10,7 @@ ProgramArguments:
   - /bin/sh
   - -c
   - >-
-    wget -q -O /dev/null https://hc-ping.com/$(cat $HOME/.healthchecks.macos-backups.ping-id)/start
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "macos-backups" }}/start
     &&
     echo "start rclone commands\n" >&2
     &&
@@ -22,7 +22,7 @@ ProgramArguments:
     &&
     echo "rclone commands complete\n" >&2
     &&
-    wget -q -O /dev/null https://hc-ping.com/$(cat $HOME/.healthchecks.macos-backups.ping-id)/$?
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "macos-backups" }}/$?
 
 RunAtLoad: true
 StartCalendarInterval:

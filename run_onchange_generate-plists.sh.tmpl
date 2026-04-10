@@ -3,7 +3,7 @@
 set -e
 
 # Trigger re-run when any launch agent YAML changes (via hash in comment)
-# {{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") }}
+# {{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml.tmpl") }}
 # {{ $path | sha256sum }}
 # {{ end }}
 
@@ -15,13 +15,17 @@ launchctl list | awk '/[[:space:]]chezmoi\./ { print $3 }' | while read -r label
 done
 rm -f ~/Library/LaunchAgents/chezmoi.*.plist
 
-# Generate plists from YAML
-{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") -}}
-{{- $agentKey := trimSuffix ".yaml" (base $path) -}}
-{{- $agent := include $path | fromYaml -}}
+# Generate plists from YAML (templates read heartbeat_ids etc. from chezmoi config)
+{{- $root := . -}}
+{{ $srcPrefix := print .chezmoi.sourceDir "/" -}}
+{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml.tmpl") -}}
+{{- $agentKey := trimSuffix ".yaml.tmpl" (base $path) -}}
+{{- $rel := trimPrefix $srcPrefix $path -}}
+{{- $yamlStr := includeTemplate $rel $root -}}
+{{- $agent := $yamlStr | fromYaml -}}
 {{- $label := index $agent "Label" | default "" -}}
 {{- if not (hasPrefix "chezmoi." $agentKey) -}}
-{{- fail (printf "filename '%s.yaml' must start with 'chezmoi.'" $agentKey) -}}
+{{- fail (printf "filename '%s.yaml.tmpl' must start with 'chezmoi.'" $agentKey) -}}
 {{- end -}}
 {{- if not (hasPrefix "chezmoi." $label) -}}
 {{- fail (printf "Label '%s' in %s must start with 'chezmoi.'" $label $path) -}}
@@ -33,7 +37,7 @@ plutil -convert xml1 -o ~/Library/LaunchAgents/{{ $agentKey }}.plist /tmp/{{ $ag
 rm /tmp/{{ $agentKey }}.json
 {{ end }}
 # Bootstrap all chezmoi-managed agents
-{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml") -}}
-{{- $agentKey := trimSuffix ".yaml" (base $path) }}
+{{ range $path := glob (joinPath .chezmoi.sourceDir ".launchagents/*.yaml.tmpl") -}}
+{{- $agentKey := trimSuffix ".yaml.tmpl" (base $path) }}
 launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/{{ $agentKey }}.plist
 {{ end -}}
