@@ -31,3 +31,5 @@ _.ignore._
 
 -rpc.trace# tip from https://dev.to/gophers/what-are-go-workspaces-and-how-do-i-use-them-1643
 go.work
+
+**/.claude/settings.local.json
