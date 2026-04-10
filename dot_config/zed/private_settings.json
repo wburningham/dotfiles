@@ -41,6 +41,7 @@
 	},
 	"use_system_window_tabs": true, // Allow windows to tab together based macOS setting
 	"file_types": {
+		"YAML": ["*.yaml.tmpl"], // enable YAML parsing chezmoi .yaml.tmpl files
 		"JSON": ["*.qsf"], // enable JSON parsing survey .qsf files
 		"JSONC": ["*.json5"], // enable JSONC parsing for .json5 extension
 		"Shell Script": [".envrc", ".envrc.local"],
