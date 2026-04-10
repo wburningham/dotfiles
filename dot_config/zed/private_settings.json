@@ -107,6 +107,9 @@
 	// Set the buffer/terminal text's font fallbacks, this will be merged with
 	// the platform's default fallbacks.
 	"buffer_font_fallbacks": ["Maple Mono"],
+	"terminal": {
+		"font_family": "FiraCode Nerd Font Mono"
+	},
 	"base_keymap": "SublimeText",
 	"telemetry": {
 		// Send debug info like crash reports.
