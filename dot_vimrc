@@ -251,4 +251,9 @@ if has("autocmd")
 	" Source the vimrc file after modifying
 	autocmd bufwritepost .vimrc source $MYVIMRC
 
+	" Commit messages: subject ~50 chars, body wrap ~72 (see git commit guidelines)
+	if exists("+colorcolumn")
+		autocmd FileType gitcommit setlocal colorcolumn=50,72
+	endif
+
 endif
