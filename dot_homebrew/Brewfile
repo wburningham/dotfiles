@@ -151,6 +151,7 @@ cask "1password-cli"
 tap "wburningham/fonts", "https://github.com/wburningham/fonts.git"
 cask "wburningham/fonts/font-rebecca-handwriting-font"
 cask "wburningham/fonts/font-wes-handwriting-font"
+cask "wburningham/fonts/font-maple-mono-font"
 cask "font-fira-code-nerd-font"
 
 # === casks ===
