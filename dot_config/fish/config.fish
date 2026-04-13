@@ -22,6 +22,7 @@ end
 fish_add_path $GOBIN
 fish_add_path /opt/homebrew/bin
 fish_add_path $(brew --prefix rustup)/bin
+fish_add_path $(brew --prefix ruby)/bin
 
 # === sourcing ===
 status is-interactive; and begin

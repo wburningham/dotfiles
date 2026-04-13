@@ -69,6 +69,7 @@ brew "wireshark" # Network analyzer and capture tool - w/o GUI https://www.wires
 brew "eget"
 brew "fd" # Simple, fast and user-friendly alternative to find
 brew "php"
+brew "ruby" # Needed for work secret creation
 brew "witr"
 brew "rustup"
 brew "ruby" # for local homebrew formula
