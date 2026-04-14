@@ -177,8 +177,8 @@ mas "AdBlock for Safari", id: 1402042596
 # === work ===
 tap "engineering/qualtrics", "https://gitlab-app.eng.qops.net/engineering/homebrew-qualtrics"
 brew "engineering/qualtrics/bertha"
-# # tap "qdev/homebrew", "https://gitlab-app.eng.qops.net/dev-tooling/devx-cli/homebrew"
-# # brew "qdev"
+tap "qdev/homebrew", "https://gitlab-app.eng.qops.net/dev-tooling/devx-cli/homebrew"
+brew "qdev/homebrew/qdev"
 
 # # === legacy ===
 # tap "bruceadams/utilities"
