@@ -34,6 +34,9 @@ cursor-style = block
 
 
 # keybindings
+# Cmd+arrows → same bytes as Zed terminal (C-a / C-e); Neovim maps these in insert mode (see dot_config/nvim/init.lua)
+keybind = super+left=text:\x01
+keybind = super+right=text:\x05
 # keybind = super+f=write_screen_file:open
 # keybind = clear
 # keybind = ctrl+h=goto_split:left
