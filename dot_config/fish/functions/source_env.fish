@@ -31,5 +31,5 @@ function source_env --description "Source POSIX env file into fish"
         end
     end < $tmp
 
-    rm $tmp
+    command rm $tmp # important to use `command rm` because `rm` is replaced by the `fishingline/safe-rm` plugin
 end
