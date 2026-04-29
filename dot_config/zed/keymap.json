@@ -34,5 +34,12 @@
 		"bindings": {
 			"cmd-i": "agent::ToggleFocus"
 		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {
+			"cmd-up": ["terminal::SendText", "\u001bgg"],
+			"cmd-down": ["terminal::SendText", "\u001bG"]
+		}
 	}
 ]
