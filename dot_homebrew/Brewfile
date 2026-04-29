@@ -59,7 +59,6 @@ brew "orlangure/tap/gocovsh"
 # === dev:misc ===
 brew "cue-lang/tap/cue"
 cask "ghostty@tip"
-cask "rio"
 brew "gum" # Tool for glamorous shell scripts https://github.com/charmbracelet/gum
 brew "go-task"
 #brew "./formula/go-task.rb" # pin v3.44.0
@@ -138,7 +137,7 @@ brew "ollama"
 # brew "block-goose-cli"
 # cask "block-goose"
 cask "cursor"
-cask "cursor-cli"
+# cask "cursor-cli"
 brew "gemini-cli"
 cask "claude-code"
 # brew "anomalyco/tap/opencode"
