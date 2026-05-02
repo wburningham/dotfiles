@@ -70,6 +70,27 @@
                                         "mandatory": ["command", "shift"]
                                     }
                                 },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
+                                    }
+                                ],
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": ["command", "shift"]
+                                    }
+                                },
                                 "to": [
                                     {
                                         "shell_command": "osascript -e 'tell application id \"com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan\" to activate' -e 'delay 0.15' -e 'tell application \"System Events\" to keystroke \"d\" using command down'"
