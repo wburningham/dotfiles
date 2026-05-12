@@ -1,119 +1,79 @@
 {
-    "profiles": [
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Keyboard Illumination (left_opt+f1->illumination_decrement & left_opt+f2->illumination_increment)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "f1",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [{ "key_code": "illumination_decrement" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f2",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [{ "key_code": "illumination_increment" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Screenshot (f3 -> shift+cmd+4 & left_opt+f3->shift+cmd+ctl+4): https://tinyurl.com/2ptvwz7k",
+            "manipulators": [
+              {
+                "from": { "key_code": "f3" },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": ["left_command", "left_shift"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f3",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": ["left_command", "left_shift", "left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "f2",
+                  "modifiers": { "mandatory": ["left_option"] }
+                },
+                "to": [{ "key_code": "illumination_increment" }],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "fn_function_keys": [
         {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "Keyboard Illumination (left_opt+f1->illumination_decrement & left_opt+f2->illumination_increment)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f1",
-                                    "modifiers": { "mandatory": ["left_option"] }
-                                },
-                                "to": [{ "key_code": "illumination_decrement" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f2",
-                                    "modifiers": { "mandatory": ["left_option"] }
-                                },
-                                "to": [{ "key_code": "illumination_increment" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Screenshot (f3 -> shift+cmd+4 & left_opt+f3->shift+cmd+ctl+4): https://tinyurl.com/2ptvwz7k",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "f3" },
-                                "to": [
-                                    {
-                                        "key_code": "4",
-                                        "modifiers": ["left_command", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f3",
-                                    "modifiers": { "mandatory": ["left_option"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "4",
-                                        "modifiers": ["left_command", "left_shift", "left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f2",
-                                    "modifiers": { "mandatory": ["left_option"] }
-                                },
-                                "to": [{ "key_code": "illumination_increment" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Universal mute (cmd+shift+a): activate Google Meet PWA and send cmd+d",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["command", "shift"]
-                                    }
-                                },
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": ["com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan"]
-                                    }
-                                ],
-                                "to": [
-                                    {
-                                        "key_code": "d",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": ["command", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "osascript -e 'tell application id \"com.google.Chrome.app.kjgfgldnnfoeklkmfkjfagphfepbbdan\" to activate' -e 'delay 0.15' -e 'tell application \"System Events\" to keystroke \"d\" using command down'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "fn_function_keys": [
-                {
-                    "from": { "key_code": "f3" },
-                    "to": [{ "key_code": "f3" }]
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "keyboard_type_v2": "ansi"
-            }
+          "from": { "key_code": "f3" },
+          "to": [{ "key_code": "f3" }]
         }
-    ]
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "keyboard_type_v2": "ansi"
+      }
+    }
+  ]
 }
