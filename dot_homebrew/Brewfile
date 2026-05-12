@@ -167,6 +167,7 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "the-unarchiver"
 cask "zed"
+cask "johannesnagl/tap/showmd"
 
 # === Mac App Store (mas) ===
 brew "mas"
