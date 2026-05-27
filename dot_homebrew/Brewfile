@@ -94,7 +94,7 @@ brew "fnm", postinstall: "ln -s ${HOMEBREW_PREFIX}/bin/fnm ${HOMEBREW_PREFIX}/bi
 brew "pnpm"
 
 # === dev:linting ===
-brew "vale"
+brew "wesb/local/vale@3.14.1", link: :force
 # brew "hadolint" # Dockerfile linter to validate best practices
 brew "ls-lint"
 brew "yamllint"
