@@ -19,6 +19,7 @@ if test -f ~/.work.localrc.fish
 end
 
 # === paths ===
+fish_add_path $HOME/.local/bin
 fish_add_path $GOBIN
 fish_add_path /opt/homebrew/bin
 fish_add_path $(brew --prefix rustup)/bin
