@@ -167,7 +167,8 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "the-unarchiver"
 cask "zed"
-cask "johannesnagl/tap/showmd"
+cask "johannesnagl/tap/showmd" # Markdown previews from Finder
+cask "johannesnagl/tap/holdor" # Prevents system sleep while agentics run
 
 # === Mac App Store (mas) ===
 brew "mas"
