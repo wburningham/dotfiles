@@ -32,9 +32,13 @@
 	},
 	"agent_servers": {
 		"claude-acp": {
-			"default_config_options": {
-				"effort": "high",
-    "model": "default",
+			"favorite_config_option_values": {
+    "effort": [
+     "xhigh"
+    ]
+   },
+   "default_config_options": {
+				"model": "default",
 				"mode": "default"
 			},
 			"type": "registry"
@@ -47,24 +51,13 @@
 		}
 	},
 	"edit_predictions": {
-		"open_ai_compatible_api": {
-			"prompt_format": "infer",
-   "api_url": "http://127.0.0.1:12434/engines/v1",
-			"model": "huggingface.co/zed-industries/zeta-2.1:latest"
-		},
 		"provider": "open_ai_compatible_api",
-		"ollama": {
-			"model": "huggingface.co/zed-industries/zeta-2.1:latest",
-        "max_output_tokens": 30,
-			"api_url": "http://127.0.0.1:12434",
-			// "model": "qwen2.5-coder:7b"
-			// "api_url": "http://127.0.0.1:11434",
-			// "model": "qwen2.5-coder:7b"
-			// "model": "qwen2.5-coder:14b"
-			// "model": "qwen3-coder:30b-a3b-q4_K_M"
-			// "model": "mistral-small3.2:24b"
-		},
-		"mode": "eager"
+		"open_ai_compatible_api": {
+			"api_url": "http://localhost:11434/v1/completions",
+			"model": "hf.co/mradermacher/zeta-2.1-GGUF:Q8_0",
+			"prompt_format": "zeta2_1",
+			"max_output_tokens": 128
+		}
 	},
 	"use_system_window_tabs": true, // Allow windows to tab together based macOS setting
 	"file_types": {
