@@ -33,3 +33,9 @@ _.ignore._
 go.work
 
 **/.claude/settings.local.json
+
+**/.go-cache/*
+**/.go-mod-cache/*
+**/.go-tmp/*
+**/*_surveyapi.json
+**/*_qsf.json

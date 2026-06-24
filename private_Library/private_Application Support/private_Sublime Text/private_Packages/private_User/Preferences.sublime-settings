@@ -1,0 +1,51 @@
+{
+	"show_full_path": true,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"font_face": "Maple Mono",
+	"font_options":[
+		"gray_antialias",
+	],
+	"rulers": [[50, "solid"],[72, "dotted"]],
+	// exclude these files from search and from the sidebar
+	"binary_file_patterns":
+	[
+		"dist/*",
+		"node_modules/*",
+		"bower_components/*",
+		"vendor/*",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Desktop.ini",
+		"*.pyc",
+		"._*",
+		"Thumbs.db",
+		".Spotlight-V100",
+		".Trashes"
+	],
+	"folder_exclude_patterns":
+	[
+		// ".git",
+		"template_c",
+		"cachehttps"
+	],
+	"font_size": 19,
+	"index_files": false,
+}

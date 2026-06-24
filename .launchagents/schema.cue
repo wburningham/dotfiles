@@ -1,10 +1,11 @@
 // Package launchagents provides a CUE schema for validating chezmoi-managed
-// launchd launch agent configuration files (.launchagents/*.yaml).
+// launchd launch agent configuration files (.launchagents/*.yaml.tmpl).
 //
 // Reference: https://www.manpagez.com/man/5/launchd.plist/
 //
-// Validate a file with:
-//   cue vet -d '#LaunchAgent' schema.cue chezmoi.wesb.macos-backup.yaml
+// Validate rendered YAML (templates use chezmoi data e.g. heartbeat_ids):
+//   chezmoi execute-template -f chezmoi.wesb.macos-backup.yaml.tmpl >/tmp/agent.yaml
+//   cue vet -d '#LaunchAgent' schema.cue /tmp/agent.yaml
 //
 // File-watching keys (WatchPaths, QueueDirectories) are intentionally excluded
 package launchagents
@@ -86,6 +87,22 @@ package launchagents
 	// when the main job process exits. Default: false.
 	AbandonProcessGroup?: bool
 }
+
+// & _programSource
+
+// // _programSource enforces that exactly one of Program or ProgramArguments is
+// // set — not both, not neither. Open structs (no # prefix) so unification with
+// // the other #LaunchAgent fields is allowed.
+// _programSource: {
+// 	Program?: string
+// 	ProgramArguments?: [...string]
+
+// 	_programSet: [if Program != _|_ {1}, 0][0]
+// 	_programArgumentsSet: [if ProgramArguments != _|_ {1}, 0][0]
+
+// 	_neitherCheck: (_programSet+_programArgumentsSet >= 1) || error("one of 'a' or 'b' is required")
+// 	_bothCheck:    (_programSet+_programArgumentsSet <= 1) || error("'a' and 'b' are mutually exclusive, set only one")
+// }
 
 // #CalendarInterval defines a cron-like execution schedule for StartCalendarInterval.
 // All fields are optional; omitted fields act as wildcards.

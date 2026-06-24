@@ -19,6 +19,7 @@
 	},
 	"agent": {
 		"dock": "right",
+		"default_model": { "provider": "ollama", "model": "orieg/gemma3-tools:12b-ft-v2" },
 		"favorite_models": [],
 		"model_parameters": []
 	},
@@ -33,13 +34,12 @@
 	"agent_servers": {
 		"claude-acp": {
 			"favorite_config_option_values": {
-    "effort": [
-     "xhigh"
-    ]
-   },
-   "default_config_options": {
+				"effort": ["xhigh"]
+			},
+			"default_config_options": {
+				"effort": "xhigh",
 				"model": "default",
-				"mode": "default"
+				"mode": "acceptEdits"
 			},
 			"type": "registry"
 		},
@@ -50,8 +50,29 @@
 			"type": "registry"
 		}
 	},
+	"language_models": {
+		"ollama": {
+			"api_url": "http://localhost:11434",
+			"available_models": [
+				{
+					"name": "orieg/gemma3-tools:12b-ft-v2",
+					"display_name": "Gemma 3 12B (tools)",
+					"max_tokens": 131072,
+					"supports_tools": true,
+					"keep_alive": "10m"
+				}
+			]
+		}
+	},
+	// "context_servers": {
+	// 	"ck": {
+	// 		"command": "/Users/wesb/.cargo/bin/ck",
+	// 		"args": ["--serve"],
+	// 		"env": {}
+	// 	}
+	// },
 	"edit_predictions": {
-		"provider": "open_ai_compatible_api",
+		"provider": "zed",
 		"open_ai_compatible_api": {
 			"api_url": "http://localhost:11434/v1/completions",
 			"model": "hf.co/mradermacher/zeta-2.1-GGUF:Q8_0",

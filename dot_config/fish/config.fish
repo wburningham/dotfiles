@@ -21,6 +21,8 @@ end
 # === paths ===
 fish_add_path $HOME/.local/bin
 fish_add_path $GOBIN
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.deno/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path $(brew --prefix rustup)/bin
 fish_add_path $(brew --prefix ruby)/bin
@@ -75,6 +77,7 @@ status is-interactive; and begin
     alias dp podman
     alias h history
     alias nvm fnm
+    alias neofetch fastfetch
     # Use alias instead of abbreviation since ctrl+r doesn't work well w/ multi-line commands
     alias gcopy 'git rev-parse HEAD | tr -d '\''
 '\'' | pbcopy'
