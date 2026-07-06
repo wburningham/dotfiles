@@ -33,6 +33,7 @@ _.ignore._
 go.work
 
 **/.claude/settings.local.json
+**/.claude/.cc-writes/
 
 **/.go-cache/*
 **/.go-mod-cache/*
