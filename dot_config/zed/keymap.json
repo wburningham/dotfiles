@@ -36,6 +36,12 @@
 		}
 	},
 	{
+		"context": "AcpThread",
+		"bindings": {
+			"y y": "agent::AllowOnce"
+		}
+	},
+	{
 		"context": "Terminal",
 		"bindings": {
 			"cmd-up": ["terminal::SendText", "\u001bgg"],
