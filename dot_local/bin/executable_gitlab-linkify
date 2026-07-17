@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# gitlab-linkify: wrap GitLab merge-request/issue references in OSC 8
+# hyperlinks so they are clickable in OSC-8-capable terminals
+# (Ghostty, Zed, WezTerm, iTerm2, kitty, ...).
+#
+# Used as a git log/show pager filter (see ~/.gitconfig [pager]).
+# Reads the repo remote to find the host and project path, then rewrites:
+#   group/proj!123 -> <host>/group/proj/-/merge_requests/123
+#   !123           -> <host>/<this-project>/-/merge_requests/123
+#   group/proj#123 -> <host>/group/proj/-/issues/123
+#   #123           -> <host>/<this-project>/-/issues/123
+set -euo pipefail
+
+remote="$(git config --get remote.origin.url 2>/dev/null || true)"
+
+host=""; path=""
+if [[ -n "$remote" ]]; then
+    r="${remote%.git}"
+    case "$r" in
+        git@*:*)            host="${r#git@}"; host="${host%%:*}"; path="${r#*:}" ;;
+        ssh://*)            rest="${r#ssh://}"; rest="${rest#*@}"
+                            host="${rest%%/*}"; host="${host%%:*}"; path="${rest#*/}" ;;
+        http://*|https://*) rest="${r#*://}"; host="${rest%%/*}"; path="${rest#*/}" ;;
+    esac
+fi
+
+# Only linkify GitLab remotes; otherwise pass through untouched.
+case "$host" in
+    *gitlab*) ;;
+    *) exec cat ;;
+esac
+[[ -n "$path" ]] || exec cat
+
+BASE="https://${host}" PROJ="$path" perl -pe '
+    my $base = $ENV{BASE};
+    my $proj = $ENV{PROJ};
+    my $osc  = sub { my ($url, $txt) = @_; "\e]8;;$url\a$txt\e]8;;\a" };
+
+    s{(?<![\w/])([A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)+)!(\d+)}
+     {$osc->("$base/$1/-/merge_requests/$2", "$1!$2")}ge;
+
+    s{(?<![\w/!])!(\d+)}
+     {$osc->("$base/$proj/-/merge_requests/$1", "!$1")}ge;
+
+    s{(?<![\w/])([A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)+)#(\d+)}
+     {$osc->("$base/$1/-/issues/$2", "$1#$2")}ge;
+
+    s{(?<![\w/#&])#(\d+)}
+     {$osc->("$base/$proj/-/issues/$1", "#$1")}ge;
+'

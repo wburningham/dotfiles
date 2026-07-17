@@ -28,6 +28,14 @@
 	# https://ductile.systems/zdiff3/
 	conflictStyle = zdiff3
 
+[pager]
+	# Route log/show output through gitlab-linkify so merge-request (!NN) and
+	# issue (#NN) references become OSC 8 hyperlinks (clickable in Ghostty,
+	# Zed, and other OSC-8-capable terminals). -FRX matches git's default less
+	# flags; R keeps color and passes the OSC 8 sequences through.
+	log = gitlab-linkify | less -FRX
+	show = gitlab-linkify | less -FRX
+
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
