@@ -38,7 +38,7 @@
 	{
 		"context": "AcpThread",
 		"bindings": {
-			"y y": "agent::AllowOnce"
+			"y y": "agent::AllowAlways"
 		}
 	},
 	{
