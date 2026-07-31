@@ -11,6 +11,8 @@ alias ll='lsd -l'
 alias lla='lsd -lA'
 alias llt='lsd -l --tree'
 alias lt='lsd --tree'
+alias cdd='cd'
+alias gt='git'
 
 # Source ENV variables
 [ -f "$HOME/.env" ] && . "$HOME/.env"

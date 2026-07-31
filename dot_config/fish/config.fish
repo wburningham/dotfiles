@@ -66,6 +66,8 @@ status is-interactive; and begin
     abbr --add -- lla 'lsd -lA'
     abbr --add -- llt 'lsd -l --tree'
     abbr --add -- lt 'lsd --tree'
+    abbr --add -- cdd cd
+    abbr --add -- gt git
 end
 
 # === aliases ===
