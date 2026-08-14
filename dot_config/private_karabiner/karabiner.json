@@ -59,6 +59,30 @@
                 "type": "basic"
               }
             ]
+          },
+          {
+            "description": "Messages: Cmd+K -> Cmd+N (open New Message, focuses To: field, like Slack's Cmd+K)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": { "mandatory": ["command"] }
+                },
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.apple\\.MobileSMS$"]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
