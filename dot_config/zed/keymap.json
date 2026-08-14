@@ -36,6 +36,15 @@
 		}
 	},
 	{
+		// `agent::AllowAlways` is only handled inside the thread view, so focus
+		// the panel (cmd-i, above) and replay `y y` there. Heads up: a global
+		// `y y` swallows `y` in editors, terminals, and pickers.
+		"context": "!AcpThread",
+		"bindings": {
+			"y y": ["workspace::SendKeystrokes", "cmd-i y y"]
+		}
+	},
+	{
 		"context": "AcpThread",
 		"bindings": {
 			"y y": "agent::AllowAlways"
