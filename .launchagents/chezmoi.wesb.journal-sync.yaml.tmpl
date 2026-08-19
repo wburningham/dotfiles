@@ -1,0 +1,54 @@
+# launch agent that auto-commits and pushes my journal repo daily at 03:00.
+# Repo: https://github.com/wburningham/journal (remote is SSH: git@github.com:wburningham/journal.git).
+# Auth uses ~/.ssh/id_rsa directly; no token is stored. See notes below.
+#
+# What it does each run:
+#   1. ping healthchecks.io /start so a missed run shows up as a dead run
+#   2. cd into the journal working copy
+#   3. stage every file under entries/ and img/
+#   4. commit with a static message, only when something is staged
+#   5. push to origin
+#   6. echo a completion line and ping healthchecks.io with the push exit code
+#
+# Commits are unsigned (commit.gpgSign=false) so the job never blocks waiting for
+# the SSH signing key passphrase. Remove that override if you want signed commits
+# and have the passphrase available to ssh-keygen non-interactively.
+#
+# The heartbeat ping reports the push exit code, so a failed push turns the
+# healthchecks.io "journal-sync" check red. If cd fails the job exits before the
+# final ping, so the check also goes red via the dead-man's switch.
+
+Label: chezmoi.wesb.journal-sync
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/journal-sync.out.log
+StandardErrorPath: /tmp/journal-sync.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - >-
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "journal-sync" }}/start
+    ;
+    cd "$HOME/code/go/src/github.com/wburningham/journal" || exit 1
+    ;
+    echo "journal-sync: staging entries/ and img/\n" >&2
+    ;
+    git add -- 'entries/' 'img/'
+    ;
+    git diff --cached --quiet
+    ||
+    git -c commit.gpgSign=false commit -m 'journal-sync: automated sync'
+    ;
+    git push
+    ;
+    status=$?
+    ;
+    echo "journal-sync: complete (exit $status)\n" >&2
+    ;
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "journal-sync" }}/$status
+
+RunAtLoad: true
+StartCalendarInterval:
+  - Hour: 10
+    Minute: 0
