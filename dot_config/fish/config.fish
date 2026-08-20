@@ -55,7 +55,6 @@ status is-interactive; and begin
     abbr --add -- gglp 'git pull origin (__git.current_branch) --prune && git branch --merged | grep -v (__git.current_branch) | xargs git branch -d'
     abbr --add -- grbai 'git rebase --autosquash --interactive'
     abbr --add -- gs 'git status'
-    abbr --add -- hgrep 'history | grep'
     abbr --add -- ts 'tig status'
     abbr --add -- tscan 'trivy image --quiet --skip-version-check --pkg-types os,library'
 
