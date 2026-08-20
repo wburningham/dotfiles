@@ -83,6 +83,30 @@
                 ]
               }
             ]
+          },
+          {
+            "description": "Maps: Cmd+K -> Cmd+F (focus search, like Slack's Cmd+K)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": { "mandatory": ["command"] }
+                },
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": ["left_command"]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.apple\\.Maps$"]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
