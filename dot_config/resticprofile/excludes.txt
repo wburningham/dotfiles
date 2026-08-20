@@ -1,0 +1,84 @@
+# Node.js / JavaScript / TypeScript
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+dist/
+build/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.parcel-cache/
+coverage/
+out/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Rust
+target/
+Cargo.lock
+
+# Go
+vendor/
+pkg/mod
+pkg/sumdb
+
+# Task
+.task/
+.output/
+
+# Java / JVM
+target/
+.gradle/
+build/
+*.class
+
+# C/C++
+*.o
+*.obj
+cmake-build-*/
+CMakeFiles/
+
+# General build/output
+bin/
+bins/
+.bin/
+obj/
+.cache/
+tmp/
+tmp.*
+temp/
+*.specimens
+*.assay
+.ck/
+
+# IDE/editor
+.idea/
+.vscode/
+*.swp
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Version control internals (usually redundant if backing up the repo, but safe)
+.git/objects/
+.git/lfs/

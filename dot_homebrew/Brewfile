@@ -29,7 +29,9 @@ brew "fisher"
 
 # === misc ===
 brew "mosquitto" # for use with HomeAssistant #spellchecker:disable-line
-brew "rclone" # Rsync for cloud storage https://rclone.org
+brew "restic"
+brew "resticprofile"
+brew "redu" # Disk util for restic repos
 brew "zstd" # Zstandard is a real-time compression algorithm https://facebook.github.io/zstd
 brew "cloc"
 brew "mole"

@@ -1,0 +1,67 @@
+# launch agent that runs the whole "default" resticprofile group (journal, taxes,
+# 3d-models) as a single process, and pings healthchecks.io once for the entire run.
+#
+# resticprofile has no group-level hooks (confirmed against the v2 ScheduleConfig and
+# Group schema references) and v1 config can't schedule a group directly, so this wraps
+# `resticprofile --name default backup` by hand instead of using `resticprofile schedule`.
+#
+# NOTE: the per-profile schedules created by run_onchange_schedule-restic.tmpl (and their
+# own send-before/send-after hooks on the `base` profile in profiles.yaml) are left in
+# place for now, so backups currently run twice — once per-profile, once via this group
+# job — and healthchecks.io gets pinged both per-profile and once here. Clean up by
+# unscheduling journal/taxes/3d-models (`resticprofile --name <profile> unschedule`) and
+# removing send-before/send-after/send-after-fail from `base` once this is confirmed working.
+
+Label: chezmoi.wesb.restic-backup
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/restic-backup-group.out.log
+StandardErrorPath: /tmp/restic-backup-group.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - >-
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "restic-backups" }}/start
+    ;
+    /opt/homebrew/bin/resticprofile --config /Users/wesb/.config/resticprofile/profiles.yaml --no-ansi --name default backup
+    ;
+    status=$?
+    ;
+    echo "restic-backup: complete (exit $status)\n" >&2
+    ;
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "restic-backups" }}/$status
+
+RunAtLoad: true
+# weekdays 10AM & 3PM; launchd uses system local time (America/Denver)
+StartCalendarInterval:
+  - Weekday: 1
+    Hour: 10
+    Minute: 0
+  - Weekday: 1
+    Hour: 15
+    Minute: 0
+  - Weekday: 2
+    Hour: 10
+    Minute: 0
+  - Weekday: 2
+    Hour: 15
+    Minute: 0
+  - Weekday: 3
+    Hour: 10
+    Minute: 0
+  - Weekday: 3
+    Hour: 15
+    Minute: 0
+  - Weekday: 4
+    Hour: 10
+    Minute: 0
+  - Weekday: 4
+    Hour: 15
+    Minute: 0
+  - Weekday: 5
+    Hour: 10
+    Minute: 0
+  - Weekday: 5
+    Hour: 15
+    Minute: 0

@@ -1,0 +1,20 @@
+#!/bin/sh
+# resticprofile's env: and env-file: can't run $(...) command substitution (its godotenv
+# parser leaves it literal), so the keychain lookups defined in .env_files/restic.env are
+# resolved here and the plain values appended to the {{ "{{env}}" }} dotenv file via run-before.
+set -a
+{{ include (joinPath .chezmoi.sourceDir ".env_files/restic.env") }}
+set +a
+
+# restic.env uses B2_* names; restic's S3-compatible backend expects AWS_* credentials.
+[ -n "$B2_ACCOUNT_ID" ] && export AWS_ACCESS_KEY_ID="$B2_ACCOUNT_ID"
+[ -n "$B2_ACCOUNT_KEY" ] && export AWS_SECRET_ACCESS_KEY="$B2_ACCOUNT_KEY"
+
+# Emit only what restic needs, so nothing else from the inherited environment lands in the
+# dotenv file. `case` rather than `grep`: this runs under both launchd and an interactive
+# shell, where `grep` may resolve to different implementations.
+env | while IFS= read -r line; do
+    case "$line" in
+        B2_* | RESTIC_* | AWS_ACCESS_KEY_ID=*|AWS_SECRET_ACCESS_KEY=*) echo "$line" ;;
+    esac
+done

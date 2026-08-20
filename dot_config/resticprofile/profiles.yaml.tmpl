@@ -1,0 +1,88 @@
+# yaml-language-server: $schema=https://creativeprojects.github.io/resticprofile/jsonschema/config.json
+
+version: "1"
+
+# Restic cheatsheet: https://gist.github.com/perfecto25/f528f8d14e1c4b6e2a912513539a5af7
+
+# a group is a profile that will call all profiles one by one
+groups:
+  default:
+    - files
+    - desktop
+
+files:
+  inherit: base
+  backup:
+    tag:
+      - files
+    iexclude:
+      - "*.mp4"
+      - "*.mp3"
+      - "*.mov"
+    source:
+      - ~/Files
+
+desktop:
+  inherit: base
+  backup:
+    tag:
+      - desktop
+    iexclude:
+      - "*.zst"
+      - "*.zip"
+      - "*.tar"
+      - "*.tgz"
+      - "*.bz2"
+      - "*.tar.gz"
+      - "*.m4v"
+      - "*.mp4"
+      - "*.mp3"
+      - "*.mov"
+    source:
+      - ~/Desktop
+
+base:
+  # Repo and creds live in .env_files/restic.env as keychain lookups, so they're in the
+  # shell env too for bare `restic` commands: B2_ACCOUNT_ID, B2_ACCOUNT_KEY,
+  # RESTIC_REPOSITORY, RESTIC_PASSWORD_COMMAND. Neither env: nor env-file: can run $(...)
+  # — resticprofile's dotenv parser leaves it literal — so get_env.sh resolves them and
+  # appends the results to the {{ "{{env}}" }} dotenv file.
+  run-before: '$HOME/.config/resticprofile/get_env.sh >> "{{ "{{env}}" }}"'
+
+  backup:
+    exclude-caches: true
+    exclude-larger-than: 50M
+    one-file-system: true
+    # files with no path are relative to the configuration file
+    iexclude-file:
+      - excludes.txt
+    compression: max
+
+    # send-before:
+    #   - url: https://hc-ping.com/{{ index .heartbeat_ids "restic-backups" }}/start
+    # send-after:
+    #   - url: https://hc-ping.com/{{ index .heartbeat_ids "restic-backups" }}
+    # send-after-fail:
+    #     method: POST
+    #     url: https://hc-ping.com/{{ index .heartbeat_ids "restic-backups" }}/fail
+    #     body: "${ERROR}\n\n${ERROR_STDERR}"
+    #     headers:
+    #       - name: Content-Type
+    #         value: "text/plain; charset=UTF-8"
+    # # https://creativeprojects.github.io/resticprofile/schedules/configuration/index.html
+    # schedule: "Mon..Fri 10:00,15:00" # weekdays 10AM & 3PM; launchd uses system local time (America/Denver)
+    # schedule-after-network-online: true
+    # schedule-permission: user_logged_on # IMPORTANT: 'user' maps to LimitLoadToSessionType=Background, which can't access the keychain
+    # schedule-priority: standard # IMPORTANT: can't be 'background' because we need access to the keychain for secrets
+    # schedule-log: /tmp/restic-backup.log
+    # schedule-lock-mode: default
+    # schedule-lock-wait: 10m
+    # schedule-ignore-on-battery: true
+
+  retention:
+    after-backup: true
+    prune: true
+    keep-daily: 5
+    keep-weekly: 4
+    keep-monthly: 3
+    keep-yearly: 2

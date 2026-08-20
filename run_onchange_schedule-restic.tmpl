@@ -1,0 +1,59 @@
+#!/bin/sh
+# run_onchange_schedule-restic.sh.tmpl
+set -e
+
+# Trigger re-scheduling of restic launch agent when profiles config changes (via hash in comment)
+# {{ range $path := glob (joinPath .chezmoi.sourceDir "dot_config/resticprofile/*") }}
+# {{ $path }}: {{ include $path | sha256sum }}
+# {{ end }}
+
+# resticprofile has no way to mark "base" as inheritance-only/abstract: --all schedules
+# every profile with a backup+schedule section, including base, which then fails at
+# runtime (no source). So schedule each concrete profile by name instead of using --all,
+# reading the profile names straight out of profiles.yaml's "default" group so there's
+# only one list to maintain. Only profiles with backup.schedule (including via inherit)
+# are scheduled; unschedule still runs for every group member so stale jobs are removed
+# when schedule is dropped from the config.
+{{- $config := include (joinPath .chezmoi.sourceDir "dot_config/resticprofile/profiles.yaml.tmpl") | fromYaml }}
+{{- $profiles := index $config.groups "default" }}
+{{- $toSchedule := list }}
+{{- range $name := $profiles }}
+  {{- $found := false }}
+  {{- $toVisit := list $name }}
+  {{- range until 10 }}
+    {{- if $found }}{{ break }}{{ end }}
+    {{- if eq (len $toVisit) 0 }}{{ break }}{{ end }}
+    {{- $current := index $toVisit 0 }}
+    {{- $toVisit = $toVisit | rest }}
+    {{- $p := index $config $current }}
+    {{- if not $p }}{{ continue }}{{ end }}
+    {{- with index $p "backup" }}
+      {{- if index . "schedule" }}{{ $found = true }}{{ end }}
+    {{- end }}
+    {{- if and (not $found) (index $p "inherit") }}
+      {{- $inherit := index $p "inherit" }}
+      {{- if kindIs "string" $inherit }}
+        {{- $toVisit = append $toVisit $inherit }}
+      {{- else if kindIs "slice" $inherit }}
+        {{- $toVisit = concat $toVisit $inherit }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- if $found }}
+    {{- $toSchedule = append $toSchedule $name }}
+  {{- end }}
+{{- end }}
+profiles="{{ $profiles | join " " }}"
+scheduled="{{ $toSchedule | join " " }}"
+
+for profile in $profiles; do
+  echo "> START resticprofile unschedule ($profile)"
+  resticprofile --name "$profile" unschedule
+  echo "> DONE  resticprofile unschedule ($profile)"
+done
+
+for profile in $scheduled; do
+  echo "> START resticprofile schedule ($profile)"
+  resticprofile --name "$profile" schedule
+  echo "> DONE  resticprofile schedule ($profile)"
+done
