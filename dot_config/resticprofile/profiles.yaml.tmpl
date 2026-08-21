@@ -7,8 +7,52 @@ version: "1"
 # a group is a profile that will call all profiles one by one
 groups:
   default:
+    - code
     - files
     - desktop
+
+code:
+  inherit: base
+  backup:
+    tag:
+      - code
+    iexclude:
+      - "*.mp4"
+      - "*.mp3"
+      - "*.mov"
+    source:
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/adventofcode
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/blueprint-images
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/groupcache
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/groupcache-example
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/httpjson
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/images
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/kotest
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/makefiles
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/renovate-osv-source
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/renovate-presets
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/rmake
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/sbom-playground
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/scannables
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/sectool-token-manager
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/sourcegraph
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/style-guide
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/tasks
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/triage
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/usegoreleaser
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/vegeta-jwt-attack
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/work-notes
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/workerd-test
+      - ~/code/go/src/gitlab-app.eng.qops.net/wesb/zed-increment-extension
+      - ~/code/go/src/gitlab-app.eng.qops.net/tylerc/jsonassay
+      - ~/code/go/src/gitlab-app.eng.qops.net/golang/
+      - ~/code/go/src/gitlab-app.eng.qops.net/tasks/
+      - ~/code/go/src/gitlab-app.eng.qops.net/prose/
+      - ~/code/go/src/gitlab-app.eng.qops.net/fam/fam/
+      - ~/code/go/src/gitlab-app.eng.qops.net/fam/staticassets/
+      - ~/code/go/src/gitlab-app.eng.qops.net/collect-platform/rfcs/
+      - ~/code/go/src/gitlab-app.eng.qops.net/codesearch/
+      - ~/code/go/src/gitlab-app.eng.qops.net/php/services/jfeapi/cmd/jfeapi/
 
 files:
   inherit: base

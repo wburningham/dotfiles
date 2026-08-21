@@ -37,6 +37,8 @@ Cargo.lock
 vendor/
 pkg/mod
 pkg/sumdb
+.go-cache
+.go-mod-cache
 
 # Task
 .task/
