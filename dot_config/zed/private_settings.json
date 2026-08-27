@@ -45,7 +45,8 @@
 		},
 		"cursor": {
 			"default_config_options": {
-				"model": "composer-2[fast=true]"
+				"mode": "agent",
+    "model": "composer-2[fast=true]"
 			},
 			"type": "registry"
 		}
@@ -173,6 +174,8 @@
 		"ktrz-monokai": true,
 		"php": true,
 		"ruby": true,
+		"sql": true,
+		"svelte": true,
 		"toml": true,
 		"txtar": true,
 		"typos": true,
