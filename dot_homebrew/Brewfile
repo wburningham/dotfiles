@@ -41,7 +41,6 @@ brew "fastfetch" # faster neofetch
 cask "tailscale-app" # personal VPN
 # cask "db-browser-for-sqlite"
 cask "meetingbar"
-cask "hiddenbar"
 cask "karabiner-elements"
 
 # # === dev:git ===
@@ -172,6 +171,8 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "the-unarchiver"
 cask "zed"
+cask "thaw"
+
 # cask "johannesnagl/tap/showmd" # Markdown previews from Finder
 # cask "johannesnagl/tap/holdor" # Prevents system sleep while agentics run
 
