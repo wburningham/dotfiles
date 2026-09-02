@@ -85,7 +85,7 @@
 	"file_types": {
 		"YAML": ["*.yaml.tmpl"], // enable YAML parsing chezmoi .yaml.tmpl files
 		"JSON": ["*.qsf"], // enable JSON parsing survey .qsf files
-		"JSONC": ["*.json5"], // enable JSONC parsing for .json5 extension
+		"JSONC": ["private_settings.json","*.json5"], // enable JSONC parsing for .json5 extension & zed settings
 		"Shell Script": [".envrc", ".envrc.local"],
 		"Git Attributes": ["**/{git,.git,.git/info}/attributes"],
 		"Git Config": [
