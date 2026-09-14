@@ -39,9 +39,12 @@ brew "dsully/tap/macos-defaults"
 brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
 brew "fastfetch" # faster neofetch
 cask "tailscale-app" # personal VPN
-# cask "db-browser-for-sqlite"
+# cask "db-browser-for-sqlite" # local sqlite onlyy
+# cask "dbeaver-community" # local and libsql-compatible client
 cask "meetingbar"
 cask "karabiner-elements"
+cask "anki"
+# brew "zola"
 
 # # === dev:git ===
 brew "git"
@@ -82,6 +85,9 @@ brew "parallel" # Shell command parallelization utility https://savannah.gnu.org
 # tap "tldev/tap", "https://github.com/tldev/homebrew-tap.git"
 # cask "posturr"
 
+tap "dyoshikawa/rulesync", "https://github.com/dyoshikawa/rulesync"
+brew "rulesync"
+
 # === dev:http ===
 brew "wget"
 brew "curl"
@@ -113,7 +119,11 @@ brew "apko"
 brew "melange"
 # brew "cosign"
 # brew "cyclonedx-gomod"
-# brew "syft"
+brew "syft"
+brew "skopeo" # Command line utility that performs various operations on container images and image repositories.
+brew "crane" # Tool for interacting with remote images and registries
+brew "regclient" # Docker and OCI Registry Client in Go and tooling using those libraries
+brew "qemu"
 brew "oras"
 # brew "skopeo"
 # brew "parlay"
