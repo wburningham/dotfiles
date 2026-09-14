@@ -46,6 +46,7 @@ end
 
 # === abbreviations ===
 status is-interactive; and begin
+    abbr --add -- capply chezmoi apply --interactive
     abbr --add -- copy pbcopy
     abbr --add -- paste pbpaste
     abbr --add -- pasta pbpaste
@@ -71,7 +72,6 @@ end
 
 # === aliases ===
 status is-interactive; and begin
-    alias c chezmoi
     alias d docker
     alias allow 'direnv allow .'
     alias deny 'direnv deny .'
