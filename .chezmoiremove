@@ -1,0 +1,19 @@
+# Paths chezmoi removes from the target dir on every apply, relative to ~.
+#
+# Every entry is a rulesync project-scope output with no pass that generates it,
+# so rulesync's own `delete: true` (scoped per pass) can never reclaim it.
+# See README.md for the full pipeline.
+#
+# Do not add .claude/CLAUDE.md here. This file is applied on every apply, but the
+# generate script only re-fires on a hash change, so the path would sit missing
+# most of the time.
+
+# codexcli rules, project scope. Replaced by ~/.codex/AGENTS.md (pass 3).
+AGENTS.md
+
+# cursor permissions, project scope. Replaced by ~/.cursor/cli-config.json (pass 2).
+.cursor/cli.json
+
+# claudecode rules, project scope. Replaced by ~/.claude/CLAUDE.md (pass 3),
+# which pass 3 now writes directly instead of through a symlink.
+CLAUDE.md

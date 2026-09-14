@@ -1,0 +1,144 @@
+{
+  "permission": {
+    "bash": {
+      "rg --pre*": "deny",
+      "rg -z*": "deny",
+      "rg --search-zip*": "deny",
+      "rg *": "allow",
+      "rulesync docs": "allow",
+      "rulesync docs *": "allow",
+      "rulesync docs 2>&1": "allow",
+      "rulesync docs 2>&1 | *": "allow",
+      "rulesync docs | *": "allow",
+      "rulesync doctor": "allow",
+      "rulesync doctor *": "allow",
+      "rulesync doctor 2>&1": "allow",
+      "rulesync doctor 2>&1 | *": "allow",
+      "rulesync doctor | *": "allow",
+      "rulesync --help 2>&1": "allow",
+      "rulesync --help": "allow",
+      "rulesync --version": "allow",
+      "rulesync generate --dry-run *": "allow",
+      "c apply": "deny",
+      "chezmoi apply": "deny",
+      "cd *": "allow",
+      "cdd *": "allow",
+      "cue *": "allow",
+      "docker diff *": "allow",
+      "docker history *": "allow",
+      "docker images": "allow",
+      "docker images *": "allow",
+      "docker info": "allow",
+      "docker info *": "allow",
+      "docker inspect *": "allow",
+      "docker logs *": "allow",
+      "docker ps": "allow",
+      "docker ps *": "allow",
+      "docker stats *": "allow",
+      "docker top *": "allow",
+      "docker version": "allow",
+      "docker version *": "allow",
+      "echo *": "allow",
+      "git diff *": "allow",
+      "git diff * | grep *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git status *": "allow",
+      "grep *": "allow",
+      "gt diff *": "allow",
+      "gt diff * | grep *": "allow",
+      "gt log *": "allow",
+      "gt show *": "allow",
+      "gt status *": "allow",
+      "go mod *": "allow",
+      "go build *": "allow",
+      "go test *": "allow",
+      "go test * 2>&1 | *": "allow",
+      "go test * | *": "allow",
+      "head *": "allow",
+      "ls -la *": "allow",
+      "tail *": "allow",
+      "task deploy": "deny",
+      "task deploy *": "deny",
+      "which *": "allow"
+    },
+    "webfetch": {
+      "agentclientprotocol.com": "allow",
+      "go.dev": "allow",
+      "periscope.eng.qops.net": "allow",
+      "raw.githubusercontent.com": "allow",
+      "sourcegraph.com": "allow",
+      "www.qualtrics.com": "allow",
+      "zed.dev": "allow",
+      "surveyassay.eng.qops.net": "allow",
+      "gitlab-app.eng.qops.net": "allow",
+      "creativeprojects.github.io": "allow",
+      "zensical.org": "allow",
+      "support.apple.com": "allow",
+      "github.com": "allow"
+    },
+    "Skill": {
+      "go-style": "allow",
+      "say-hello": "allow",
+      "collect-platform-context-synthesizer": "allow",
+      "design-and-rationale": "allow",
+      "cue-context": "allow",
+      "gitlab": "allow",
+      "programming-language-theory": "allow",
+      "skill-development": "allow",
+      "sourcegraph": "allow",
+      "rfc-discusser": "allow",
+      "use-modern-go": "allow",
+      "rfc-author": "allow",
+      "taskfile": "allow",
+      "collect-platform-context": "allow",
+      "markdown-style": "allow",
+      "prose-style": "allow",
+      "gl-mr-discussion": "allow",
+      "change-list-message": "allow"
+    }
+  },
+  "claudecode": {
+    "permissions": {
+      "additionalDirectories": [
+        "/Users/wesb/code/go/pkg/mod",
+        "/Users/wesb/code/go/src/gitlab-app.eng.qops.net/collect-platform/rfcs"
+      ]
+    },
+    "sandbox": {
+      "filesystem": {
+        "allowWrite": [
+          "/Users/wesb/Library/Caches/go-build",
+          "/Users/wesb/code/go/pkg/mod",
+          "/Users/wesb/.docker/run/docker.sock"
+        ]
+      },
+      "network": {
+        "allowedDomains": [
+          "*.github.com",
+          "github.com",
+          "localhost",
+          "127.0.0.1",
+          "::1",
+          "qualtrics-docker-registry-v2.s3.amazonaws.com",
+          "packages.wolfi.dev",
+          "apk.cgr.dev",
+          "cgr.dev",
+          "dl.enterprise.chainguard.dev",
+          "quay.io",
+          "registry.fedoraproject.org"
+        ],
+        "allowLocalBinding": true
+      }
+    },
+    "effortLevel": "xhigh",
+    "env": {
+      "GO111MODULE": "on",
+      "GONOPROXY": "none",
+      "GONOSUMDB": "gitlab-app.eng.qops.net/*",
+      "GOPRIVATE": "gitlab-app.eng.qops.net/*",
+      "GOPROXY": "https://goproxy.eng.qops.net:1720"
+    },
+    "model": "haiku"
+  }
+}

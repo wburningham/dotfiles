@@ -1,0 +1,32 @@
+#!/bin/sh
+# shellcheck disable=SC1083
+# run_onchange_rulesync.sh.tmpl (chezmoi template)
+set -e
+
+# Trigger re-run when rulesync config or source files change (via hash in comment).
+# skills/ is excluded because .chezmoiignore keeps it out of ~/.rulesync/, so it
+# feeds nothing that generate reads.
+# rulesync.jsonc: {{ include "rulesync.jsonc" | sha256sum }}
+# {{ range $path := glob (joinPath .chezmoi.sourceDir "exact_dot_rulesync/**") }}
+# {{ if and (eq (stat $path).type "file") (ne (base $path) ".DS_Store") (not (contains "/skills/" $path)) }}
+# {{ $path }}: {{ include $path | sha256sum }}
+# {{ end }}
+# {{ end }}
+
+if ! command -v rulesync >/dev/null 2>&1; then
+  echo "chezmoi: warning: rulesync not found on PATH, skipping" >&2
+  exit 0
+fi
+
+cd {{ .chezmoi.homeDir | quote }}
+
+# Cursor rules: project-scope generate from ~ writes ~/.cursor/rules/*.mdc.
+# rulesync global mode does not support Cursor rules generation.
+rulesync generate --targets cursor --features rules
+
+# Permissions: --global required for user-scope outputs (cli-config.json,
+# ~/.claude/settings.json, ~/.codex/config.toml). Project-scope writes cli.json.
+rulesync generate --global --features permissions
+
+# Claude Code + Codex rules: user-scope only; handled here since pass 1 is cursor-only.
+rulesync generate --global --targets claudecode,codexcli --features rules
