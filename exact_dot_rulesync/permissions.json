@@ -20,6 +20,7 @@
       "rulesync --version": "allow",
       "rulesync generate --dry-run *": "allow",
       "c apply": "deny",
+      "claude --version": "allow",
       "chezmoi apply": "deny",
       "cd *": "allow",
       "cdd *": "allow",
@@ -44,6 +45,7 @@
       "git log *": "allow",
       "git show *": "allow",
       "git status *": "allow",
+      "glread *": "allow",
       "grep *": "allow",
       "gt diff *": "allow",
       "gt diff * | grep *": "allow",
@@ -99,6 +101,20 @@
     }
   },
   "claudecode": {
+    "permission": {
+      "mcp__grafana__list_datasources": {
+        "*": "allow"
+      },
+      "mcp__grafana__list_prometheus_metric_names": {
+        "*": "allow"
+      },
+      "mcp__grafana__list_prometheus_label_values": {
+        "*": "allow"
+      },
+      "mcp__grafana__query_prometheus": {
+        "*": "allow"
+      }
+    },
     "permissions": {
       "additionalDirectories": [
         "/Users/wesb/code/go/pkg/mod",

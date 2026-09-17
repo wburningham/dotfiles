@@ -1,0 +1,3 @@
+# rulesync install output in the chezmoi source tree.
+# Managed sources live in exact_dot_rulesync/ and deploy to ~/.rulesync/.
+.rulesync/

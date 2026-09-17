@@ -47,6 +47,7 @@ end
 # === abbreviations ===
 status is-interactive; and begin
     abbr --add -- capply chezmoi apply --interactive
+    abbr --add -- cupdate cupdate-locks
     abbr --add -- copy pbcopy
     abbr --add -- paste pbpaste
     abbr --add -- pasta pbpaste

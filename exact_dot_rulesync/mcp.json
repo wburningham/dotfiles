@@ -1,0 +1,13 @@
+{
+  "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/mcp-schema.json",
+  "mcpServers": {
+    "gitlab": {
+      "type": "http",
+      "url": "https://mcp-gitlab.eng.qops.net/mcp-proxy/v1/gitlab"
+    },
+    "grafana": {
+      "type": "http",
+      "url": "https://mcp-gitlab.eng.qops.net/mcp-proxy/v1/grafana"
+    }
+  }
+}

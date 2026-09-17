@@ -5,11 +5,14 @@
   "targets": ["cursor", "claudecode", "codexcli"],
 
   "features": [
-    // "mcp",
+    "mcp",
     // "commands",
     // "subagents",
     // "hooks",
-    // "skills",
+    "skills",
+    // permissions.json is chezmoi-managed (exact_dot_rulesync/permissions.json ->
+    // ~/.rulesync/permissions.json). run_onchange_rulesync-generate.tmpl regenerates
+    // tool outputs from it on chezmoi apply.
     "permissions",
     "rules"
   ],
@@ -18,6 +21,14 @@
 
   "verbose": true,
   "silent": false,
+  "sources": [
+    {
+      "source": "https://gitlab-app.eng.qops.net/wesb/agent-skills.git",
+      "transport": "git",
+      "ref": "master",
+      "path": "skills"
+    }
+  ],
 
   // Advanced options
   // "simulateCommands": false, // Generate simulated commands

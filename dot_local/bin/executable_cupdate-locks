@@ -1,0 +1,39 @@
+#!/bin/sh
+# Refresh upstream-pinned lockfiles chezmoi manages and re-add them to source.
+# Run from any directory. Commit the updated locks in chezmoi source, then capply.
+set -e
+
+command -v chezmoi >/dev/null 2>&1 || {
+	echo "chezmoi not found on PATH" >&2
+	exit 1
+}
+
+cd "$HOME"
+
+updated=""
+
+# rulesync.lock — declarative sources in rulesync.jsonc
+update_rulesync_lock() {
+	command -v rulesync >/dev/null 2>&1 || {
+		echo "rulesync not found on PATH; skipping rulesync.lock" >&2
+		return 0
+	}
+	if ! test -f rulesync.jsonc; then
+		return 0
+	fi
+
+	rm -rf .rulesync/skills/.curated .rulesync/rules/.curated
+	rulesync install --update
+	chezmoi re-add "$HOME/rulesync.lock"
+	updated="${updated}rulesync.lock "
+}
+
+update_rulesync_lock
+
+if test -z "$updated"; then
+	echo "No lockfiles updated."
+	exit 0
+fi
+
+echo "Updated lockfiles in chezmoi source: $updated"
+echo "Commit them, then: capply"
