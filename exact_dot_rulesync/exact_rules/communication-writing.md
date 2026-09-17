@@ -3,8 +3,6 @@ root: false
 targets:
   - '*'
 description: Writing style for all generated text
-globs:
-  - '**/*'
 cursor:
   alwaysApply: true
   description: Writing style for all generated text

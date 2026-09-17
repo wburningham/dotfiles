@@ -3,8 +3,6 @@ root: false
 targets:
   - '*'
 description: Read-only git inspection with gt and cdd shell aliases
-globs:
-  - '**/*'
 cursor:
   alwaysApply: true
   description: Read-only git inspection with gt and cdd shell aliases

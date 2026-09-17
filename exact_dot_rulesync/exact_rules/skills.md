@@ -3,8 +3,6 @@ root: false
 targets:
   - '*'
 description: Skill loading conventions and continuous skill improvement protocol
-globs:
-  - '**/*'
 cursor:
   alwaysApply: true
   description: Skill loading conventions and continuous skill improvement protocol

@@ -3,8 +3,6 @@ root: false
 targets:
   - '*'
 description: Conversational tone and acknowledgment style
-globs:
-  - '**/*'
 cursor:
   alwaysApply: true
   description: Conversational tone and acknowledgment style
