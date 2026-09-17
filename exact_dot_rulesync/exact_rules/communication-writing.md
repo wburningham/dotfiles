@@ -104,3 +104,19 @@ Don't hard-wrap prose. One paragraph = one line; let the renderer wrap. Exceptio
 Always use contractions in all generated text: aren't, can't, couldn't, didn't, don't, doesn't, hasn't, haven't, how's, isn't, shouldn't, wasn't, weren't, won't.
 
 **Exceptions:** technical identifiers, direct quotations, legal/regulatory text, RFC 2119 keywords in caps (`MUST NOT`, `SHALL NOT`).
+
+## Messages I send to coworkers
+
+Applies to Slack messages, emails, and GitLab comments addressed to people. Everything above still governs the text you draft.
+
+- Open on the substance. No "Hey all", no "To be clear up front:", no scene-setting.
+- No sign-off, no "Thanks!", no exclamation points.
+
+### Editing a draft I wrote
+
+A draft I wrote is mine, so edit it conservatively.
+
+- Leave a sentence alone if it reads fine aloud, even where it breaks "Minimize comma usage".
+- Flag only sentences that fail to parse. Don't propose style-only fixes, and don't re-raise one I've declined.
+- After rewriting, list what changed and why in a few lines, and say what I can revert.
+- Render the full message in a markdown code block so I can copy it.
