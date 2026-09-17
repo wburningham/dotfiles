@@ -4,6 +4,13 @@
 # ❯ <move to .mac_apps>
 # Add entry to this file
 
+[flickr-cli]
+    type = "archive-file"
+    url = 'https://github.com/thedavidweng/flickr-cli/releases/download/v0.3.1/flickr_0.3.1_darwin_arm64.tar.gz'
+    checksum.sha256 = "200b1db8d16b62244065a9defd05bbd68b6d79ed4570384c7650ac4b1db6f600"
+    path = "flickr"
+    executable = true
+    targetPath = ".local/bin/flickr"
 [Dash]
     type = "archive"
     encrypted = true
