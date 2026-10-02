@@ -35,6 +35,7 @@ brew "redu" # Disk util for restic repos
 brew "zstd" # Zstandard is a real-time compression algorithm https://facebook.github.io/zstd
 brew "cloc"
 brew "mole"
+brew "caddy"
 brew "dsully/tap/macos-defaults"
 brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
 brew "fastfetch" # faster neofetch

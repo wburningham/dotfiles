@@ -1,0 +1,28 @@
+# Local reverse proxy for gitlab-app.eng.qops.net on 127.0.0.1:9114.
+# Only GET and HEAD are proxied; other methods receive 405.
+
+Label: chezmoi.wesb.gitlab-proxy
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/gitlab-proxy.out.log
+StandardErrorPath: /tmp/gitlab-proxy.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - |
+    caddy run --adapter caddyfile --config - <<'EOF'
+    http://127.0.0.1:9114 {
+      @allowed method GET HEAD
+      handle @allowed {
+        reverse_proxy https://gitlab-app.eng.qops.net {
+          header_up Host gitlab-app.eng.qops.net
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+    EOF
+RunAtLoad: true
+KeepAlive: true
