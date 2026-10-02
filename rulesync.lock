@@ -3,20 +3,23 @@
   "sources": {
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
-      "resolvedRef": "34e763904825b7ec7e8bb4051bbbcda36b3b5743",
-      "resolvedAt": "2026-09-15T16:58:28.884Z",
+      "resolvedRef": "2c5688a049e245f0b9c8da19280b296c6a8ca6e3",
+      "resolvedAt": "2026-10-02T19:14:44.101Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
         },
         "gl-draft-review": {
-          "integrity": "sha256-d0ce728265356c7bde7794a5cb8a5d0dde61891669b04ceab09200d141378bf2"
+          "integrity": "sha256-b7ec22bf00c4ae3ec75e84e3d72696f6b0a895f5835f64bccfee2a341b58e664"
         },
         "gl-mr-discussion": {
-          "integrity": "sha256-ce90f70c7db2d8834a48eb68b571cc5d51eb9fe6e75e648b4a3279f387e00a9f"
+          "integrity": "sha256-7ba132690b3fb62ba3a7403c296aeeb32d5f3cdc46b2a4e12c92b10d258e2341"
         },
         "programming-language-theory": {
           "integrity": "sha256-f7773dc2ef8dc8a79443b09284ef2928c0a297ecea12d48b571e70e58f487c92"
+        },
+        "read-assay": {
+          "integrity": "sha256-dc7e8ec57a5ca26e4fcaa16085705d89827f7e1c7c27f365760b9dfe93db3340"
         },
         "rfc-author": {
           "integrity": "sha256-efa99d8b3101b6caae54d4c1eff1c7ed600d625061bdfb7501b015924fee8ad7"
@@ -24,7 +27,10 @@
         "rfc-discusser": {
           "integrity": "sha256-34a3c4599ac81101db2f841e4f244705fe1a97a77193b2d3f8e25210a8fd29be"
         }
-      }
+      },
+      "skillSelection": [
+        "*"
+      ]
     }
   }
 }
