@@ -1,4 +1,6 @@
-# Local reverse proxy for gitlab-app.eng.qops.net on 127.0.0.1:9114.
+# Local reverse proxies on 127.0.0.1:
+#   9114 -> https://gitlab-app.eng.qops.net
+#   7445 -> https://surveyassay.eng.qops.net
 # Only GET and HEAD are proxied; other methods receive 405.
 
 Label: chezmoi.wesb.gitlab-proxy
@@ -17,6 +19,18 @@ ProgramArguments:
       handle @allowed {
         reverse_proxy https://gitlab-app.eng.qops.net {
           header_up Host gitlab-app.eng.qops.net
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+
+    http://127.0.0.1:7445 {
+      @allowed method GET HEAD
+      handle @allowed {
+        reverse_proxy https://surveyassay.eng.qops.net {
+          header_up Host surveyassay.eng.qops.net
         }
       }
       handle {
