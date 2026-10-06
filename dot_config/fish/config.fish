@@ -68,7 +68,6 @@ status is-interactive; and begin
     abbr --add -- llt 'lsd -l --tree'
     abbr --add -- lt 'lsd --tree'
     abbr --add -- cdd cd
-    abbr --add -- gt git
 end
 
 # === aliases ===
@@ -77,9 +76,11 @@ status is-interactive; and begin
     alias allow 'direnv allow .'
     alias deny 'direnv deny .'
     alias dp podman
+    alias gt git
     alias h history
     alias nvm fnm
     alias neofetch fastfetch
+    alias pwdcopy 'pwd | pbcopy'
     # Use alias instead of abbreviation since ctrl+r doesn't work well w/ multi-line commands
     alias gcopy 'git rev-parse HEAD | tr -d '\''
 '\'' | pbcopy'
