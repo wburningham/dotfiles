@@ -8,9 +8,3 @@
 # Finder droppings. Also keeps them out of run_onchange trigger hashes.
 .DS_Store
 **/.DS_Store
-
-# rulesync install output in the chezmoi source tree. Managed sources live in
-# exact_dot_rulesync/ and deploy to ~/.rulesync/. On the target, skills/.curated/
-# is preserved because exact_dot_rulesync/skills/ is not exact_.
-.rulesync/
-.rulesync/**
