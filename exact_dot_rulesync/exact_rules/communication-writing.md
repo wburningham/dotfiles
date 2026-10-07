@@ -88,6 +88,8 @@ Don't use the following words or phrases in any text you generate. This applies 
 - `the question is`
 - `load-bearing`
 - `load bearing`
+- `when <X> lands`
+- `this lands...`
 
 **Self-check before submitting**: scan your response for these words and rewrite using alternatives.
 
