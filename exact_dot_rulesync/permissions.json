@@ -47,6 +47,7 @@
       "git status *": "allow",
       "readassay *": "allow",
       "readassay * | jq *": "allow",
+      "readassay * | jq * | head *": "allow",
       "glread *": "allow",
       "grep *": "allow",
       "gt branch --contains **": "allow",
