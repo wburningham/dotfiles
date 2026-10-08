@@ -48,6 +48,7 @@
       "readassay *": "allow",
       "readassay * | jq *": "allow",
       "readassay * | jq * | head *": "allow",
+      "readassay * 2>&1 | *": "allow",
       "glread *": "allow",
       "grep *": "allow",
       "gt branch --contains **": "allow",
@@ -82,7 +83,7 @@
       "tail *": "allow",
       "task deploy": "deny",
       "task deploy *": "deny",
-      "task lint": "deny",
+      "task lint": "allow",
       "which *": "allow"
     },
     "webfetch": {
