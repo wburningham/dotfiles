@@ -90,6 +90,7 @@ Don't use the following words or phrases in any text you generate. This applies 
 - `load bearing`
 - `when <X> lands`
 - `this lands...`
+- `landed on`
 
 **Self-check before submitting**: scan your response for these words and rewrite using alternatives.
 

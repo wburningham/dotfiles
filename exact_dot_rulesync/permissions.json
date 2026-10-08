@@ -69,7 +69,10 @@
       "gt log *": "allow",
       "gt log * 2>&1": "allow",
       "gt show *": "allow",
+      "gt show * 2>&1": "allow",
+      "gt show * 2>&1 | sed *": "allow",
       "gt show * | sed *": "allow",
+      "sed -n *": "allow",
       "gt status": "allow",
       "gt status *": "allow",
       "go mod *": "allow",
@@ -83,6 +86,7 @@
       "tail *": "allow",
       "task deploy": "deny",
       "task deploy *": "deny",
+      "task lint": "deny",
       "which *": "allow"
     },
     "webfetch": {
