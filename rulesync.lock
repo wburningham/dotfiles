@@ -3,8 +3,8 @@
   "sources": {
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
-      "resolvedRef": "2c5688a049e245f0b9c8da19280b296c6a8ca6e3",
-      "resolvedAt": "2026-10-02T19:14:44.101Z",
+      "resolvedRef": "4db380ce78ff62d386592c9118ec16df7d9355a0",
+      "resolvedAt": "2026-10-08T11:55:41.860Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
@@ -19,7 +19,7 @@
           "integrity": "sha256-f7773dc2ef8dc8a79443b09284ef2928c0a297ecea12d48b571e70e58f487c92"
         },
         "read-assay": {
-          "integrity": "sha256-dc7e8ec57a5ca26e4fcaa16085705d89827f7e1c7c27f365760b9dfe93db3340"
+          "integrity": "sha256-993b6c40841eedf8db79ba70739930aebf33f63681d31c12619192b87394b12f"
         },
         "rfc-author": {
           "integrity": "sha256-efa99d8b3101b6caae54d4c1eff1c7ed600d625061bdfb7501b015924fee8ad7"
