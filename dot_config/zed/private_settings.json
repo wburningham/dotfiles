@@ -18,7 +18,10 @@
 		"dock": "left"
 	},
 	"agent": {
-		"sidebar_side": "right",
+		"threads_sidebar": {
+   "position": "right"
+  },
+  "use_modifier_to_send": true,
   "dock": "right",
 		"default_model": { "provider": "ollama", "model": "orieg/gemma3-tools:12b-ft-v2" },
 		"favorite_models": [],
@@ -35,7 +38,8 @@
 	"agent_servers": {
 		"codex-acp": {
    "default_config_options": {
-    "mode": "agent",
+    "collaboration_mode": "plan",
+    "mode": "read-only",
     "reasoning_effort": "max",
     "model": "gpt-5.6-terra"
    },
@@ -47,8 +51,8 @@
 			},
 			"default_config_options": {
 				"effort": "xhigh",
-				"model": "opus[1m]",
-				"mode": "default"
+				"model": "opus",
+				"mode": "acceptEdits"
 			},
 			"type": "registry"
 		},
@@ -94,7 +98,7 @@
 	"file_types": {
 		"YAML": ["*.yaml.tmpl"], // enable YAML parsing chezmoi .yaml.tmpl files
 		"JSON": ["*.qsf"], // enable JSON parsing survey .qsf files
-		"JSONC": ["private_settings.json","*.json5"], // enable JSONC parsing for .json5 extension
+		"JSONC": ["private_settings.json"],
 		"Shell Script": [".envrc", ".envrc.local"],
 		"Git Attributes": ["**/{git,.git,.git/info}/attributes"],
 		"Git Config": [
@@ -127,6 +131,11 @@
 			}
 		},
 		"vale": {
+    	"binary": {
+        "env": {
+          "VALE_STYLES_PATH": "/Users/wesb/.vale-styles"
+        }
+      },
 			// These initialization options are merged into Zed's defaults
 			"initialization_options": {
 				"installVale": false,
@@ -180,6 +189,7 @@
 		"groovy": true,
 		"html": true,
 		"java": true,
+		"json5": true,
 		"ktrz-monokai": true,
 		"php": true,
 		"ruby": true,
