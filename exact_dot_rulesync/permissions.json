@@ -101,6 +101,11 @@
       "support.apple.com": "allow",
       "github.com": "allow"
     },
+    "read": {
+      "~/.claude/skills/**": "allow",
+      "~/.cursor/skills/**": "allow",
+      "~/.agents/skills/**": "allow"
+    },
     "Skill": {
       "go-style": "allow",
       "say-hello": "allow",
