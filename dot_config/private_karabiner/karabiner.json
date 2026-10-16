@@ -67,14 +67,6 @@
                   }
                 ],
                 "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "f2",
-                  "modifiers": { "mandatory": ["left_option"] }
-                },
-                "to": [{ "key_code": "illumination_increment" }],
-                "type": "basic"
               }
             ]
           },
