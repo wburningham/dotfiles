@@ -4,6 +4,24 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "Caps Lock -> Hyper (ctrl+opt+shift+cmd)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": ["left_command", "left_control", "left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Keyboard Illumination (left_opt+f1->illumination_decrement & left_opt+f2->illumination_increment)",
             "manipulators": [
               {
