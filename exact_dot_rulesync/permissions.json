@@ -74,6 +74,7 @@
       "gt status *": "allow",
       "gt tag *": "allow",
       "gt tag * | head *": "allow",
+      "go vet *": "allow",
       "go mod *": "allow",
       "go build *": "allow",
       "go test *": "allow",
