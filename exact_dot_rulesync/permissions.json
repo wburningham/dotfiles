@@ -72,6 +72,8 @@
       "sed -n *": "allow",
       "gt status": "allow",
       "gt status *": "allow",
+      "gt tag *": "allow",
+      "gt tag * | head *": "allow",
       "go mod *": "allow",
       "go build *": "allow",
       "go test *": "allow",
