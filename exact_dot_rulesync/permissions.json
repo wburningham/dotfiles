@@ -152,6 +152,7 @@
       ]
     },
     "sandbox": {
+      "enableWeakerNetworkIsolation": true,
       "filesystem": {
         "allowWrite": [
           "/Users/wesb/Library/Caches/go-build",

@@ -1,0 +1,85 @@
+# Local reverse proxies on 127.0.0.1:
+#   9114 -> https://gitlab-app.eng.qops.net
+#   7445 -> https://surveyassay.eng.qops.net
+#   9443 -> https://api.github.com (HTTPS via Caddy's local CA; for gh with GH_HOST=127.0.0.1:9443)
+# Only GET and HEAD are proxied; other methods receive 405.
+#
+# The GitHub proxy strips gh's GHES /api/v3 prefix and injects a token read from the
+# login keychain (account readonly-eng-proxy, service GH_PROXY_TOKEN). It answers
+# /api/v3/meta itself so gh's GHES version check passes.
+# Trust the local CA once after first start:
+#   sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain \
+#     "$HOME/Library/Application Support/Caddy/pki/authorities/local/root.crt"
+
+Label: chezmoi.wesb.gitlab-proxy
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+  HOME: {{ .chezmoi.homeDir }}
+StandardOutPath: /tmp/gitlab-proxy.out.log
+StandardErrorPath: /tmp/gitlab-proxy.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - |
+    GH_PROXY_TOKEN=$(security find-generic-password -a readonly-eng-proxy -s GH_PROXY_TOKEN -w)
+    export GH_PROXY_TOKEN
+    caddy run --adapter caddyfile --config - <<'EOF'
+    {
+      # Site addresses don't restrict the listen address; without this Caddy binds all interfaces
+      default_bind 127.0.0.1
+      skip_install_trust
+      auto_https disable_redirects
+    }
+
+    http://127.0.0.1:9114 {
+      @allowed method GET HEAD
+      handle @allowed {
+        reverse_proxy https://gitlab-app.eng.qops.net {
+          header_up Host gitlab-app.eng.qops.net
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+
+    http://127.0.0.1:7445 {
+      @allowed method GET HEAD
+      handle @allowed {
+        reverse_proxy https://surveyassay.eng.qops.net {
+          header_up Host surveyassay.eng.qops.net
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+
+    https://127.0.0.1:9443 {
+      tls internal
+      @allowed method GET HEAD
+      handle @allowed {
+        # gh treats this host as GHES and parses installed_version, which github.com's /meta lacks.
+        # Stay below 3.18.0: from there gh sends a GraphQL POST to detect advanced issue search.
+        handle /api/v3/meta {
+          header Content-Type application/json
+          respond `{"installed_version":"3.17.0"}` 200
+        }
+        handle_path /api/v3/* {
+          reverse_proxy https://api.github.com {
+            header_up Host api.github.com
+            header_up Authorization "token {env.GH_PROXY_TOKEN}"
+          }
+        }
+        handle {
+          respond 404
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+    EOF
+RunAtLoad: true
+KeepAlive: true
