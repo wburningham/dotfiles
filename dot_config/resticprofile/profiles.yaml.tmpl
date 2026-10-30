@@ -125,10 +125,22 @@ base:
     # schedule-lock-wait: 10m
     # schedule-ignore-on-battery: true
 
+  # retention runs only around backup; a direct `resticprofile <profile>.forget` reads the
+  # forget section instead, so both share one policy via the anchor. after-backup stays
+  # outside it because it isn't a valid restic forget flag.
   retention:
     after-backup: true
-    prune: true
-    keep-daily: 5
-    keep-weekly: 4
-    keep-monthly: 3
-    keep-yearly: 2
+    <<: &forget-policy
+      prune: true
+      group-by: host,tags
+      # true limits each profile's forget to snapshots with that profile's tag, so
+      # code.forget can't touch files snapshots.
+      tag: true
+      # false drops the --path filters for the current source list, so snapshots from
+      # older source lists still expire.
+      path: false
+      keep-last: 2
+      keep-weekly: 3
+      keep-monthly: 2
+
+  forget: *forget-policy
