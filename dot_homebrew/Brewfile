@@ -30,12 +30,15 @@ brew "fisher"
 # === misc ===
 brew "mosquitto" # for use with HomeAssistant #spellchecker:disable-line
 brew "restic"
+brew "beads" # Distributed graph issue tracker for AI agents, powered by Dolt.
+cask "beadbox/cask/beadbox" # UI for ^
 brew "resticprofile"
 brew "redu" # Disk util for restic repos
 brew "zstd" # Zstandard is a real-time compression algorithm https://facebook.github.io/zstd
 brew "cloc"
 brew "mole"
 brew "caddy"
+brew "rustledger"
 brew "dsully/tap/macos-defaults"
 brew "mcfly" # replaces ctrl-r search w/ CWD+context aware & neural network prioritizing search. https://www.nickyt.co/blog/i-switched-shell-history-tools-heres-why-m6h
 brew "fastfetch" # faster neofetch
@@ -64,13 +67,14 @@ brew "orlangure/tap/gocovsh"
 # brew "./formula/gocovsh.rb" # Custom because I thought there was no brew formula
 
 # === dev:misc ===
-brew "cue-lang/tap/cue"
+# brew "cue"
 cask "ghostty@tip"
 brew "gum" # Tool for glamorous shell scripts https://github.com/charmbracelet/gum
 brew "go-task"
 #brew "./formula/go-task.rb" # pin v3.44.0
 brew "watch" # watch -n 10 df -h; Executes a program periodically, showing output fullscreen
 brew "wireshark" # Network analyzer and capture tool - w/o GUI https://www.wireshark.org
+cask "mitmproxy"
 # brew "act"
 brew "eget"
 brew "fd" # Simple, fast and user-friendly alternative to find
@@ -133,8 +137,8 @@ brew "dive" # Tool for exploring each layer in a docker image https://github.com
 # brew "podman"
 
 # dev:kubernetes
-brew "kubernetes-helm"
-brew "kubectl"
+brew "helm"
+brew "kubernetes-cli" # kubectl use to be an alias
 brew "kubelogin" # OpenID Connect authentication plugin for kubectl https://github.com/int128/kubelogin
 brew "k9s" # Kubernetes CLI Cluster manager https://k9scli.io
 
@@ -185,7 +189,7 @@ cask "zed"
 cask "thaw"
 
 # cask "johannesnagl/tap/showmd" # Markdown previews from Finder
-# cask "johannesnagl/tap/holdor" # Prevents system sleep while agentics run
+cask "johannesnagl/tap/holdor" # Prevents system sleep while agentics run
 
 # === Mac App Store (mas) ===
 brew "mas"

@@ -4,7 +4,7 @@
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
       "resolvedRef": "dfca32667b49aab37b3bfc5649262934c7b2ae87",
-      "resolvedAt": "2026-10-09T16:26:04.109Z",
+      "resolvedAt": "2026-11-08T03:46:25.745Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
@@ -30,7 +30,111 @@
       },
       "skillSelection": [
         "*"
-      ]
+      ],
+      "skillsPath": "skills"
+    },
+    "mattpocock/skills@v1.3.2:skills/engineering": {
+      "requestedRef": "v1.3.2",
+      "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
+      "resolvedAt": "2026-11-08T03:46:43.552Z",
+      "skills": {
+        "ask-matt": {
+          "integrity": "sha256-e940edda9eb590b33014332686ce20e88c3db319a92d7548164850288002457c"
+        },
+        "code-review": {
+          "integrity": "sha256-03503c0416f951e0ad88a8e69e41176a73abe96bcf671d94d877fb08305c4363"
+        },
+        "codebase-design": {
+          "integrity": "sha256-35bfe62d56c0ae786a01540ca492232d588c119c3e2a19bcd2d49627b162c07c"
+        },
+        "diagnosing-bugs": {
+          "integrity": "sha256-bccb1855753ec4d07a1c0df85476a383b5a89d33d7726e9bb5d8014121307874"
+        },
+        "domain-modeling": {
+          "integrity": "sha256-a94465b3818001677bed9e51205fcbea48b35b1938215ab2f42459029e805f51"
+        },
+        "grill-with-docs": {
+          "integrity": "sha256-6b1292031c4f38a11309b9dad9be1141c1921c6edf86d1ae6da8b048fa71a349"
+        },
+        "implement-spec": {
+          "integrity": "sha256-1d9d9a664a6d31b67ff96214aa859db15a081bec668ac65440004539f969162e"
+        },
+        "implement": {
+          "integrity": "sha256-6d558f3f35fb0f1db27d937b1c5025683fe1e307c2c12bc93cd349b91d7f824c"
+        },
+        "improve-codebase-architecture": {
+          "integrity": "sha256-bb2b46f09aa3640009ec4a4a6fd9a03c8a03b752d30f924b5bb5bbeb8a732d2e"
+        },
+        "pr": {
+          "integrity": "sha256-556671c9cfe315c003b3e05bb8c58ad0a75fcde32c67e8cf82a9069c80a92854"
+        },
+        "prototype": {
+          "integrity": "sha256-492e4433fcd9cf88c0854aba063829ee248b208849e5827a45da8424199fd10f"
+        },
+        "research": {
+          "integrity": "sha256-df131984eac7a34957991e521cadaf314c63fa9a87656997df44d49b635d0526"
+        },
+        "retro": {
+          "integrity": "sha256-33e50d2e1b6da392645e0dee2f5ac3b1ca03b3d1c3aa39e9d25269656b4d4714"
+        },
+        "setup-matt-pocock-skills": {
+          "integrity": "sha256-e23001df24f4507c5275b2144fed9268e0468c7d61d643a78f83345dec2dfa83"
+        },
+        "tdd": {
+          "integrity": "sha256-b86dc370fd2ff43ba9c21e54fba9b1f4927f838177ff314a9528fc7243eb624c"
+        },
+        "to-spec": {
+          "integrity": "sha256-f8041146ec1678c32304f46c9de99b73a4b5dadf664e35a8124be47c4cfe3196"
+        },
+        "to-tickets": {
+          "integrity": "sha256-f74f194dd91c8f3ed7445267a3fd26480398a4baeb3c2a1b1008c4bf09105725"
+        },
+        "triage": {
+          "integrity": "sha256-1ec33672b2ac2ca02c906f204b3bfb819c7f37bfe1df033871bffaaf222fb1f6"
+        },
+        "wayfinder": {
+          "integrity": "sha256-87b6daa3b8428b01d16a2939f9364d06ce1901c12325507f66e8363c74efe02f"
+        },
+        "wizard": {
+          "integrity": "sha256-d5467ba49ab8e4b88be2932eb0343fc2f33e9dd916f6832038574a6a8922b660"
+        }
+      },
+      "skillSelection": [
+        "*"
+      ],
+      "skillsPath": "skills/engineering"
+    },
+    "mattpocock/skills@v1.3.2:skills/productivity": {
+      "requestedRef": "v1.3.2",
+      "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
+      "resolvedAt": "2026-11-08T03:46:49.378Z",
+      "skills": {
+        "grill-me": {
+          "integrity": "sha256-5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044"
+        },
+        "grilling": {
+          "integrity": "sha256-f51b8d5b32e80943ca65882933d5adf8bc85135ed4b3ff76d33a8d8d9f331b87"
+        },
+        "handoff": {
+          "integrity": "sha256-4f617ccf1f815c05bec26b782c69e46ee84e3d47c06532041e95e742c78d102c"
+        },
+        "teach": {
+          "integrity": "sha256-cc0450dcd5862720c93b63e24b3309b9889032d36958ef71f5e0fabbe102ad89"
+        },
+        "to-questionnaire": {
+          "integrity": "sha256-915ac22f1133fd4a7899ac6536e704cae57f1104d45745b32193d1572332868f"
+        },
+        "wait-what": {
+          "integrity": "sha256-5b47637fa230778ae2903048cfc9b75a614f49da268264274c35c23fe2008ccd"
+        },
+        "writing-for-agents": {
+          "integrity": "sha256-0071124a923559493bc8924a90fb87bceb048d31ad2ce785fa4281d7c506bfa7"
+        }
+      },
+      "skillSelection": [
+        "*"
+      ],
+      "skillsPath": "skills/productivity"
     }
   }
 }

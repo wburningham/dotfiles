@@ -1,0 +1,47 @@
+{
+  "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/hooks-schema.json",
+  "version": 1,
+  "hooks": {},
+  "claudecode": {
+    "hooks": {
+      "sessionStart": [
+        { "type": "command", "matcher": "", "command": "bd prime --hook-json" }
+      ]
+    }
+  },
+  "codexcli": {
+    "hooks": {
+      "sessionStart": [
+        {
+          "type": "command",
+          "matcher": "startup|resume|clear",
+          "command": "bd codex-hook SessionStart",
+          "statusMessage": "Loading Beads context"
+        }
+      ],
+      "beforeSubmitPrompt": [
+        {
+          "type": "command",
+          "command": "bd codex-hook UserPromptSubmit",
+          "statusMessage": "Refreshing Beads context"
+        }
+      ],
+      "preCompact": [
+        {
+          "type": "command",
+          "matcher": "manual|auto",
+          "command": "bd codex-hook PreCompact",
+          "statusMessage": "Checking Beads context"
+        }
+      ],
+      "postCompact": [
+        {
+          "type": "command",
+          "matcher": "manual|auto",
+          "command": "bd codex-hook PostCompact",
+          "statusMessage": "Scheduling Beads context refresh"
+        }
+      ]
+    }
+  }
+}

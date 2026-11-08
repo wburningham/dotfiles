@@ -8,7 +8,9 @@
     "mcp",
     // "commands",
     // "subagents",
-    // "hooks",
+    // hooks.json is chezmoi-managed (exact_dot_rulesync/hooks.json). Generated
+    // for claudecode and codexcli only by run_onchange_rulesync-generate.tmpl.
+    "hooks",
     "skills",
     // permissions.json is chezmoi-managed (exact_dot_rulesync/permissions.json ->
     // ~/.rulesync/permissions.json). run_onchange_rulesync-generate.tmpl regenerates
@@ -19,6 +21,10 @@
 
   "delete": true, // Delete existing files before generating
 
+  // Keep hooks other apps wrote (Supacode, Notchy) in ~/.claude/settings.json
+  // and ~/.codex/hooks.json. Without this, generate replaces the hook list.
+  "preserveUnownedHooks": true,
+
   "verbose": true,
   "silent": false,
   "sources": [
@@ -27,7 +33,10 @@
       "transport": "git",
       "ref": "master",
       "path": "skills"
-    }
+    },
+    // Skills are nested one level under category dirs, so declare each category.
+    { "source": "mattpocock/skills@v1.3.2:skills/engineering" },
+    { "source": "mattpocock/skills@v1.3.2:skills/productivity" }
   ],
 
   // Advanced options

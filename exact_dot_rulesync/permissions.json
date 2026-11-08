@@ -156,6 +156,7 @@
       "filesystem": {
         "allowWrite": [
           "/Users/wesb/Library/Caches/go-build",
+          "/Users/wesb/.cache/readassay",
           "/Users/wesb/code/go/pkg/mod",
           "/Users/wesb/.docker/run/docker.sock"
         ]

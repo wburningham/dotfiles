@@ -80,6 +80,7 @@ Apply these rewrites in order of preference:
 Don't use the following words or phrases in any text you generate. This applies to ALL generated text (session responses, file contents, code comments, commit messages, PR descriptions, etc.).
 
 **Forbidden words:**
+- `carry`
 - `probe`
 - `signal`
 - `verdict`

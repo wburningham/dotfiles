@@ -1,0 +1,4 @@
+no-git-ops: true
+metrics:
+    disabled: true
+    notice_shown: true

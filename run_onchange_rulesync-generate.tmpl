@@ -48,6 +48,14 @@ fi
 # Claude Code + Codex rules: user-scope only; handled here since pass 1 is cursor-only.
 rulesync generate --global --targets claudecode,codexcli --features rules,skills
 
+# Hooks: ~/.claude/settings.json and ~/.codex/hooks.json. preserveUnownedHooks
+# in rulesync.jsonc keeps hooks other apps added there.
+if [ ! -f .rulesync/hooks.json ]; then
+  echo "chezmoi: warning: .rulesync/hooks.json missing, skipping hooks generate" >&2
+else
+  rulesync generate --global --targets claudecode,codexcli --features hooks
+fi
+
 # MCP: global Claude Code (~/.claude.json) and Cursor (~/.cursor/mcp.json).
 if [ ! -f .rulesync/mcp.json ]; then
   echo "chezmoi: warning: .rulesync/mcp.json missing, skipping mcp generate" >&2

@@ -1,0 +1,15 @@
+# Runs the Hister HTTP server on 127.0.0.1:4433 and watches configured directories.
+# HOME is set so hister finds $HOME/.histerrc or $HOME/.config/hister/config.yml.
+
+Label: chezmoi.wesb.hister-listen
+UserName: wesb
+# EnvironmentVariables:
+  # PATH: /opt/homebrew/bin:/usr/bin:/bin
+  # HOME: {{ .chezmoi.homeDir }}
+StandardOutPath: /tmp/hister-listen.out.log
+StandardErrorPath: /tmp/hister-listen.err.log
+ProgramArguments:
+  - /Users/wesb/code/go/bin/hister
+  - listen
+RunAtLoad: true
+KeepAlive: true
