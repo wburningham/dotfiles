@@ -16,11 +16,11 @@
     encrypted = true
     url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/Dash.tar.gz.age" }}'
     targetPath = "./Applications"
-[PandaBar]
-    type = "archive"
-    encrypted = true
-    url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/PandaBar.tar.gz.age" }}'
-    targetPath = "./Applications"
+# [PandaBar]
+#     type = "archive"
+#     encrypted = true
+#     url = '{{ joinPath "file://" .chezmoi.sourceDir ".mac_apps/PandaBar.tar.gz.age" }}'
+#     targetPath = "./Applications"
 [fish-theme]
     type = "file"
     url = 'https://raw.githubusercontent.com/catppuccin/fish/5fc5ae9c2ec22eb376cb03ce76f0d262a38960f3/themes/catppuccin-mocha.theme'
