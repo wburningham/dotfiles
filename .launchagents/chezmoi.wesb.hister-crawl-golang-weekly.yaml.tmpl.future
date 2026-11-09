@@ -1,0 +1,41 @@
+# Crawls the Golang Weekly issue archive into Hister once a week.
+# Depth 1 from /issues reaches every issue page.
+#
+# Each run deletes and recreates the job with --force (https://hister.org/docs/crawler).
+# Reusing a job ID resumes it, and a finished job refetches nothing. Without --force an
+# already-indexed /issues page is skipped, so its links to new issues are never found.
+# Requires the hister-listen agent: hister index submits documents to the running server.
+#
+# Pings are commented out until a heartbeat ID exists. To enable them, add
+# "hister-crawl-golang-weekly" to heartbeat_ids in the chezmoi config and uncomment the wget lines.
+# Until then the commented lines render with "<no value>" in place of the ID.
+
+Label: chezmoi.wesb.hister-crawl-golang-weekly
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/hister-crawl-golang-weekly.out.log
+StandardErrorPath: /tmp/hister-crawl-golang-weekly.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - |
+    # wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "hister-crawl-golang-weekly" }}/start
+    # A finished job resumes as a no-op, so start a fresh job each run.
+    /opt/homebrew/bin/hister crawl delete golangweekly || true
+    /opt/homebrew/bin/hister index --recursive --force \
+      --job-id golangweekly \
+      --label golangweekly \
+      --max-depth 1 \
+      --allowed-domain golangweekly.com \
+      --allowed-pattern '^https://golangweekly\.com/issues(/\d+)?/?$' \
+      https://golangweekly.com/issues
+    status=$?
+    # wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "hister-crawl-golang-weekly" }}/$status
+    exit $status
+
+# Wednesdays 10AM local time; Golang Weekly publishes on Tuesdays
+StartCalendarInterval:
+  Weekday: 3
+  Hour: 10
+  Minute: 0
