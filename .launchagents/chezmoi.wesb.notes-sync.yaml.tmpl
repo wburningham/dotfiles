@@ -1,0 +1,55 @@
+# launch agent that auto-commits and pushes my notes repo every hour.
+# Repo: https://github.com/wburningham/notes (remote is SSH: git@github.com:wburningham/notes.git).
+# Auth uses ~/.ssh/id_rsa directly; no token is stored. See notes below.
+#
+# What it does each run:
+#   1. ping healthchecks.io /start so a missed run shows up as a dead run
+#   2. cd into the notes working copy
+#   3. stage every markdown file under docs/ (git pathspec '*' matches across '/')
+#   4. commit with a static message, only when something is staged
+#   5. push to origin
+#   6. echo a completion line and ping healthchecks.io with the push exit code
+#
+# Commits are unsigned (commit.gpgSign=false) so the job never blocks waiting for
+# the SSH signing key passphrase. Remove that override if you want signed commits
+# and have the passphrase available to ssh-keygen non-interactively.
+#
+# The heartbeat ping reports the push exit code, so a failed push turns the
+# healthchecks.io "notes-sync" check red. If cd fails the job exits before the
+# final ping, so the check also goes red via the dead-man's switch.
+
+Label: chezmoi.wesb.notes-sync
+UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
+StandardOutPath: /tmp/notes-sync.out.log
+StandardErrorPath: /tmp/notes-sync.err.log
+ProgramArguments:
+  - /bin/sh
+  - -c
+  - >-
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "notes-sync" }}/start
+    ;
+    cd "$HOME/code/go/src/github.com/wburningham/notes" || exit 1
+    ;
+    echo "notes-sync: staging docs/*.md\n" >&2
+    ;
+    git add -- 'docs/*.md'
+    ;
+    git add -- 'scripture_refs.md'
+    ;
+    git diff --cached --quiet
+    ||
+    git -c commit.gpgSign=false commit -m 'notes-sync: automated sync'
+    ;
+    git push
+    ;
+    status=$?
+    ;
+    echo "notes-sync: complete (exit $status)\n" >&2
+    ;
+    wget -q -O /dev/null https://hc-ping.com/{{ index .heartbeat_ids "notes-sync" }}/$status
+
+RunAtLoad: true
+StartCalendarInterval:
+  - Minute: 0
