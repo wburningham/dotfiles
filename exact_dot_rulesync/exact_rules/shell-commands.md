@@ -17,6 +17,7 @@ Permission allow rules match commands by prefix. The tool splits chains joined b
 - Issue one Bash tool call per command instead. Send independent calls in parallel in a single response.
 - Prefer the Read, Grep, and Glob tools over shell iteration for reading or searching files
 - Keep each command a simple invocation that a prefix allow rule can match (ex: `rg -n TODO path/to/file`)
+- **ALWAYS** quote glob patterns so the shell passes them through unexpanded (ex: `rg -g '*.go' TODO`, not `rg -g *.go TODO`)
 
 #### Examples
 
