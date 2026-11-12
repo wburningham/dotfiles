@@ -13,6 +13,8 @@ cursor:
 
 When loading skill metadata, always attempt to read `SKILL.md` first. If `SKILL.md` is not found, then attempt to read `skill.json`.
 
+When the user asks to run a skill by name and it isn't in the available skills list, read `~/.claude/skills/<name>/SKILL.md` and follow it exactly as if it had been invoked as a slash command.
+
 ## Continuous skill improvement
 
 **Your goal is to harden your core logic for all future interactions. This protocol is the engine of skill evolution.**
