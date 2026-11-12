@@ -1,7 +1,8 @@
 ---
 root: false
 targets:
-  - '*'
+  - cursor
+  - claudecode
 description: Read-only git inspection with gt and cdd shell aliases
 cursor:
   alwaysApply: true

@@ -16,9 +16,9 @@ targets:
 
 Any user or project rules about **staging**, **committing**, **pushing**, or otherwise **mutating** the repository **DO NOT APPLY** while this skill is active. Those workflows belong to a separate, explicit commit request.
 
-You **MAY** and **SHOULD** **INSPECT** repository state to write an accurate message. **INSPECTION** is **NOT** **COMMITTING**. Use **`gt`** (not `git`) and **`cdd`** (not `cd`) for every shell command in this skill.
+You **MAY** and **SHOULD** **INSPECT** repository state to write an accurate message. **INSPECTION** is **NOT** **COMMITTING**. Commands in this skill use plain `git` and `cd`. Use the substitutes your shell rules require for either one.
 
-**NEVER** run `gt add`, `gt commit`, `gt push`, or any other mutating `gt` subcommand unless the user explicitly asks you to create the commit in a follow-up message.
+**NEVER** run `git add`, `git commit`, `git push`, or any other mutating `git` subcommand unless the user explicitly asks you to create the commit in a follow-up message.
 
 A commit message (change list, CL) is a public record for a future reader who has only the log, not the diff. Write it so someone with a faint memory of the change can find it and understand what was done and why, without the code in front of them.
 
@@ -26,11 +26,11 @@ A commit message (change list, CL) is a public record for a future reader who ha
 
 When drafting or reviewing a commit message from the working tree, run these in parallel:
 
-- `gt status` - untracked files and staged vs unstaged changes
-- `gt diff` and `gt diff --staged` - full change set to summarize
-- `gt log` - recent messages to match repository style
+- `git status`: untracked files and staged vs unstaged changes
+- `git diff` and `git diff --staged`: full change set to summarize
+- `git log`: recent messages to match repository style
 
-To inspect a specific commit, use `gt show <rev>`. To compare against a base branch, use `gt log <base>...HEAD` and `gt diff <base>...HEAD`.
+To inspect a specific commit, use `git show <rev>`. To compare against a base branch, use `git log <base>...HEAD` and `git diff <base>...HEAD`.
 
 ## Format
 
