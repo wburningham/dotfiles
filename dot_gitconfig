@@ -78,6 +78,9 @@
 	email = wburningham@gmail.com
 	signingkey = /Users/wesb/.ssh/id_rsa.pub
 
+[gpg "ssh"]
+	allowedSignersFile = /Users/wesb/.ssh/allowed_signers
+
 [includeIf "gitdir:~/code/go/src/gitlab*/"]
 	path = ~/.config/git/work
 [gpg]
