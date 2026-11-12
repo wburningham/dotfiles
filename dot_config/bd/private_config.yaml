@@ -1,4 +1,6 @@
 no-git-ops: true
+agent:
+  profile: minimal
 metrics:
     disabled: true
     notice_shown: true
