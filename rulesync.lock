@@ -3,8 +3,8 @@
   "sources": {
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
-      "resolvedRef": "dfca32667b49aab37b3bfc5649262934c7b2ae87",
-      "resolvedAt": "2026-11-08T03:46:25.745Z",
+      "resolvedRef": "362ad188fa575838a2e41976310a6c219929ad7f",
+      "resolvedAt": "2026-11-13T22:39:23.457Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
@@ -19,7 +19,7 @@
           "integrity": "sha256-f7773dc2ef8dc8a79443b09284ef2928c0a297ecea12d48b571e70e58f487c92"
         },
         "read-assay": {
-          "integrity": "sha256-2a05abcf781bc0ae0ae3cf1cc65af855bce0d9a385d19050786d704d1a405a87"
+          "integrity": "sha256-6fd85b51bc4ac11b4f1346d9c658a7da452f416d90c27dd3bef496c14ba1f22b"
         },
         "rfc-author": {
           "integrity": "sha256-efa99d8b3101b6caae54d4c1eff1c7ed600d625061bdfb7501b015924fee8ad7"
@@ -36,7 +36,7 @@
     "mattpocock/skills@v1.3.2:skills/engineering": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-08T03:46:43.552Z",
+      "resolvedAt": "2026-11-13T22:39:44.013Z",
       "skills": {
         "ask-matt": {
           "integrity": "sha256-e940edda9eb590b33014332686ce20e88c3db319a92d7548164850288002457c"
@@ -107,7 +107,7 @@
     "mattpocock/skills@v1.3.2:skills/productivity": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-08T03:46:49.378Z",
+      "resolvedAt": "2026-11-13T22:39:51.557Z",
       "skills": {
         "grill-me": {
           "integrity": "sha256-5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044"
