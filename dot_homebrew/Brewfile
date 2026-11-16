@@ -151,7 +151,8 @@ brew "python-yq" # Command-line YAML and XML processor that wraps jq https://kis
 brew "graphviz"
 
 # === dev:ai ===
-brew "ollama"
+# brew "ollama"
+brew "incoai/tap/splash"
 # brew "ck-search" # soon
 # brew "block-goose-cli"
 # cask "block-goose"
@@ -159,7 +160,7 @@ cask "cursor"
 cask "cursor-cli"
 brew "gemini-cli"
 cask "claude-code"
-# brew "anomalyco/tap/opencode"
+brew "opencode"
 cask "codex"
 
 # === passwords ===

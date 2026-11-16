@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "splash/qwen3.6",
+  // Hide every provider except the local Splash server from model selection.
+  "policies": [
+    { "action": "provider.use", "resource": "*", "effect": "deny" },
+    { "action": "provider.use", "resource": "splash", "effect": "allow" }
+  ],
+  // Ask before every tool by default, then allow a baseline set. Project configs load
+  // after this file and the last matching rule wins, so a project can allow more.
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "edit", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" }
+  ],
+  "providers": {
+    "splash": {
+      "name": "Splash",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:8000/v1"
+      },
+      "compatibility": {
+        "maxTokensField": "max_completion_tokens",
+        "supportsPromptCacheKey": false
+      },
+      "models": {
+        "qwen3.6": {
+          "name": "Qwen3.6 35B A3B (4-bit)",
+          "modelID": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image"],
+            "output": ["text"],
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high"]
+            }
+          },
+          "limit": { "context": 262144, "output": 65536 },
+          "settings": { "reasoningEffort": "medium" }
+        }
+      }
+    }
+  }
+}
