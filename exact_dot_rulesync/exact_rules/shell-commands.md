@@ -28,3 +28,9 @@ Permission allow rules match commands by prefix. The tool splits chains joined b
 > `rg -n TODO a.go`
 > `rg -n TODO b.go`
 > `rg -n TODO c.go`
+
+## GitHub issues and PRs
+
+- Read an issue or PR with `gh api repos/<owner>/<repo>/issues/<n>`
+- Read its comments with `gh api repos/<owner>/<repo>/issues/<n>/comments`
+- Search issues with `gh search issues --repo <owner>/<repo> <query>`
