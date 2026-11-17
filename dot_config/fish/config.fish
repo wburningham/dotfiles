@@ -29,6 +29,11 @@ fish_add_path $(brew --prefix ruby)/bin
 
 # === sourcing ===
 status is-interactive; and begin
+    if command -sq mise
+        mise activate fish | source
+    end
+end
+status is-interactive; and begin
     if command -sq fnm
         fnm env --use-on-cd | source
     end

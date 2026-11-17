@@ -82,6 +82,7 @@ brew "php"
 brew "ruby" # Needed for work secret creation
 brew "witr"
 brew "rustup"
+brew "hister"
 brew "deno"
 brew "ruby-lsp" # for local homebrew formula
 brew "parallel" # Shell command parallelization utility https://savannah.gnu.org/projects/parallel
@@ -113,6 +114,7 @@ brew "wesb/local/vale@3.14.1", link: :force
 brew "ls-lint"
 brew "yamllint"
 brew "shellcheck"
+brew "checkbashisms"
 brew "markdownlint-cli"
 brew "typos-cli"
 # typos-lsp: LSP for typos-cli (Neovim git commits, etc.) https://github.com/tekumara/typos-lsp
@@ -188,6 +190,7 @@ cask "sublime-text"
 cask "the-unarchiver"
 cask "zed"
 cask "thaw"
+cask "irbis-zen"
 
 # cask "johannesnagl/tap/showmd" # Markdown previews from Finder
 cask "johannesnagl/tap/holdor" # Prevents system sleep while agentics run

@@ -3,10 +3,12 @@
 
 Label: chezmoi.wesb.hister-listen
 UserName: wesb
+EnvironmentVariables:
+  PATH: /opt/homebrew/bin:/usr/bin:/bin
 StandardOutPath: /tmp/hister-listen.out.log
 StandardErrorPath: /tmp/hister-listen.err.log
 ProgramArguments:
-  - /Users/wesb/code/go/bin/hister
+  - /opt/homebrew/bin/hister
   - listen
 RunAtLoad: true
 KeepAlive: true
