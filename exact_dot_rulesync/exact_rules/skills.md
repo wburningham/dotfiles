@@ -3,11 +3,6 @@ root: false
 targets:
   - '*'
 description: Skill loading conventions and continuous skill improvement protocol
-cursor:
-  alwaysApply: true
-  description: Skill loading conventions and continuous skill improvement protocol
-  globs:
-    - '**/*'
 ---
 # Skills
 

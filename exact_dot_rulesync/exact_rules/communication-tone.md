@@ -3,11 +3,6 @@ root: false
 targets:
   - '*'
 description: Conversational tone and acknowledgment style
-cursor:
-  alwaysApply: true
-  description: Conversational tone and acknowledgment style
-  globs:
-    - '**/*'
 ---
 # Communication: tone
 

@@ -3,11 +3,6 @@ root: false
 targets:
   - '*'
 description: Lazy loading of referenced instruction files
-cursor:
-  alwaysApply: true
-  description: Lazy loading of referenced instruction files
-  globs:
-    - '**/*'
 ---
 # External file loading
 

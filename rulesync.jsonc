@@ -2,14 +2,13 @@
 {
   "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/config-schema.json",
 
-  "targets": ["cursor", "claudecode", "codexcli"],
+  "targets": ["claudecode", "codexcli"],
 
   "features": [
     "mcp",
     // "commands",
     // "subagents",
-    // hooks.json is chezmoi-managed (exact_dot_rulesync/hooks.json). Generated
-    // for claudecode and codexcli only by run_onchange_rulesync-generate.tmpl.
+    // hooks.json is chezmoi-managed (exact_dot_rulesync/hooks.json).
     "hooks",
     "skills",
     // permissions.json is chezmoi-managed (exact_dot_rulesync/permissions.json ->

@@ -31,41 +31,15 @@ cd {{ .chezmoi.homeDir | quote }}
 rm -rf .rulesync/skills/.curated .rulesync/rules/.curated
 rulesync install --frozen
 
-# Cursor rules: project-scope generate from ~ writes ~/.cursor/rules/*.mdc.
-# rulesync global mode does not support Cursor rules generation.
-rulesync generate --targets cursor --features rules,skills
-
-# Permissions: chezmoi deploys exact_dot_rulesync/permissions.json to
-# ~/.rulesync/permissions.json before this onchange script runs. Pass 2 reads
-# that file and writes ~/.claude/settings.json, ~/.cursor/cli-config.json, and
-# ~/.codex/config.toml. --global is required; project scope writes cli.json.
-if [ ! -f .rulesync/permissions.json ]; then
-  echo "chezmoi: warning: .rulesync/permissions.json missing, skipping permissions generate" >&2
-else
-  rulesync generate --global --features permissions
-fi
-
-# Claude Code + Codex rules: user-scope only; handled here since pass 1 is cursor-only.
-rulesync generate --global --targets claudecode,codexcli --features rules,skills
-
-# Hooks: ~/.claude/settings.json and ~/.codex/hooks.json. preserveUnownedHooks
-# in rulesync.jsonc keeps hooks other apps added there.
-if [ ! -f .rulesync/hooks.json ]; then
-  echo "chezmoi: warning: .rulesync/hooks.json missing, skipping hooks generate" >&2
-else
-  rulesync generate --global --targets claudecode,codexcli --features hooks
-fi
-
-# MCP: global Claude Code (~/.claude.json) and Cursor (~/.cursor/mcp.json).
-if [ ! -f .rulesync/mcp.json ]; then
-  echo "chezmoi: warning: .rulesync/mcp.json missing, skipping mcp generate" >&2
-else
-  rulesync generate --global --features mcp
-fi
+# One user-scope pass for every target and feature in rulesync.jsonc. --global
+# writes ~/.claude/ and ~/.codex/ instead of project-scope ~/CLAUDE.md and
+# ~/AGENTS.md. chezmoi deploys exact_dot_rulesync/ (permissions.json,
+# hooks.json, mcp.json) to ~/.rulesync/ before this script runs.
+rulesync generate --global
 
 # generate --delete sweeps orphaned files but leaves empty directories (ex: scripts/
 # removed from upstream but the dir remains). Prune empties under skill outputs.
-for skill_root in .cursor/skills .claude/skills .agents/skills; do
+for skill_root in .claude/skills .agents/skills; do
   if [ -d "$skill_root" ]; then
     find "$skill_root" -depth -type d -empty -delete 2>/dev/null || true
   fi

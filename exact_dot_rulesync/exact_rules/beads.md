@@ -3,11 +3,6 @@ root: false
 targets:
   - '*'
 description: Beads (bd) memory writes require explicit approval
-cursor:
-  alwaysApply: true
-  description: Beads (bd) memory writes require explicit approval
-  globs:
-    - '**/*'
 ---
 # Beads memory writes
 

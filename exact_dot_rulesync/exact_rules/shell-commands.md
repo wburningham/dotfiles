@@ -3,11 +3,6 @@ root: false
 targets:
   - '*'
 description: Shell command shapes that match permission allow rules
-cursor:
-  alwaysApply: true
-  description: Shell command shapes that match permission allow rules
-  globs:
-    - '**/*'
 ---
 # Shell commands: avoid permission prompts
 
