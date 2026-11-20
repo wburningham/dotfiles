@@ -169,7 +169,8 @@
         "/Users/wesb/.local/state/mise",
         "/Users/wesb/.local/share/mise",
         "/Users/wesb/code/go/pkg/mod",
-        "/Users/wesb/code/go/src/gitlab-app.eng.qops.net/collect-platform/rfcs"
+        "/Users/wesb/code/go/src/gitlab-app.eng.qops.net/collect-platform/rfcs",
+        "/Users/wesb/code/go/src/github.com/wburningham/gitconflicts"
       ]
     },
     "sandbox": {
