@@ -165,6 +165,9 @@
     },
     "permissions": {
       "additionalDirectories": [
+        "/Users/wesb/Library/Caches/mise",
+        "/Users/wesb/.local/state/mise",
+        "/Users/wesb/.local/share/mise",
         "/Users/wesb/code/go/pkg/mod",
         "/Users/wesb/code/go/src/gitlab-app.eng.qops.net/collect-platform/rfcs"
       ]
@@ -173,14 +176,18 @@
       "enableWeakerNetworkIsolation": true,
       "filesystem": {
         "allowWrite": [
-          "/Users/wesb/Library/Caches/go-build",
           "/Users/wesb/.cache/readassay",
+          "/Users/wesb/.docker/run/docker.sock",
+          "/Users/wesb/Library/Caches/mise",
+          "/Users/wesb/.local/state/mise",
+          "/Users/wesb/.local/share/mise",
           "/Users/wesb/code/go/pkg/mod",
-          "/Users/wesb/.docker/run/docker.sock"
+          "/Users/wesb/Library/Caches/go-build"
         ]
       },
       "network": {
         "allowedDomains": [
+          "release-assets.githubusercontent.com",
           "*.github.com",
           "github.com",
           "localhost",
