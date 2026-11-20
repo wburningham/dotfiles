@@ -35,7 +35,9 @@
     },
     // Skills are nested one level under category dirs, so declare each category.
     { "source": "mattpocock/skills@v1.3.2:skills/engineering" },
-    { "source": "mattpocock/skills@v1.3.2:skills/productivity" }
+    { "source": "mattpocock/skills@v1.3.2:skills/productivity" },
+    // atago skill lives at skills/atago; limit to it so other skills there aren't pulled in.
+    { "source": "nao1215/atago@v0.26.3:skills", "skills": ["atago"] }
   ],
 
   // Advanced options

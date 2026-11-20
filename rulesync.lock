@@ -4,7 +4,7 @@
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
       "resolvedRef": "96203a30065b2d23dbe266dd93f91c22d21e216a",
-      "resolvedAt": "2026-11-16T22:35:06.495Z",
+      "resolvedAt": "2026-11-20T20:59:19.186Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
@@ -36,7 +36,7 @@
     "mattpocock/skills@v1.3.2:skills/engineering": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-16T22:35:28.498Z",
+      "resolvedAt": "2026-11-20T20:59:38.139Z",
       "skills": {
         "ask-matt": {
           "integrity": "sha256-e940edda9eb590b33014332686ce20e88c3db319a92d7548164850288002457c"
@@ -107,7 +107,7 @@
     "mattpocock/skills@v1.3.2:skills/productivity": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-16T22:35:35.035Z",
+      "resolvedAt": "2026-11-20T20:59:44.227Z",
       "skills": {
         "grill-me": {
           "integrity": "sha256-5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044"
@@ -135,6 +135,20 @@
         "*"
       ],
       "skillsPath": "skills/productivity"
+    },
+    "nao1215/atago@v0.26.3:skills": {
+      "requestedRef": "v0.26.3",
+      "resolvedRef": "0314a332403b516b78810d5941d2cbd244cbfafa",
+      "resolvedAt": "2026-11-20T20:59:46.087Z",
+      "skills": {
+        "atago": {
+          "integrity": "sha256-0bf174733e11b3b1db12cdc2975739eb014f14554761b82a47b7f00ca686e4e4"
+        }
+      },
+      "skillSelection": [
+        "atago"
+      ],
+      "skillsPath": "skills"
     }
   }
 }

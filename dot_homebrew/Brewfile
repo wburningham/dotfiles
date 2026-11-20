@@ -68,6 +68,7 @@ brew "orlangure/tap/gocovsh"
 
 # === dev:misc ===
 # brew "cue"
+cask "nao1215/tap/atago"
 cask "ghostty@tip"
 brew "gum" # Tool for glamorous shell scripts https://github.com/charmbracelet/gum
 brew "go-task"
