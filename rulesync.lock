@@ -4,7 +4,7 @@
     "https://gitlab-app.eng.qops.net/wesb/agent-skills": {
       "requestedRef": "master",
       "resolvedRef": "96203a30065b2d23dbe266dd93f91c22d21e216a",
-      "resolvedAt": "2026-11-20T20:59:19.186Z",
+      "resolvedAt": "2026-11-20T22:12:04.501Z",
       "skills": {
         "collect-platform-context": {
           "integrity": "sha256-17c893ae867432ce6bd4f598959be5f6e890de92fea5b077c6cbb2b207ab9d8b"
@@ -36,7 +36,7 @@
     "mattpocock/skills@v1.3.2:skills/engineering": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-20T20:59:38.139Z",
+      "resolvedAt": "2026-11-20T22:12:23.122Z",
       "skills": {
         "ask-matt": {
           "integrity": "sha256-e940edda9eb590b33014332686ce20e88c3db319a92d7548164850288002457c"
@@ -107,7 +107,7 @@
     "mattpocock/skills@v1.3.2:skills/productivity": {
       "requestedRef": "v1.3.2",
       "resolvedRef": "d1478fcb140db0b93c0c8df17bcfd311844749d0",
-      "resolvedAt": "2026-11-20T20:59:44.227Z",
+      "resolvedAt": "2026-11-20T22:12:29.197Z",
       "skills": {
         "grill-me": {
           "integrity": "sha256-5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044"
@@ -139,7 +139,7 @@
     "nao1215/atago@v0.26.3:skills": {
       "requestedRef": "v0.26.3",
       "resolvedRef": "0314a332403b516b78810d5941d2cbd244cbfafa",
-      "resolvedAt": "2026-11-20T20:59:46.087Z",
+      "resolvedAt": "2026-11-20T22:12:30.892Z",
       "skills": {
         "atago": {
           "integrity": "sha256-0bf174733e11b3b1db12cdc2975739eb014f14554761b82a47b7f00ca686e4e4"
@@ -149,6 +149,62 @@
         "atago"
       ],
       "skillsPath": "skills"
+    },
+    "spf13/go-skills": {
+      "requestedRef": "383c2f8916313b7f1260a6d15d92a468e4ecc89e",
+      "resolvedRef": "383c2f8916313b7f1260a6d15d92a468e4ecc89e",
+      "resolvedAt": "2026-11-20T22:12:49.692Z",
+      "skills": {
+        ".claude-plugin": {
+          "integrity": "sha256-1136192d8ac6c347aa4945cca574f01bd45ea94c91dafa50550dd32bc92b5688"
+        },
+        ".codegraph": {
+          "integrity": "sha256-1e72dff19b7680a611de74d534487410630ae49db1f1afc2a461e13c763f71e0"
+        },
+        ".github": {
+          "integrity": "sha256-c5fd463c237e2e5cec38ab328522210d49cd02723ef1f617d9e3f610258bf732"
+        },
+        ".ratchet": {
+          "integrity": "sha256-aeead6cd2d06cb839e2fa1cc570ad74006fcd8b8ae40edb4d54a0838bff62742"
+        },
+        "afero": {
+          "integrity": "sha256-4aa8968e5bd2a9a6d7685c5d44bcf754ba4d8fb597e9b400bc1ed11463438ea9"
+        },
+        "cmd": {
+          "integrity": "sha256-0faffd415d2c6dabe829f321f5e3db9505e110c7832ef0712b6807176c55c215"
+        },
+        "cobra-viper": {
+          "integrity": "sha256-23fdb74f78bd06ece99cad2da5c3f5983d6c57bc7e3e4ff5d0439c54fe08a859"
+        },
+        "docs": {
+          "integrity": "sha256-dc212d999d25688e056857806a1f566b7b0433786d7412381a164faaae126c48"
+        },
+        "fileflow-pathologize": {
+          "integrity": "sha256-2286f6607e14316206c80ad11b68cb7b7d0725594eb89d78bac244b869e6587b"
+        },
+        "go-release": {
+          "integrity": "sha256-7c111b574eb06b9f0cd5da3d9a3807db5f50a986e7c33203471a23dac3dda85b"
+        },
+        "go-spec-reviewer": {
+          "integrity": "sha256-f37737569865f1d4203597def0925485c0eeb53eb943a72c5a78add39560dd49"
+        },
+        "go": {
+          "integrity": "sha256-d93767777053540d4ec342adf54aa1942c1ffb21eb040f30cb7bc552cdfc7f0e"
+        },
+        "internal": {
+          "integrity": "sha256-b9263d587cffc25a7903e9bb5411d2925767d92f136beb026a1613ab10f7ac6b"
+        },
+        "templates": {
+          "integrity": "sha256-de7f11974c5f2dfaa879e002320b077c6b4518c4f1d1b57aa4c178676c41f968"
+        },
+        "wails": {
+          "integrity": "sha256-c39076e3cb4f82dde55d65a802e20b306c655736658eed9fd376c82f860a8849"
+        }
+      },
+      "skillSelection": [
+        "*"
+      ],
+      "skillsPath": "."
     }
   }
 }
