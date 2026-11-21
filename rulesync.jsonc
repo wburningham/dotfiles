@@ -46,6 +46,14 @@
       "ref": "383c2f8916313b7f1260a6d15d92a468e4ecc89e",
       "path": ".",
       "skills": ["afero", "cobra-viper", "fileflow-pathologize", "go", "go-release", "go-spec-reviewer", "wails"]
+    },
+    // Local repo on this host. Source must be committed (rulesync reads git objects, not the working tree).
+    {
+      "source": "file:///Users/wesb/code/go/src/github.com/wburningham/gitconflicts",
+      "transport": "git",
+      "ref": "integration/gitconflicts",
+      "path": "skills",
+      "skills": ["gitconflicts"]
     }
   ],
 
