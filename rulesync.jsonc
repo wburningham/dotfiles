@@ -38,8 +38,15 @@
     { "source": "mattpocock/skills@v1.3.2:skills/productivity" },
     // atago skill lives at skills/atago; limit to it so other skills there aren't pulled in.
     { "source": "nao1215/atago@v0.26.3:skills", "skills": ["atago"] },
-    // spf13/go-skills has no tags or releases, so pin to a commit. Skills sit at the repo root.
-    { "source": "spf13/go-skills", "ref": "383c2f8916313b7f1260a6d15d92a468e4ecc89e", "path": "." }
+    // spf13/go-skills has no tags or releases, so pin to a commit. Skills sit at the repo root
+    // next to non-skill dirs (cmd, internal, docs, templates, dot dirs). List skills explicitly
+    // so generate doesn't fail on dirs without SKILL.md.
+    {
+      "source": "spf13/go-skills",
+      "ref": "383c2f8916313b7f1260a6d15d92a468e4ecc89e",
+      "path": ".",
+      "skills": ["afero", "cobra-viper", "fileflow-pathologize", "go", "go-release", "go-spec-reviewer", "wails"]
+    }
   ],
 
   // Advanced options

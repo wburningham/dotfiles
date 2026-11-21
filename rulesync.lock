@@ -155,29 +155,11 @@
       "resolvedRef": "383c2f8916313b7f1260a6d15d92a468e4ecc89e",
       "resolvedAt": "2026-11-20T22:12:49.692Z",
       "skills": {
-        ".claude-plugin": {
-          "integrity": "sha256-1136192d8ac6c347aa4945cca574f01bd45ea94c91dafa50550dd32bc92b5688"
-        },
-        ".codegraph": {
-          "integrity": "sha256-1e72dff19b7680a611de74d534487410630ae49db1f1afc2a461e13c763f71e0"
-        },
-        ".github": {
-          "integrity": "sha256-c5fd463c237e2e5cec38ab328522210d49cd02723ef1f617d9e3f610258bf732"
-        },
-        ".ratchet": {
-          "integrity": "sha256-aeead6cd2d06cb839e2fa1cc570ad74006fcd8b8ae40edb4d54a0838bff62742"
-        },
         "afero": {
           "integrity": "sha256-4aa8968e5bd2a9a6d7685c5d44bcf754ba4d8fb597e9b400bc1ed11463438ea9"
         },
-        "cmd": {
-          "integrity": "sha256-0faffd415d2c6dabe829f321f5e3db9505e110c7832ef0712b6807176c55c215"
-        },
         "cobra-viper": {
           "integrity": "sha256-23fdb74f78bd06ece99cad2da5c3f5983d6c57bc7e3e4ff5d0439c54fe08a859"
-        },
-        "docs": {
-          "integrity": "sha256-dc212d999d25688e056857806a1f566b7b0433786d7412381a164faaae126c48"
         },
         "fileflow-pathologize": {
           "integrity": "sha256-2286f6607e14316206c80ad11b68cb7b7d0725594eb89d78bac244b869e6587b"
@@ -191,18 +173,18 @@
         "go": {
           "integrity": "sha256-d93767777053540d4ec342adf54aa1942c1ffb21eb040f30cb7bc552cdfc7f0e"
         },
-        "internal": {
-          "integrity": "sha256-b9263d587cffc25a7903e9bb5411d2925767d92f136beb026a1613ab10f7ac6b"
-        },
-        "templates": {
-          "integrity": "sha256-de7f11974c5f2dfaa879e002320b077c6b4518c4f1d1b57aa4c178676c41f968"
-        },
         "wails": {
           "integrity": "sha256-c39076e3cb4f82dde55d65a802e20b306c655736658eed9fd376c82f860a8849"
         }
       },
       "skillSelection": [
-        "*"
+        "afero",
+        "cobra-viper",
+        "fileflow-pathologize",
+        "go",
+        "go-release",
+        "go-spec-reviewer",
+        "wails"
       ],
       "skillsPath": "."
     }
