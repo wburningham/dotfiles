@@ -1,4 +1,4 @@
-no-git-ops: true
+# no-git-ops: true
 agent:
   profile: minimal
 metrics:
