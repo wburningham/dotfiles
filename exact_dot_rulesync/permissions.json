@@ -188,6 +188,10 @@
     "sandbox": {
       "enableWeakerNetworkIsolation": true,
       "filesystem": {
+        "allowRead": [
+          "/Users/wesb/.local/share/chezmoi/exact_dot_rulesync/exact_rules",
+          "/Users/wesb/.local/share/chezmoi/exact_dot_rulesync/skils"
+        ],
         "allowWrite": [
           "/Users/wesb/.cache/readassay",
           "/Users/wesb/.docker/run/docker.sock",

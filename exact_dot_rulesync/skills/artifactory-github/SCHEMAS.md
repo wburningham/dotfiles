@@ -21,12 +21,14 @@ All returned 200 with a valid JSON Schema on 2026-11-20. Prefix each with `https
 | goreleaser | `goreleaser/goreleaser/raw/v2.8.2/www/docs/static/schema.json` | `goreleaser/goreleaser/raw/main/www/static/schema.json` |
 | mise | `jdx/mise/raw/v2026.11.10/schema/mise.json` | `jdx/mise/raw/main/schema/mise.json` |
 | atago | `nao1215/atago/raw/v0.26.3/schema/atago.schema.json` | `nao1215/atago/raw/main/schema/atago.schema.json` |
+| Taskfile (go-task) | `go-task/task/raw/v3.44.0/website/static/schema.json` | `go-task/task/raw/main/website/src/public/schema.json` |
 
 cfv v3.0.0 validates through these URLs inside the sandbox. Against the golangci-lint v2.15.0 URL it passed a valid config and rejected an unknown `gofumpt` key.
 
 ## Path quirks
 
 - **goreleaser** moved its schema from `www/docs/static/schema.json` to `www/static/schema.json` after v2.8.2.
+- **go-task** moved its schema from `website/static/schema.json` (v3.44.0) to `website/src/public/schema.json` on `main`. Check the path at the tag you pin.
 - **golangci-lint** publishes versioned files on `main` that lag releases. No `golangci.v2.15.jsonschema.json` exists on `main` or at `v2.15.0`. Use the tag's `golangci.jsonschema.json`.
 
 ## Schemas not on GitHub
