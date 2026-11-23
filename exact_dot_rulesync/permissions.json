@@ -162,6 +162,28 @@
         "rg -z*": "deny",
         "rg *": "allow"
       },
+      "webfetch": {
+        "domain:agentclientprotocol.com": "allow",
+        "domain:artifactory.eng.qops.net": "allow",
+        "domain:creativeprojects.github.io": "allow",
+        "domain:github.com": "allow",
+        "domain:gitlab-app.eng.qops.net": "allow",
+        "domain:gitwand.app": "allow",
+        "domain:go.dev": "allow",
+        "domain:mergiraf.org": "allow",
+        "domain:mise.jdx.dev": "allow",
+        "domain:packslip.dev": "allow",
+        "domain:periscope.eng.qops.net": "allow",
+        "domain:pypi.org": "allow",
+        "domain:raw.githubusercontent.com": "allow",
+        "domain:sourcegraph.com": "allow",
+        "domain:support.apple.com": "allow",
+        "domain:surveyassay.eng.qops.net": "allow",
+        "domain:www.npmjs.com": "allow",
+        "domain:www.qualtrics.com": "allow",
+        "domain:zed.dev": "allow",
+        "domain:zensical.org": "allow"
+      },
       "mcp__grafana__list_datasources": {
         "*": "allow"
       },
