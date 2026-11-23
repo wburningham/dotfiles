@@ -23,6 +23,10 @@ Thumbs.db
 .envrc
 .envrc.local
 
+# Mise stuff
+
+mise.local.toml
+
 # tip from kcdodds https://tinyurl.com/yzl3hnnb for pattern to create files/folders to play with
 
 _.ignore._
