@@ -77,6 +77,7 @@ end
 
 # === aliases ===
 status is-interactive; and begin
+    alias m mise
     alias d docker
     alias allow 'direnv allow .'
     alias deny 'direnv deny .'
