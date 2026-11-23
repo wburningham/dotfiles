@@ -133,10 +133,13 @@
     "enabled": true
   },
   "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
     "codex-acp": {
       "default_config_options": {
         "collaboration_mode": "default",
-        "mode": "workspace-write",
+        "mode": "agent",
         "reasoning_effort": "medium",
         "model": "gpt-5.6-terra"
       },
@@ -150,7 +153,7 @@
       },
       "default_config_options": {
         "effort": "medium",
-        "model": "opus",
+        "model": "sonnet",
         "mode": "acceptEdits"
       },
       "type": "registry"
@@ -231,6 +234,11 @@
         "config": "~/.typos.toml"
       }
     },
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true
+      }
+    },
     "rust-analyzer": {
       "initialization_options": {
         "check": {
@@ -262,6 +270,13 @@
     }
   },
   "languages": {
+    "Go": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
     "Groovy": {
       "enable_language_server": false
     },
