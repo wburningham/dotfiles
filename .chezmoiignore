@@ -1,6 +1,6 @@
 .env_files/
 .macos_defaults/
-.launch_agents/
+.launchagents/
 
 # Repo-only; not a home-directory dotfile.
 .gitignore
