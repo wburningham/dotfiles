@@ -6,6 +6,8 @@
 .gitignore
 AGENTS.md
 CLAUDE.md
+mise.toml
+mise.lock
 
 # Finder droppings. Also keeps them out of run_onchange trigger hashes.
 .DS_Store

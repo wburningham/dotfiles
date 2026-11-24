@@ -1,0 +1,21 @@
+#:schema https://artifactory.eng.qops.net/artifactory/github/jdx/mise/raw/v2026.11.10/schema/mise.json
+
+[settings]
+url_replacements = { "https://github.com" = "https://artifactory.eng.qops.net/artifactory/github" }
+lockfile_platforms = ["macos-arm64"]
+
+
+[tasks.lint]
+description = "Check that every shared bash permission is duplicated in the Claude Code override"
+tools = { jq = "1.8.2" }
+run = '''
+jq -e '
+  .permission.bash as $s
+  | .claudecode.permission.bash as $c
+  | [$s | keys[] | select($c[.] != $s[.])]
+  | if length > 0
+    then error("permission.bash entries missing or different in claudecode.permission.bash:\n" + join("\n"))
+    else true
+    end
+' {{config_root}}/exact_dot_rulesync/permissions.json > /dev/null
+'''

@@ -16,11 +16,7 @@ rulesync merges `claudecode.permission` over the shared `permission` block one c
 - Put Claude-only rules (ex: the `rg` denies) only in `claudecode.permission.bash`. Don't move them to the shared block. Codex can't express mid-pattern wildcards like `rg *--pre*` and drops them, even denies. A shared `rg *` allow would then auto-approve `rg --pre` in Codex.
 - The same replacement applies to `webfetch`. The shared block uses bare domains and the Claude override uses `domain:` prefixes, so update both when you add a domain.
 
-Check that the two bash maps agree. This prints shared entries missing from the Claude override and should print nothing:
-
-```sh
-jq -r '.permission.bash as $s | .claudecode.permission.bash as $c | $s | keys[] | select($c[.] != $s[.])' exact_dot_rulesync/permissions.json
-```
+Run `mise lint` after editing the file. It fails and lists any shared bash entries that are missing from the Claude override or differ there.
 
 ### Don't edit generated files
 
