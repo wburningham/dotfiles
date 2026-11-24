@@ -1,0 +1,8 @@
+#!/bin/sh
+# Run the pinned Context7 CLI against the local read-only proxy
+# (see .launchagents/chezmoi.wesb.readonly-dev-proxy.yaml.tmpl). Set CONTEXT7_BASE_URL to override.
+#
+# The proxy injects the API key, so this wrapper never sets CONTEXT7_API_KEY. Agent sandboxes block
+# reading shell init files, so the base URL is set here rather than in an env file.
+# The context7-docs skill is written for this version's flags; update both together.
+CONTEXT7_BASE_URL=${CONTEXT7_BASE_URL:-http://127.0.0.1:9177} exec mise x npm:ctx7@0.12.2 -- ctx7 "$@"

@@ -2,7 +2,11 @@
 #   9114 -> https://gitlab-app.eng.qops.net
 #   7445 -> https://surveyassay.eng.qops.net
 #   9443 -> https://api.github.com (HTTPS via Caddy's local CA; for gh with GH_HOST=127.0.0.1:9443)
+#   9177 -> https://context7.com (for ctx7 with CONTEXT7_BASE_URL=http://127.0.0.1:9177)
 # Only GET and HEAD are proxied; other methods receive 405.
+#
+# The Context7 proxy forwards only the read endpoints the ctx7 CLI calls and injects an API key
+# read from the login keychain (account readonly-eng-proxy, service CONTEXT7_API_KEY).
 #
 # The GitHub proxy strips gh's GHES /api/v3 prefix and injects a token read from the
 # login keychain (account readonly-eng-proxy, service GH_PROXY_TOKEN). It answers
@@ -24,6 +28,8 @@ ProgramArguments:
   - |
     GH_PROXY_TOKEN=$(security find-generic-password -a readonly-eng-proxy -s GH_PROXY_TOKEN -w)
     export GH_PROXY_TOKEN
+    CONTEXT7_API_KEY=$(security find-generic-password -a readonly-eng-proxy -s CONTEXT7_API_KEY -w)
+    export CONTEXT7_API_KEY
     caddy run --adapter caddyfile --config - <<'EOF'
     {
       # Site addresses don't restrict the listen address; without this Caddy binds all interfaces
@@ -70,6 +76,26 @@ ProgramArguments:
           reverse_proxy https://api.github.com {
             header_up Host api.github.com
             header_up Authorization "token {env.GH_PROXY_TOKEN}"
+          }
+        }
+        handle {
+          respond 404
+        }
+      }
+      handle {
+        respond 405
+      }
+    }
+
+    http://127.0.0.1:9177 {
+      @allowed method GET HEAD
+      handle @allowed {
+        # The read endpoints behind ctx7 library, docs, search, code and get-upgrade-guide.
+        @api path /api/v2/libs/search /api/v2/context /api/v3/search /api/v2/code /api/v2/version-upgrade-guide
+        handle @api {
+          reverse_proxy https://context7.com {
+            header_up Host context7.com
+            header_up Authorization "Bearer {env.CONTEXT7_API_KEY}"
           }
         }
         handle {
