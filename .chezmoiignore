@@ -4,6 +4,8 @@
 
 # Repo-only; not a home-directory dotfile.
 .gitignore
+AGENTS.md
+CLAUDE.md
 
 # Finder droppings. Also keeps them out of run_onchange trigger hashes.
 .DS_Store
